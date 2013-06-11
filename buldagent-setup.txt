@@ -1,0 +1,38 @@
+Introduction:
+=============
+The purpose of this file is to outline the special instructions that were completed on setting up the L53H build on the build agents
+as it is a middleman build which is a Ruby Framework and utilizes Ruby Gems.
+
+
+
+Setup Part 1:
+=============
+Difference between Windows and CentOS is that there is a default JS Engine.
+
+To resolve this the following was added to the GemFile:
+
+	gem 'therubyracer', :platforms => :ruby
+
+And the following command was run:
+
+	bundle install
+
+And the build was able to execute succesfully.
+
+
+
+Setup Part 2:
+=============
+With recent modifications to make the project build to the /l53h directory, the following was also needed inside the GemFile:
+
+	gem 'libv8', '~> 3.11.8', :platforms => :ruby
+
+But due to the Nature of CentOS, in order to install libv8 the following command was needed to be run:
+
+	sudo gem install libv8 --version=3.11.8.4
+
+Followed by:
+
+	bundle install
+
+Which will allow it to succesfully update.
