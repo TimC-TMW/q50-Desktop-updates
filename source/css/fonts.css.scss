@@ -1,0 +1,21 @@
+/* mixins use to get the font you want */
+@mixin default-font-n4{
+	font-family:"MetaPro-n4", "MetaPro", arial, verdana, sans-serif;
+	font-style:normal;
+	font-weight:400;
+}
+@mixin default-font-i4{
+	font-family:"MetaPro-i4", "MetaPro", arial, verdana, sans-serif;
+	font-style:italic;
+	font-weight:400;
+}
+@mixin default-font-n6{
+	font-family:"MetaPro-n6", "MetaPro", arial, verdana, sans-serif;
+	font-style:normal;
+	font-weight:600;
+}
+@mixin default-font-i6{
+	font-family:"MetaPro-i6", "MetaPro", arial, verdana, sans-serif;
+	font-style:italic;
+	font-weight:600;
+}

@@ -1,0 +1,142 @@
+/*------------------------------ LAYOUT ---------------*/
+#page_colors #wrapper{
+	
+}
+
+#page_colors #build{
+	min-height:100%;
+	background: #000;
+}
+
+#page_colors #build #wrapper{
+	width:950px;
+	margin:0 auto;
+}
+
+#content_colors.content {
+	position: absolute;
+	z-index: 8;
+	margin: 0px auto 0px;
+	width: 100%;
+	bottom: 95px;
+}
+
+#content_colors_container {
+	position: relative;
+	width: 100px;
+	min-width: 526px;
+	margin: 0px auto 0px;
+}
+
+#content_colors_container div#cutline{
+	color: #998675;
+	font-size: 11px;
+	width: 471px;
+	text-align: right;
+	position: relative;
+	top: 25px;
+}
+
+
+#content_colors h2{
+	display: none;
+}
+
+#content_colors h3 {
+	line-height:1em;
+ 	color: #000;
+ 	position: relative;
+ 	top: 70px;
+ 	margin-left: 40px;
+}
+
+#content_colors.content div.disclaimers {
+	color: #4a4240;
+	margin-top: 30px;
+	position: absolute;
+}
+
+ul.swatches{
+	overflow:hidden;
+	zoom:1;
+	margin-left:40px;
+	margin: 0px auto 0px;
+}
+
+ul.swatches li{
+	position:relative;
+	float:left;
+	margin-left:12px;
+	cursor:pointer;
+	margin-right: -7px;
+}
+
+ul.swatches li:first-child{
+	margin-left:0;
+}
+
+#page_colors div#build ul.swatches li:after{
+	content: "";
+	display:none;
+	position:absolute;
+	top:37px;
+	right:2px;
+	left:2px;
+	height:3px;
+	background: transparent;
+}
+
+.no-touch ul.swatches li:hover:after, #build ul.swatches li.selected:after{ display:block; }
+#page_colors ul.swatches li img{
+	display: inline-block;
+	width: 50px;
+	height: 38px;
+}
+
+ul.swatches li img#selected{
+	position: relative;
+	display: none;
+	width: 52px;
+	height: 30px;
+}
+
+#page_colors .disclaimer{
+	margin-top:30px;
+	font-family:helvetica,arial,verdana,sans-serif;
+	color:#666;
+}
+#page_colors .disclaimer a{ color:#666; }
+
+#page_colors .disclaimer h4{
+	display:inline-block;
+	margin-left:27px;
+	line-height:12px;
+}
+
+#page_colors .disclaimer h4:before {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  margin-right: 7px;
+  width: 7px;
+}
+
+#page_colors .disclaimer .container{
+	overflow:hidden;
+	height:auto;
+	padding:0 40px;
+	font-size:10px;
+}
+
+#page_colors .disclaimer .container p{ margin:10px 0; }
+
+/*----- GALLERY: EXTERIOR 360 ---------------*/
+#page_colors #wrapper section {
+	margin: 0px auto 0px;
+}
+
+#page_colors #wrapper #threesixty { position:absolute; top: 0px; right:0; bottom:0; left:0; z-index:7; display:none; background: transparent;}
+#page_colors #wrapper #threesixty .threesixty .hint{ width:500px; margin-left:-250px; position:absolute; z-index:9; bottom:130px; left:50%; text-align:center; font-size:14px; color:#FFF; background: transparent;}
+#page_colors #wrapper #threesixty .threesixty .hint h2{ font-size:22px; background: transparent;}
+
+
