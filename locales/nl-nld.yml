@@ -1,0 +1,448 @@
+nl-nld:
+  #CONFIG
+  context_path: "/nl-nld/"
+  locale: "nl-nld"
+  country: "nl"
+  language: "nld"
+  booth: "tdi-infiniti-carsnl"
+  metric: "metrics.infiniti-cars.nl"
+  #HEADER
+  header:
+    logo: "Infiniti"
+    link: "/nl-nld/index.html"
+    title: "De geheel nieuwe Infiniti Q50 <span>BESCHIKBAAR VANAF HERFST 2013</span>"
+    signup: "AANMELDEN VOOR UPDATES"
+    signup_link: "http://form.infiniti-cars.nl/nld-nl/Request-Further-Information/?moi=q50"
+  #NAV
+  nav:
+    home:
+      label: "Home"
+      link: "/nl-nld/index.html"
+    design:
+      label: "Verleidelijk Design"
+      link: "/nl-nld/design/index.html"
+      heading: "Vyzkoušejte atraktivní design"
+    performance:
+      label: "Behendige Prestaties"
+      link: "/nl-nld/performance/index.html"
+      heading: "Vyzkoušejte dynamický výkon"
+    technology:
+      label: "Intuïtieve Technologie"
+      link: "/nl-nld/technology/index.html"
+      heading: "Vyzkoušejte intuitivní technologie"
+    features:
+      label: "Bekijk alle eigenschappen"
+    gallery:
+      label: "Galerij"
+      link: "/nl-nld/gallery/index.html"
+    specs:
+      label: "specs &amp; Price"
+      link: "/nl-nld/specs-pricing/index.html"
+    colors:
+      label: "colours"
+      link: "/nl-nld/colors/index.html"
+    mute:
+      label: "Mute"
+  #FOOTER
+  footer:
+    back:
+      label: "Infiniti Nederland"
+      link: "http://www.infiniti-cars.nl/"
+    feedback:
+      label: "Reacties"
+      link: "http://www.infinitiusersurvey.com/?l=nl&c=nl"
+    copyright:
+      label: "Disclaimer"
+      link: "http://www.infiniti-cars.nl/about/legal.html"
+    privacy:
+      label: "Privacy statement"
+      link: "http://www.infiniti-cars.nl/about/privacy_policy.html"
+    microdisclaimer:
+      label: "Microsite disclaimer"
+      link: "#"
+    cookie_information:
+      label: "Cookies"
+      link: "http://www.infiniti-cars.nl/about/cookies.html"
+    facebook:
+      link: "https://www.facebook.com/infinitieurope"
+    twitter:
+      link: "https://twitter.com/InfinitiEurope"
+    share:
+      label: "Delen"
+  #ADDTHIS
+  addthis:
+    url: ""
+    title: "De geheel nieuwe Infiniti Q50"
+    description: ""
+  #FEATURES MODAL
+  features:
+    heading: "ALLE EIGENSCHAPPEN"
+  #DISCLAIMER MODAL
+  disclaimer:
+    header: "Disclaimer"
+    copy: "Afbeeldingen, foto's en specificaties in deze publicatie zijn gebaseerd op het conceptvoertuig, maar geven de actuele productinformatie weer die beschikbaar was op het moment van publicatie. Omdat dit nog een prototype is en het definitieve ontwerp en de uiteindelijke uitrusting en accessoires nog niet bepaald zijn, kan de productieversie afwijken van de exemplaren die hier getoond zijn. Bekijk de productieversie bij uw Infiniti Center voordat u tot koop overgaat. Beschikbaarheid en levertijden kunnen per uitvoering afwijken." 
+  #PANORAMA INSTRUCTION MODAL
+  panorama:
+    page_title: "Reageer interactief"
+    page_description: "De INTERIEURPANORAMA EXPERIENCE biedt op uitdagende wijze interactie met het interieur van de Infiniti Q50, ongeacht het toestel dat u gebruikt."
+    computer:
+      title: "PC of Mac"
+      description: "Klik en sleep de cursor om te navigeren door het interieurpanorama van de nieuwe Infiniti Q50. Druk op de Shift-toets om in te zoomen, en op de Command of Crtl-toets om uit te zoomen. U kunt ook het scrollwiel van de muis gebruiken."
+      image_alt: "Cursor"
+    gyro:
+      title: "Apple iPad 2, iPhone 4 (of hoger) en Android-apparaten"
+      description: "Om de beleving te ondergaan houdt u uw iPad in landscape-positie. Door vervolgens het apparaat intuïtief te bewegen kunt u het panorama van het interieur veranderen. Om in te zoomen raakt u met duim en wijsvinger het scherm aan en spreidt u de vingers. Om in te zoomen brengt u de vingers naar elkaar toe."
+      image_alt: "iPad"
+    touch:
+      title: "Apple iPad1, iPhone 3S,<br />iPod Touch"
+      description: "Sleep met uw vinger om het volledige interieurpanorama van de nieuwe Infiniti Q50 te kunnen zien. Om in te zoomen raakt u met duim en wijsvinger het scherm aan en spreidt u de vingers. Om in te zoomen brengt u de vingers naar elkaar toe."
+      image_alt: "Vinger"
+  #BROWSER / FLASH UPDATE MODAL(s)
+  browser:
+    heading: "Browserupgrade aangeraden"
+    message: "Uw webbrowser is niet in staat om u op deze website optimaal te laten genieten van de interactieve beleving van de nieuwe Infiniti Q50. Wij adviseren u de nieuwste versie van een van de onderstaande browsers te installeren. Excuses voor het ongemak."
+    instruction: "Klik op het pictogram om naar de downloadpagina te gaan:"
+    ie_message: "Als u gebruikmaakt van Internet Explorer 8 of een latere versie, schakelt u de compatibiliteitsweergave uit om verder te gaan."
+  flash:
+    heading: "U hebt Flash nodig"
+    message: "Onze excuses voor het ongemak, maar u hebt Flash nodig om optimaal te kunnen genieten van de volledig nieuwe, interactieve Infiniti Q50-site. Installeer Flash of schakel Flash-blocker (indien ingeschakeld) uit."
+    instruction: "Klik op het pictogram hieronder om Flash Player te installeren voor uw browser:"
+  #ORIENTATION MESSAGE
+  orientation:
+    heading: "De geheel nieuwe Infiniti Q50<br />Bekijk in de landscape-modus voor de optimale 'tablet-ervaring'."
+    message: "Kantel uw apparaat"
+  #VIDEO CONTROLS
+  controls:
+    play: "Afspelen"
+    continue: "Verder"
+    next_chapter: "Volgend hoofdstuk"
+    restart_chapter: "Herstart hoofdstuk"
+    previous_chapter: "Vorig hoofdstuk"
+    next_journey: "Volgende reis:"
+  #HOME PAGE
+  home:
+    page_title: "De geheel nieuwe Infiniti Q50 | Infiniti Nederland"
+    page_description: "Officiële website Infiniti Nederland: Introductie van de volledig nieuwe Infiniti Q50. Ontdek het design, de prestaties en de technologie van dit revolutionaire nieuwe model."
+    page_canonical: "/nl-nld/index.html"
+    headline: "DE GEHEEL NIEUWE INFINITI Q50 <span>EEN REVOLUTIE DIE DOOR U IS VORMGEGEVEN</span>"
+    tagline: "BELEEF DRIE INSPIRERENDE REIZEN IN DE INFINITI Q50"
+    experience: "Experience"
+    design: "Design"
+    performance: "Prestaties"
+    technology: "Technologie"
+  #DESIGN PAGE
+  design:
+    page_title: "De geheel nieuwe Infiniti Q50 Design | Infiniti Nederland"
+    page_description: "Officiële website Infiniti Nederland: ontdek het verleidelijke design van de geheel nieuwe Infiniti Q50, de overtreffende trap van elegantie en luxe."
+    page_canonical: "/nl-nld/design/index.html"
+    loading:
+      line_1: "Ervaar het sensuele design"
+      line_2: "door de ogen van een professionele fotograaf."
+      line_3: "De reis gaat beginnen."
+    chapters:
+      label_1: "Overzicht design"
+      label_2: "Exterieur 360&deg;"
+      label_3: "Adaptieve koplampen"
+      label_4: "Luxe stoelen"
+      label_5: "Intuïtief interieur"
+      label_6: "Interieurpanorama"
+    content:
+      design_overview:
+        heading: "EEN VERHEVEN DESIGNEXPRESSIE"
+        copy: "Als design wordt afgemeten aan de regels die worden gebroken in plaats gevolgd, aan de conventies die worden afgewezen in plaats van eraan te voldoen en de aannames die ter discussie worden gesteld in plaats van bevestigd, ontstaat er de vrijheid om vorm en functie aan te passen aan nieuwe doelen - die van u."
+      wavehood:
+        heading: "GOLVENDE VORMGEVING"
+        copy: "Met vloeiende vormen als een golf in de branding. Het toonbeeld van modern luxueus design, zoals alleen Infiniti dat kan."
+      crescent_window:
+        heading: "GOLVENDE ELEGANTIE"
+        copy: "Het artistieke, halvemaanvormige design vormt een boog naar de achterzijde waardoor het een ruimtelijk gevoel oproept en tegelijkertijd zorgt voor beter zicht op de inzittenden achterin."
+      sculpted_body:
+        heading: "GEMODELLEERDE CARROSSERIE"
+        copy: "De carrosserie ademt atletische perfectie en de uitgebalanceerde, krachtige vormgeving onderstreept dat deze auto klaar is voor alle actie die u aankunt."
+      headlights: 
+        loading: "Even geduld alstublieft…"
+        heading: "INTUÏTIEF ADAPTIEVE KOPLAMPEN"
+        copy: "Expressieve verlichting - een onmiskenbare indruk. Een uniek ontwerp, gebaseerd op de twee multi-mode led-koplampen en geaccentueerd door de dagrijverlichting. Verlichting wordt op intelligente wijze aangepast aan de hoeveelheid daglicht. Bij schemer wordt de verlichting aangepast aan de situatie, bovendien dimt het SmartBeam Assist-systeem het grootlicht zodra een tegenligger nadert. Het systeem biedt de juiste hoeveelheid licht zonder dat de bestuurder daar iets voor hoeft te doen."
+        instruction: "Klik of druk op het koplamppictogram voor meer informatie"
+        super_1:
+          heading: "Dagrijverlichting"
+          copy: "Een led-lamp met lage lichtintensiteit zorgt dat u ook bij daglicht goed te zien bent."
+        super_2:
+          heading: "Dimlicht"
+          copy: "Ideale led-verlichting voor wanneer u in het donker rijdt."
+        super_3:
+          heading: "Mistlampen"
+          copy: "Led-verlichting waar u ook bij slecht weer op kunt vertrouwen."
+        super_4:
+          heading: "SmartBeams met hoge intensiteit"
+          copy: "De heldere led-lampen hebben meer bereik in het donker."
+      zero_gravity_seats:
+        heading: "ERGONOMISCHE STOELEN VOOR LUXUEUZE ONDERSTEUNING"
+        copy: "Een doorbraak in ergonomisch design. Deze luxueus stoelen bieden optimale steun voor het bovenlichaam, voor volledig comfort voor de bestuurder. Het enige dat hij of zij voelt, is een instinctieve band tussen bestuurder en auto."
+  #PERFORMANCE PAGE
+  performance:
+    page_title: "De geheel nieuwe Infiniti Q50 Prestaties | Infiniti Nederland"
+    page_description: "Officiële website Infiniti Nederland: ervaar de geweldige prestaties van de geheel nieuwe Infiniti Q50 - nog meer vermogen en efficiëntie."
+    page_canonical: "/nl-nld/performance/index.html"
+    loading:
+      line_1: "Beleef bevrijdende prestaties"
+      line_2: "met de reflexen van een professionele bestuurder."
+      line_3: "Uw reis gaat bijna beginnen."
+    chapters:
+      label_1: "Aerodynamica zonder opwaartse druk"
+      label_2: "Sport-versie"
+      label_3: "Motoren"
+      label_4: "Sportieve hybride"
+      label_5: "Direct Adaptive Steering (DAS)"
+      label_6: "Persoonlijke voorkeursinstellingen"
+    video:
+      high_res_webm: "Performance_NL_540p.webm"
+      high_res_mp4: "Performance_NL_540p.mp4"
+      low_res_webm: "Performance_NL_360p.webm"
+      low_res_mp4: "Performance_NL_360p.mp4"
+    content:
+      performance_overview:
+        heading: "ER IS GEEN LUXE IN CONFORMITEIT"
+        copy: "De algemene overtuiging is dat de cilinderinhoud moet worden vergroot om het vermogen te verhogen. Om de efficiëntie te verbeteren, moet het vermogen worden verlaagd. En om luxe écht te kunnen waarderen zou u de wereld om u heen moeten vergeten. Tot zover de algemene overtuiging... De nieuwe Infiniti Q50. Bevrijdende prestaties"
+      performance_zero-lift:
+        heading: "ZERO LIFT AERODYNAMICA"
+        copy: "Benut de kracht van de wind - doorgaans is de wind de vijand van prestaties, maar nu kan de wind ook een bondgenoot zijn. De aerodynamische vormgeving zonder opwaartse druk van de Q50 geleidt de luchtstroom op een dusdanige manier lang de boven-, zij- en onderkant van het voertuig, waardoor stabiel, voorspelbaar weggedrag wordt verzekerd bij elke snelheid. Gecombineerd met de stuggere wielophanging zorgt deze holistische aanpak van de aerodynamica voor minder turbulentie, zelfs bij hoge snelheden, en voor optimale grip en controle."
+      performance_sport_model:
+        heading: "VOORUITSTREVEND SPORTIEF DESIGN"
+        copy: "Het Q50 Sport-model - heeft een kenmerkend sportief vormgegeven voorbumper en een unieke voorspoiler. De lichtmetalen 19-inchvelgen met dubbele spaken passen precies in de wielkasten, bovendien is elk wiel voorzien van remmen met zuigers en rotors van autosportniveau voor optimaal remvermogen. Deze Infiniti is ontworpen om te bewegen. Op het moment dat u geniet van het comfort van de sportieve, met leder beklede sportstoelen, bent u slechts een magnesium schakelflipper verwijderd van zeven vooruitstrevende dimensies van prestatievermogen."
+      performance_engine:
+        heading: "TWEE DIMENSIES VAN MOTORVERMOGEN"
+        copy: "De keus is aan u: de enerverende prestaties van Infiniti's Direct Response Hybrid System, dat de kracht van een 3,5-liter V6-benzinemotor combineert met een elektromotor die de efficiëntie verder verhoogt, of de felle 2,2-liter viercilinder turbodieselmotor die 125 kW (170 pk) levert met een CO2-uitstoot van slechts 115 g/km. Welke motor u ook kiest, één ding is zeker: u hoeft geen compromis te sluiten tussen prestaties en efficiëntie."
+        disclaimer: "De uiteindelijke CO2-emissie moet nog worden gehomologeerd. De CO2-uitstoot varieert per motorversie, transmissie en bandenmaat."
+      performance_hybrid_engine_1:
+        heading: "DE ESSENTIE VAN VERMOGEN. DE KERN VAN PRESTATIES"
+        copy: "Sportieve hybride - een sublieme combinatie van kracht en efficiëntie. Deze aandrijflijn biedt een zinderend acceleratievermogen en duurzame, directe prestaties die in één woord sensationeel zijn."
+      performance_hybrid_engine_2:
+        heading: "DE MEEST GEAVANCEERDE EXPRESSIE VAN INFINITI PERFORMANCE"
+        copy: "Sportieve hybride – conventionele premiumauto's worden van steeds grotere motoren voorzien om hun prestatieniveau te verhogen. De Q50 Hybrid is uitgerust met een lithium-ionaccu voor een extra power boost tijdens het accelereren. Dit vermogen wordt via de Intelligent Dual Clutch naar de aangedreven wielen overgebracht, zonder het brandstofverbruik te verhogen. Bovendien laadt het systeem zichzelf gedeeltelijk weer op wanneer u remt."
+      performance_adaptive_steering:
+        heading: "WERELDPRIMEUR: NIEUWE STUURTECHNOLOGIE"
+        copy: "Direct Adaptive Steering (DAS) - controle, precisie, flexibiliteit: de kroon op optimaal rijgedrag. Na meer dan tien jaar onderzoek en ontwikkeling is deze nu binnen handbereik. DAS is 's werelds eerste systeem dat gebruikmaakt van elektronica waarmee de besturing wordt gestroomlijnd en de bestuurder een groter gevoel van controle krijgt. Dit maakt bijvoorbeeld constante, kleine stuurcorrecties op slecht wegdek overbodig. Het systeem zorgt voor stabiliteit en beperkt vibraties in het stuur."
+      performance_steer_by_wire:
+        sport: "Sport-stand"
+        sport_copy: "Meer weerstand. Een kleinere draaicirkel."
+        standard: "Standard-stand"
+        standard_copy: "Minder weerstand. Een gemiddelde draaicirkel."
+        touring: "Touring"
+        touring_copy: "Lichtere besturing. Grotere draaicirkel."
+        custom: "Custom-stand"
+        custom_copy: "Stel uw eigen voorkeuren in."
+        steering_effort: "Stuurkracht"
+        heavy: "Zwaar"
+        middle: "Middel"
+        light: "Licht"
+        turning_radius: "Draaicirkel"
+        disclaimer: "Alleen ter verduidelijking. Deze demo geeft niet de werkelijke draaicirkel weer. De beschikbaarheid van de diverse standen is afhankelijk van de gekozen motor en transmissie."
+      steer_by_wire_end:
+        heading: "VAN S-BOCHT TOT PLEZIERRITJE"
+        copy: "Persoonlijke voorkeursinstellingen - met het baanbrekende Direct Adaptive Steering (DAS) systeem van Infiniti kunt u kiezen uit drie stuurinstellingen. De standen Sport of Standard kunnen worden gebruikt afhankelijk van de omstandigheden of uw persoonlijke stemming en de stand Custom kan volledig worden afgestemd op uw persoonlijke voorkeuren, zodat u de weg op gaat onder uw eigen voorwaarden."
+  #TECHNOLOGY PAGE
+  technology:
+    page_title: "De geheel nieuwe Infiniti Q50 Technologie | Infiniti Nederland"
+    page_description: "Officiële website Infiniti Nederland: ontdek de intuïtieve technologie van de geheel nieuwe Infiniti Q50 met geavanceerde digitale, audio- en veiligheidsvoorzieningen."
+    page_canonical: "/nl-nld/technology/index.html"
+    loading:
+      line_1: "Ervaar intuïtieve technologie"
+      line_2: "via de lifestyle van een ondernemer."
+      line_3: "De reis gaat bijna beginnen."
+    chapters:
+      label_1: "Digitale omgeving"
+      label_2: "Blijf verbonden"
+      label_3: "Infiniti InTouch&#8482;"
+      label_4: "BOSE<sup>&reg;</sup> Audio"
+      label_5: "Parkeerhulp bij achteruitrijden"
+      label_6: "Safety Shield"
+      label_7: "Around View<sup>&reg;</sup> Monitor (AVM)"
+    content:
+      technology_overview:
+        heading: "ALTIJD IN CONTACT"
+        copy: "De buitenwereld verdwijnt niet zodra u achter het stuur plaatsneemt. Daarom is de Q50 voorzien van technologie die ervoor zorgt dat u met de wereld in contact blijft. Blijf verbonden met en op de hoogte van het enige dat net zo snel beweegt als de Q50: uw leven. En dat via uw apparaten, uw planning en uw voorwaarden. Dit is niet slechts geavanceerde technologie; het is geavanceerde luxe, op niets anders gericht dan op ú."
+      digital_environment:
+        heading: "VOOR U GEPERSONALISEERD"
+        copy: "Instelbare digitale omgeving - onthoudt meer dan alleen uw favoriete zitpositie. En meer dan uw ideale temperatuurinstellingen.  Zelfs meer dan uw favoriete route naar huis, of uw favoriete rijstand. Hij ként u. En op het moment dat het de Infiniti Intelligent Key herkent, zorgt het systeem dat uw Q50 helemaal naar uw wens is afgesteld. Het lijkt wel magie, maar het is geavanceerde technologie."
+        video_disclaimer: "De getoonde schermen zijn simulaties gebaseerd op preproductieversies. Ze kunnen van de productieversies afwijken."
+        torque_response:
+          heading: "GASRESPONS"
+          copy: "Stel zelf de mate van gasrespons in. U kunt kiezen uit vier standen."
+        adaptive_steering:
+          heading: "DIRECT ADAPTIVE STEERING (DAS)"
+          copy: "Met deze baanbrekende stuurtechnologie kunt u zowel de stuurdruk als de overbrenging instellen."
+        driver_position:
+          heading: "ADAPTIVE DRIVER POSITION (ADP)"
+          copy: "Stel uw favoriete zitpositie in, uw favoriete stand van de spiegels én de stuurhoogte."
+        active_trace_control:
+          heading: "ACTIVE TRACE CONTROL (ATC)"
+          copy: "Als u een bocht neemt, kan Active Trace Control automatisch de binnen- of buitenremmen van de Q50 bedienen, zodat u de optimale lijn rijdt."
+      infiniti_connection:
+        heading: "BLIJF VERBONDEN"
+        copy: ""
+        calendar:
+          heading: "Synchroniseer uw agenda"
+      infiniti_intouch:
+        heading: "BLIJF OP DE HOOGTE"
+        copy: "Infiniti InTouch&#8482; - uw leven is één groot netwerk en met Infiniti InTouch&#8482; bent u altijd op de hoogte. Dit revolutionaire systeem met twee displays stelt u in staat uw digitale leven naadloos vanuit de auto voort te zetten zonder een seconde te missen. Infiniti InTouch&#8482;: apps, e-mail, navigatie, smartphone-synchronisatie en meer, zowel via knopbediening als spraakcontrole. U bent optimaal met de buitenwereld verbonden."
+        facebook:
+          heading: "Blijf in contact met familie en vrienden dankzij de Facebook-compatibiliteit."
+        apps:
+          heading: "Toegang tot uw InTouch apps van Infiniti."
+        places:
+          heading: "Tik om uw interessante plaatsen in te stellen met Google&#8482; Places."
+        pinch_zoom:
+          heading: "Knijp uw vinger samen om in te zoomen en de locatie te bepalen, tik op Route instellen en laat het navigatiesysteem van de Infiniti Q50 de snelste route berekenen en u naar uw bestemming leiden."
+      bose_audio:
+        heading: "INFINITI-WAARDIG<br>AUDIOSYSTEEM"
+        copy: "Het nieuwe BOSE<sup>&reg;</sup> Sound System - de geluidsingenieurs van BOSE<sup>&reg;</sup> hebben de geluidsinstallatie speciaal op de Infiniti Q50 afgestemd. Het systeem omvat veertien luidsprekers en drie 10-inchwoofers, voor heldere lage frequenties en een verbeterde geluidsdruk. De luidsprekers omringen u met een geluid dat optimaal is voor de akoestiek van het interieur. Geluid van buitenaf en vervormingen worden gefilterd voor een unieke en realistische weergave van muziek die u alleen bij Infiniti ervaart."
+        speakers: "BOSE<sup>&reg;</sup> Sound System met veertien luidsprekers voor een unieke en realistische geluidsbeleving"
+      bci:
+        heading: "PARKEERHULP BIJ ACHTERUITRIJDEN "
+        copy: "Hulp bij achteruit inparkeren - de parkeerhulp van Infiniti (BCI - Back-up Collision Intervention) is opnieuw een belangrijke ontwikkeling voor het vertrouwen van de bestuurder in de auto . Als de auto achteruitrijdt, helpt BCI om voertuigen en objecten achter de auto te signaleren en waarschuwt de bestuurder met optische signalen en geluidssignalen. Indien nodig, gaat BCI verder door automatisch te remmen om een botsing te helpen voorkomen."
+        super1: "Als u achteruitrijdt, helpt het systeem objecten achter de auto te signaleren."
+        super2: "De bestuurder wordt gewaarschuwd met optische signalen en geluidssignalen."
+        super3: "Indien nodig, remt BCI de auto automatisch af om een botsing te helpen voorkomen."
+      avm:
+        heading: "360 GRADEN EXTRA ZEKERHEID"
+        copy: "Around View<sup>&reg;</sup> Monitor (AVM) - Infiniti introduceerde 's werelds eerste Around View<sup>&reg;</sup> Monitor; een geavanceerde, maar gebruiksvriendelijke technologie die parkeren vereenvoudigt. Vier camera's die rondom op de auto zijn geplaatst, bieden de bestuurder een zicht van 360&deg; rond de auto ('bird's eye view) op de display in het dashboard. Infiniti heeft het systeem nu uitgebreid met Moving Object Detection (MOD) dat de bestuurder waarschuwt voor bewegende objecten - een nieuw perspectief op de wereld om u heen. De Q50 helpt u om zelfs in de kleinste ruimten te manoeuvreren."
+        super1: "Vier camera's zorgen voor een zicht van 360&deg; rond de auto."
+        super2: "Het systeem projecteert beelden van de vier camera's op het scherm en vormt ze om tot een zogenoemde bird's eye view."
+        super3: "Gekleurde lijnen helpen bij het manoeuvreren en geven de afstand tot objecten achter de auto. <span style=\"display:block;margin-top:10px;\"></span>De parkeersensoren voor en achter produceren een geluidssignaal als de auto een obstakel te dicht nadert." 
+        super4: "Voertuigsensoren detecteren bewegende voorwerpen en geven hun positie aan op de display."
+  #GALLERY PAGE
+  gallery:
+    page_title: "De geheel nieuwe Infiniti Q50 Foto's en 360's | Infiniti Nederland"
+    page_description: "Officiële website Infiniti Nederland: bekijk exclusieve foto's en 360 graden panoramabeelden van de geheel nieuwe Infiniti Q50."
+    page_canonical: "/nl-nld/gallery/index.html"
+    back: "Terug naar galerij"
+    nav:
+      photos: "Foto's"
+      exterior: "Exterieur 360"
+      interior: "Interieur 360"
+      next: "Volgende"
+      previous: "Vorige"
+  #INTERIOR PANO
+  pano:
+    welcome:
+      title: "PERSOONLIJKE LUXE IN ELKE STOEL"
+      description: "Een intuïtief interieur - zorgvuldig met de hand gepolijste esdoornhouten accenten. Eveneens met de hand gestikte lederen bekleding. Artistiek uitgebalanceerde oppervlakken. Instrumenten met Intelligent Display. Elk element is intuïtief gepositioneerd om gebruiksgemak en comfort te garanderen. Alles is prachtig ondergebracht in het prachtige dashboard met golvende vormen, dat de inzittenden verwent met persoonlijk comfort. Welkom in een wereld van luxe die volledig op u is afgestemd, ongeacht of u aan het stuur zit of meerijdt."
+      instruction: "Ontdek luxe in 360 graden. <em>Klik of tik om te beginnen</em>"
+    help: "Help"
+    help_copy: "Klik of tik <br />op het voertuigpictogram <br />om het perspectief <br />te veranderen."
+  #EXTERIOR 360
+  threesixty:
+    title: "Exterieur 360&deg;"
+    instructions: "Voor een blik op de Q50 vanuit elk perspectief kunt u het beeld roteren door te klikken en de cursor te verslepen"
+    loading: "Even geduld alstublieft…"
+  #SAFETY SHIELD
+  safetyshield:
+    title: "INFINITI SAFETY SHIELD"
+    description: "Het Infiniti Safety Shield is onze totaalbenadering op het gebied van veiligheid. De Q50 biedt meerdere, elkaar aanvullende technologieën om de veiligheid en het comfort tijdens het rijden te vergroten door de omstandigheden in de gaten te houden, u voor mogelijk gevaar te waarschuwen, u te helpen een aanrijding te voorkomen en u en uw passagiers te beschermen als u toch bij een aanrijding betrokken bent."
+    instructions: "Klik of tik op de ringen voor details &gt;"
+    risks:
+      no_risk:
+        title: "Er is nog geen risico"
+        sub_title: "Helpt om comfortabel te rijden."
+        cruise_title: "Intelligent Cruise Control (ICC) (volledig snelheidsbereik)"
+        cruise_description: "Past automatisch de snelheid aan de snelheid van het overige verkeer aan."
+        distance_title: "Distance Control Assist (DCA)"
+        distance_description: "Deze primeur in de auto-industrie helpt de bestuurder om intuïtief het gas los te laten en te remmen tijdens omstandigheden waarbij regelmatig moet worden geremd."
+        monitor_title: "Around View Monitor (AVM) met Moving Object Detection (MOD)"
+        monitor_description: "'s Werelds eerste Around View Monitor (AVM) met Moving Object Detection (MOD) biedt de bestuurder een virtueel 360&deg; zicht van de parkeeromgeving. Het systeem voorziet in zowel optische signalen als geluidssignalen om te waarschuwen voor bewegende objecten die zich binnen het beeld van de display bevinden. "
+      risk:
+        title: "Een risicovolle situatie"
+        sub_title: "Helpt de bestuurder het voertuig in veilige rijomstandigheden te brengen."
+        backup_title: "Parkeerhulp bij achteruitrijden (BCI - Back-up Collision Intervention)"
+        backup_description: "Radar- en sonarsensors aan de zij- en achterkant van de auto helpen de bestuurder een eventuele aanrijding te voorkomen tijdens achteruitrijden. Als de bestuurder ondanks de waarschuwingssignalen verder rijdt, remt de auto automatisch af."
+        predictive_title: "Predictive Forward Collision Warning (PFCW)"
+        predictive_description: "Deze wereldprimeur waarschuwt de bestuurder tegen gevaren die buiten zijn gezichtsveld liggen. Dit systeem berekent niet alleen de relatieve snelheid en afstand van het voertuig dat voor u rijdt, maar zelfs van het voertuig daarvoor."
+        blind_title: "Blind Spot Intervention (BSI) en Blind Spot Warning (BSW)"
+        blind_description: "Deze wereldprimeur waarschuwt de bestuurder als hij van baan wil wisselen terwijl zich een voertuig in de dode hoek bevindt. Ook helpt dit systeem de bestuurder weer veilig naar het midden van zijn eigen rijbaan terug te keren."
+        lane_title: "Lane Departure Warning (LDW) en Lane Departure Prevention (LDP)"
+        lane_description: "Opnieuw een wereldprimeur in de auto-industrie. Lane Departure Prevention detecteert het als de auto onbedoeld van zijn rijbaan afwijkt. Het systeem assisteert de bestuurder automatisch bij het terugkeren naar het midden van de rijbaan."
+      may_occur:
+        title: "Een aanrijding is mogelijk"
+        sub_title: "Helpt de bestuurder om de auto in veiligheid te brengen."
+        braking_title: "Forward Emergency Braking"
+        braking_description: "<p>Als het systeem berekent dat er moet worden geremd, dan waarschuwt het de bestuurder via het display en met waarschuwingssignalen. Daarna duwt het systeem het gaspedaal naar boven en remt het de auto geleidelijk af, om de bestuurder te helpen de snelheid van de auto veilig te verminderen.</p><p>Als het systeem berekent dat de kans op een aanrijding groter wordt, remt het automatisch harder af om te proberen de aanrijding te voorkomen.</p>"
+      unavoidable:
+        title: "Aanrijding onvermijdelijk"
+        sub_title: "Helpt letsel te beperken als een aanrijding onvermijdelijk is."
+        braking_title: "Forward Emergency Braking (FEB)"
+        braking_description: "Dit systeem waarschuwt de bestuurder als een aanrijding onvermijdelijk is en remt vervolgens automatisch af en spant de veiligheidsgordel aan om schade en letsel zoveel mogelijk te beperken."
+      collision:
+        title: "Een aanrijding"
+        sub_title: "Helpt in het geval van een aanrijding het letsel beperken."
+        restraints_title: "Veiligheidskooi"
+        restraints_description: "Infiniti Advanced Airbag System (AAS), in de voorstoelen gemonteerde gordijnairbags ter bescherming van voor- en achterpassagiers; veiligheidsgordels met gordelspanners en spankrachtbegrenzers, en waarschuwingssignaal voor het dragen van de veiligheidsgordel. Veiligheidskooi met kreukelzones voor en achter."
+    disclaimers:
+      title: "Disclaimers"
+      link: "View Disclaimers"
+      one: "<strong>Intelligent Cruise Control (ICC) (over het hele snelheidsbereik)</strong><br />Intelligent Cruise Control (over het hele snelheidsbereik) is geen waarschuwingssysteem of een systeem dat aanrijdingen voorkomt. Het is ontworpen om te werken met zo min mogelijk remwerking. Het niet bedienen van de remmen kan leiden tot een ongeval."
+      two: "<strong>Distance Control Assist (DCA)</strong><br />Distance Control Assist helpt om onder bepaalde omstandigheden een veilige afstand tot de voorganger te bewaren. Het systeem dient niet om ongevallen te voorkomen. Het niet bedienen van de remmen kan leiden tot een ongeval."
+      three: "<strong>Around View Monitor (AVM) met Moving Object Detection MOD)</strong><br />AVM met MOD kan de dode hoek niet helemaal wegnemen en is niet in staat om ieder object op te merken. MOD werkt bij snelheden lager dan 8 km/u. Controleer altijd uw omgeving voordat u de auto in beweging zet. Het systeem is geen vervanging voor de normale handelingen die nodig zijn bij achteruitrijden."
+      four: "<strong>Back-up Collision Intervention (BCI)</strong><br />BCI kan niet ieder object zien en werkt bij beperkte snelheid. Kijk altijd om u heen voordat u het voertuig in beweging zet. Het systeem is geen vervanging voor de normale handelingen die nodig zijn bij achteruitrijden. Raadpleeg het handboek voor meer informatie."
+      five: "<strong>Blind Spot Warning (BSW) / Blind Spot Intervention (BSI)</strong><br />Blind Spot Warning en Blind Spot Intervention zijn niet bedoeld om de auto van rijbaan te laten wisselen. De systemen voorkomen dan ook geen aanrijding met een ander voertuig. Ook detecteren ze wellicht niet alle voertuigen en objecten die zich rond de auto bevinden."
+      six: "<p><strong>Lane Departure Warning (LDW) en Lane Departure Prevention (LDP)</strong><br />Lane Departure warning werkt alleen als de wegmarkering duidelijk zichtbaar is. Snelheidsbeperkingen zijn van toepassing. Raadpleeg het handboek voor meer informatie.</p><p>Lane Departure Prevention System (LDPS) werkt alleen als de wegmarkering duidelijk zichtbaar is. Snelheidsbeperkingen zijn van toepassing. Raadpleeg het handboek voor meer informatie.</p>"
+      seven: "<strong>Predictive Forward Collision Warning (PFCW)</strong><br />Predictive Forward Collision Warning is bedoeld om de bestuurder te waarschuwen voordat een aanrijding plaatsvindt. Het systeem kan geen aanrijding voorkomen. Snelheidsbeperkingen zijn van toepassing. Rijd altijd veilig."
+      eight: "<strong>Forward Emergency Braking (FEB)</strong><br />Forward Emergency Braking kan geen ongevallen voorkomen die het gevolg zijn van onverantwoord of gevaarlijk rijgedrag. Onder sommige omstandigheden waarschuwt of remt het systeem misschien niet. Snelheidsbeperkingen zijn van toepassing. Rijd altijd veilig."
+      nine: "<p><strong>Airbags</strong><br />Airbags zijn slechts een extra veiligheidsmaatregel. Draag altijd uw veiligheidsgordel. Ondanks de veiligheidssensor in de voorstoel mogen kinderstoeltjes voorin nooit achterstevoren worden gemonteerd. Alle kinderen van 12 jaar en jonger moeten achterin zitten in een op de juiste wijze bevestigde kinderstoel, eventueel met verhoging, en moeten altijd hun veiligheidsgordel dragen. Airbags werken alleen bij bepaalde ongevallen. Raadpleeg het handboek voor meer informatie.</p><p><strong>Vrijwaring veiligheidsgordel</strong> Draag altijd uw veiligheidsgordel en drink geen alcohol voordat u moet rijden. ©2013 INFINITI Business unit van Nissan North America Inc.</p>"
+  #MISC
+  misc:
+    loading: "Een revolutie die door u is vormgegeven."
+    replay: "Opnieuw afspelen"
+    continue: "Verder"
+  disclaimers:
+    bose: "BOSE<sup>&reg;</sup> is een geregistreerd merk van The Bose Corporation."
+    zero_gravity: "Heeft alleen betrekking op de voorstoelen."
+    bci: "BCI kan niet ieder object zien en werkt bij beperkte snelheid. Kijk altijd om u heen voordat u het voertuig in beweging zet. Het systeem is geen vervanging voor de normale handelingen die nodig zijn bij achteruitrijden. Kijk altijd achterom voordat u achteruitrijdt. Raadpleeg het handboek voor meer informatie. Leverbaar uitsluitend in combinatie met automatische transmissie."
+    avm: "Around View<sup>&reg;</sup> Monitor met Moving Object Detection kan dode hoeken niet volledig elimineren en niet ieder voorwerp zien. Kijk altijd om u heen voordat u het voertuig in beweging zet. Het systeem is geen vervanging voor de normale manoeuvre die nodig is om achteruit te rijden. Kijk altijd achterom voordat u achteruit rijdt. Moving Object Detection is alleen actief bij snelheden tot 8 km/u."
+    infiniti_connection: "Driving is serious business. Only use Infiniti Connection<sup>&trade;</sup> and Infiniti Connection Plus services when safe to do so. Subscription Agreement required to enroll. Initial 12 months, beginning on your date of purchase, included complimentary. Subsequently, your credit card (if on file) will be charged at the then current subscription rate and your service will continue for 1 year periods under the terms of your Subscription Agreement, unless cancelled. Services require compatible 2G GSM/GPRS cellular network. Cellular network and vehicle services, including Google Calendar<sup>&trade;</sup>, provided by independent companies not within Infiniti's control. Cellular network not available in all areas. 2G cellular network not available in all areas. In areas with 2G network coverage, signal strength may vary and/or not be available at all times. Cellular technology is evolving, and changes to cellular networks may affect future service functionality. Ask your cellular network carrier for details on anticipated 2G network availability in your area and how this may affect your planned usage. Should a cellular provider or service provider terminate/further restrict service, service may be suspended or terminated without notice or liability to Infiniti and its affiliates and agents. Infiniti not responsible for any equipment replacement or upgrades, or associated costs, that may be required for continued operation due to service changes.Terms and conditions of Subscription Agreement apply. Standard text rates and/or data usage may apply to communications received by email or SMS/text message."
+    infiniti_intouch: "Autorijden is een serieuze bezigheid. Gebruik de Infiniti InTouch Apps&#8482; alleen wanneer het veilig is om dat te doen. Een abonnement is vereist, net als een geschikte smartphone. Netwerkdekking kan per gebied verschillen. GPS-kaartgegevens zijn niet overal even gedetailleerd en mogelijk geven ze niet de actuele verkeersregels weer. Bepaalde apps en diensten, zoals Google Points of Interest en Send to Car, worden geleverd door onafhankelijke bedrijven en Infiniti heeft hier geen invloed op. Mocht de app of de serviceprovider diensten beperken of beëindigen, dan kan de dienst worden gestopt zonder kennisgeving aan en zonder aansprakelijkheid voor Infiniti of de betrokken bedrijven. Infiniti is niet verantwoordelijk voor het vervangen of upgraden van apparaten en apps en de daaraan verbonden kosten als gevolg van de wijziging van de app of de dienst. De beschikbaarheid van InTouch Apps&#8482; kan per land verschillen. Voorwaarden en bepalingen van de Abonnementsovereenkomst zijn hier van toepassing. Standaard teksttarieven en/of dataverbruik zijn mogelijk van toepassing op communicatie via e-mail en sms-/tekstberichten."
+  #COLORS PAGE
+  colors:
+    page_title: "Color Options for the All-New 2014 Infiniti Q50"
+    page_description: "View exterior color options and 360 degree views of the All-New 2014 Infiniti Q50."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/colors/"	
+    tab_label: "Colors"
+    tab_heading: "Select a Color"
+    exterior_color: "Exterior Color"
+    interior_color: "Interior Color"
+    disclaimer_1: "**Please see the actual vehicle. Colors may vary."
+    cutline: "Infiniti Q50 Premium All-Wheel Drive with Optional Equipment Shown"
+  #SPECS PAGE
+  specs:
+    page_title: "2014 Infiniti Q50 Specs & Pricing"
+    page_description: "Compare specs, versions, packages and pricing of the All-New 2014 Infiniti Q50 and its competitors."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/specs-pricing/"
+    common:
+      specs: "Specifications"
+      compare: "Compare Competitors"
+      starting_at: "Starting At MSRP"
+      standard: "Standard"
+      standard_marker: "S"
+      na: "Not Available"
+      na_marker: "N/A"
+      optional: "Optional"
+      optional_marker: "O"
+    download:
+      specs: "Download Specifications PDF"
+      compare: "Download Compare PDF"
+    specs:
+      view_by: "View by"
+      standard: "Q50 Models"
+      hybrid: "Q50 Hybrid Models"
+      expand: "Expand all"
+      collapse: "Collapse"
+      na: "N/A Not Available"
+    packages: "Packages"
+  compare:
+    common:
+      starting_at: "Starting At MSRP" 
+ #BUILD PAGE
+  build:  
+    page_title: "Build Your 2014 Infiniti Q50"
+    page_description: "Infiniti USA Official Site: Build and reserve your All-New 2014 Infiniti Q50."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/build/"

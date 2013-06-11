@@ -1,0 +1,448 @@
+ro-ron:
+  #CONFIG
+  context_path: "/ro-ron/"
+  locale: "ro-ron"
+  country: "ro"
+  language: "ron"
+  booth: "tdi-infinitiro"
+  metric: "metrics.infiniti.ro"
+  #HEADER
+  header:
+    logo: "Infiniti"
+    link: "/ro-ron/index.html"
+    title: "Prezentarea noului Infiniti Q50 <span>DISPONIBIL DIN TOAMNA ANULUI 2013</span>"
+    signup: "ÎNSCRIEŢI-VĂ PENTRU NOUTĂŢI"
+    signup_link: "http://form.infiniti.ro/ron-ro/Request-Further-Information/?moi=q50"
+  #NAV
+  nav:
+    home:
+      label: "Home"
+      link: "/ro-ron/index.html"
+    design:
+      label: "Design Seducător"
+      link: "/ro-ron/design/index.html"
+      heading: "Descoperiţi designul seducător"
+    performance:
+      label: "Performanţă Şi Agilitate"
+      link: "/ro-ron/performance/index.html"
+      heading: "Descoperiţi performanţa şi agilitatea"
+    technology:
+      label: "Tehnologie Intuitivă"
+      link: "/ro-ron/technology/index.html"
+      heading: "Descoperiţi tehnologia intuitivă"
+    features:
+      label: "Vedeţi toate dotările"
+    gallery:
+      label: "Galerie"
+      link: "/ro-ron/gallery/index.html"
+    specs:
+      label: "specs &amp; Price"
+      link: "/ro-ron/specs-pricing/index.html"
+    colors:
+      label: "colours"
+      link: "/ro-ron/colors/index.html"
+    mute:
+      label: "Mod silenţios"
+  #FOOTER
+  footer:
+    back:
+      label: "Infiniti România"
+      link: "http://www.infiniti.ro/"
+    feedback:
+      label: "Feedback site"
+      link: "http://www.infinitiusersurvey.com/?l=ro&c=ro"
+    copyright:
+      label: "Legal"
+      link: "http://www.infiniti.ro/about/legal.html"
+    privacy:
+      label: "Politica de confidenţialitate"
+      link: "http://www.infiniti.ro/about/privacy_policy.html"
+    microdisclaimer:
+      label: "Precizări legale microsite"
+      link: "#"
+    cookie_information:
+      label: "Informaţii despre modulele cookie"
+      link: "http://www.infiniti.ro/about/cookies.html"
+    facebook:
+      link: "https://www.facebook.com/infinitieurope"
+    twitter:
+      link: "https://twitter.com/InfinitiEurope"
+    share:
+      label: "Share"
+  #ADDTHIS
+  addthis:
+    url: ""
+    title: "Noul Infiniti Q50"
+    description: ""
+  #FEATURES MODAL
+  features:
+    heading: "TOATE DOTĂRILE"
+  #DISCLAIMER MODAL
+  disclaimer:
+    header: "Precizări legale"
+    copy: "Toate ilustraţiile, fotografiile şi specificaţiile din această publicaţie au la bază modelul concept, cu toate că reflectă cele mai noi informaţii disponibile în momentul tipăririi. Dat fiind că maşina este în continuare la stadiul de prototip şi nu există încă informaţii definitive privind designul, dotările şi accesoriile, este posibil ca vehiculele de serie să fie diferite de cele prezentate. Vă invităm să vedeţi modelul de serie la centrul dumneavoastră Infiniti înaintea achiziţionării. Disponibilitatea şi termenele de livrare pentru anumite modele sau dotări pot varia." 
+  #PANORAMA INSTRUCTION MODAL
+  panorama:
+    page_title: "Modul de interacţiune"
+    page_description: "EXPERIENŢA PRIVIND VEDEREA DIN INTERIOR oferă un mod atractiv de interacţiune cu habitaclul modelului Infiniti Q50, indiferent de dispozitivul utilizat."
+    computer:
+      title: "PC sau Mac"
+      description: "Daţi clic şi trageţi mouse-ul pentru a naviga în spaţiul interior al noului Infiniti Q50.  Apăsaţi tasta Shift pentru a mări şi tasta Ctrl pentru a micşora imaginea sau utilizaţi rotiţa mouse-ului."
+      image_alt: "cursor computer"
+    gyro:
+      title: "iPad 2, iPhone 4 (sau versiune mai nouă) de la Apple şi dispozitive Android"
+      description: "Pentru o experienţă cu totul captivantă, ţineţi dispozitivul dumneavoastră iPad în poziţie landscape în timp ce mişcaţi şi înclinaţi dispozitivul în mod intuitiv, pentru a vedea interiorul maşinii.  Pentru a mări imaginea, depărtaţi-vă degetul mare de cel arătător pe ecran.  Pentru a micşora imaginea, apropiaţi-vă degetul mare de cel arătător."
+      image_alt: "iPad"
+    touch:
+      title: "iPad1, iPhone 3S <br />şi iPod Touch de la Apple "
+      description: "Utilizaţi-vă degetul pe ecranul tactil şi trageţi, pentru a descoperi interiorul noului model Infiniti Q50. Pentru a mări imaginea, depărtaţi-vă degetul mare de cel arătător pe ecran.  Pentru a micşora imaginea, apropiaţi-vă degetul mare de cel arătător."
+      image_alt: "deget"
+  #BROWSER / FLASH UPDATE MODAL(s)
+  browser:
+    heading: "Se recomandă trecerea la o versiune mai nouă de browser"
+    message: "Ne cerem scuze pentru neplăcere, însă browserul dumneavoastră web nu vă permite să vă bucuraţi în totalitate de experienţa interactivă oferită de noul site Infiniti Q50. Treceţi la cea mai nouă versiune a browserelor recomandate de mai jos."
+    instruction: "Daţi clic pe o pictogramă pentru a accesa pagina de descărcare:"
+    ie_message: "Dacă utilizaţi Internet Explorer 8 sau o versiune mai nouă, dezactivaţi modul de compatibilitate pentru a continua."
+  flash:
+    heading: "Este necesară aplicaţia Flash"
+    message: "Ne cerem scuze pentru neplăceri, însă aplicaţia Flash este necesară pentru a vă bucura pe deplin de experienţa interactivă oferită de noul site Infiniti Q50. Instalaţi aplicaţia Flash sau dezactivaţi orice funcţie de blocare a aplicaţiei Flash (dacă este activată vreuna)."
+    instruction: "Daţi clic pe pictograma de mai jos pentru a instala aplicaţia de redare Flash pentru browserul dvs.:"
+  #ORIENTATION MESSAGE
+  orientation:
+    heading: "Prezentarea noului Infiniti Q50<br />Pentru o experienţă ideală pentru tablete, utilizaţi modul landscape."
+    message: "Vă rugăm să rotiţi dispozitivul dvs"
+  #VIDEO CONTROLS
+  controls:
+    play: "Redare"
+    continue: "Continuaţi"
+    next_chapter: "Capitolul următor"
+    restart_chapter: "Reluaţi capitolul"
+    previous_chapter: "Capitolul anterior"
+    next_journey: "Următoarea călătorie:"
+  #HOME PAGE
+  home:
+    page_title: "Noul Infiniti Q50 | Infiniti România"
+    page_description: "Site-ul oficial Infiniti România: prezentarea noului Infiniti Q50. Descoperiţi designul, performanţa şi tehnologia acestui model nou şi revoluţionar."
+    page_canonical: "/ro-ron/index.html"
+    headline: "PREZENTAREA NOULUI INFINITI Q50 <span>UN MODEL REVOLUŢIONAR PENTRU DUMNEAVOASTRĂ</span>"
+    tagline: "DESCOPERIŢI TREI EXPERIENŢE INSPIRATE CU AJUTORUL MODELULUI INFINITI Q50"
+    experience: "Descoperiţi"
+    design: "Design"
+    performance: "Performanţă"
+    technology: "Tehnologie"
+  #DESIGN PAGE
+  design:
+    page_title: "Designul noului Infiniti Q50 | Infiniti România"
+    page_description: "Site-ul oficial Infiniti România: descoperiţi designul seducător al noului Infiniti Q50, o expresie sublimă a eleganţei şi luxului."
+    page_canonical: "/ro-ron/design/index.html"
+    loading:
+      line_1: "Descoperiţi designul senzual prin"
+      line_2: "ochii unui fotograf profesionist."
+      line_3: "Călătoria este pe cale să înceapă."
+    chapters:
+      label_1: "Prezentarea generală a designului"
+      label_2: "Exterior 360"
+      label_3: "Faruri adaptive"
+      label_4: "Scaune de lux"
+      label_5: "Interior intuitiv"
+      label_6: "Vedere din interior"
+    content:
+      design_overview:
+        heading: "EXPRESIA UNUI DESIGN SUPERIOR"
+        copy: "Când designul este evaluat în funcţie de regulile pe care le încalcă, nu cele pe care le respectă, convenţiile pe care le sfidează, nu cele pe care le urmează şi aşteptările pe care le ignoră, nu cele de care ţine cont, există libertatea de a adapta forma şi funcţiile, astfel încât acestea să vizeze noi obiective: ale dumneavoastră!"
+      wavehood:
+        heading: "DESIGN EXTERIOR INSPIRAT DE FORMA VALURILOR"
+        copy: "Liniile urcă şi coboară precum un val care se apropie de ţărm. Este întruchiparea designului de lux modern, aşa cum doar Infiniti îl poate imagina."
+      crescent_window:
+        heading: "ELEGANŢĂ DESĂVÂRŞITĂ"
+        copy: "Designul elegant, în formă de semilună, se arcuieşte înspre partea din spate şi sugerează mişcarea, creând în acelaşi timp o senzaţie de spaţiu şi oferind un plus de vizibilitate pasagerilor din spate."
+      sculpted_body:
+        heading: "FORMĂ SCULPTURALĂ"
+        copy: "Aspect robust şi bine proporţionat, amintind de un sprinter uşor aplecat, gata de start, şi o grilă care emană forţă. Este o întruchipare a perfecţiunii sportive."
+      headlights: 
+        loading: "Se încarcă... Vă rugăm să aşteptaţi."
+        heading: "FARURI ADAPTIVE ÎN MOD INTUITIV"
+        copy: "Iluminare expresivă - privirea sa este inconfundabilă. Este expresia unică a unui design concentrat asupra farurilor duble cu leduri, cu moduri multiple de funcţionare, scoase în evidenţă de luminile de zi. Acestea se adaptează inteligent la nevoile de iluminare aflate în continuă schimbare. Lumina este ajustată pentru condiţii de amurg sau, cu ajutorul sistemului SmartBeam Assist, se opreşte independent lumina de drum din partea şoferului sau a pasagerului în cazul în care din sens opus se apropie un vehicul. Maşina selectează automat modul potrivit de iluminare, fără a fi necesară intervenţia dumneavoastră."
+        instruction: "Pentru mai multe detalii, daţi clic pe imaginea farurilor"
+        super_1:
+          heading: "Luminile de zi"
+          copy: "O lumină de mică intensitate, generată de leduri, care vă ajută să ieşiţi în evidenţă chiar şi pe timp de zi."
+        super_2:
+          heading: "Luminile de întâlnire"
+          copy: "Iluminare ideală cu leduri, pentru deplasarea pe timp de noapte."
+        super_3:
+          heading: "Luminile de ceaţă"
+          copy: "Iluminare suplimentară cu leduri, în special pentru condiţii meteo severe."
+        super_4:
+          heading: "Iluminare SmartBeams de mare intensitate"
+          copy: "Fasciculul luminos pătrunzător al ledurilor este proiectat la o distanţă şi mai mare pe întuneric."
+      zero_gravity_seats:
+        heading: "SCAUNE ERGONOMICE PENTRU O SUSŢINERE DESĂVÂRŞITĂ"
+        copy: "Cu adevărat revoluţionare în ceea ce priveşte designul ergonomic, aceste scaune luxoase asigură o susţinere ideală a trunchiului, pentru a vă oferi un confort desăvârşit. Prin urmare, singurul lucru pe care îl veţi simţi este legătura viscerală dintre şofer şi maşină."
+  #PERFORMANCE PAGE
+  performance:
+    page_title: "Performanţa noului Infiniti Q50 | Infiniti România"
+    page_description: "Site-ul oficial Infiniti România: descoperiţi performanţa şi agilitatea noului Infiniti Q50, care oferă un plus de putere şi eficienţă."
+    page_canonical: "/ro-ron/performance/index.html"
+    loading:
+      line_1: "Descoperiţi performanţe ameţitoare"
+      line_2: "prin reflexele unui şofer profesionist."
+      line_3: "Călătoria este pe cale să înceapă."
+    chapters:
+      label_1: "Construcţie aerodinamică cu forţă de ridicare zero"
+      label_2: "Model sport"
+      label_3: "Motoare"
+      label_4: "Hibrid performant"
+      label_5: "Direcţie adaptivă directă (Direct Adaptive Steering)"
+      label_6: "Stiluri de condus personalizate"
+    video:
+      high_res_webm: "Performance_RO_540p.webm"
+      high_res_mp4: "Performance_RO_540p.mp4"
+      low_res_webm: "Performance_RO_360p.webm"
+      low_res_mp4: "Performance_RO_360p.mp4"
+    content:
+      performance_overview:
+        heading: "LUXUL NU SE REGĂSEŞTE ÎN CONVENŢIONAL"
+        copy: "Se spune că, pentru mai multă putere, este nevoie de o cilindree mai mare. Iar pentru a spori eficienţa, trebuie să reduceţi performanţele. Totodată, pentru a aprecia cu adevărat luxul, trebuie să vă detaşaţi de lumea din jur. Să punem punct aici convenţiilor. Noul Infiniti Q50. Performanţă eliberatoare"
+      performance_zero-lift:
+        heading: "CONSTRUCŢIE AERODINAMICĂ CU FORŢĂ DE RIDICARE ZERO"
+        copy: "Exploataţi puterea vântului! În mod tradiţional un duşman al performanţei, vântul poate deveni un aliat. Prin construcţia sa aerodinamică cu forţă de ridicare zero, modelul Q50 dirijează fluxul de aer sub maşină, dar şi deasupra şi în jurul acesteia, asigurând o manevrare stabilă şi predictibilă indiferent de viteză. În plus, maşina dispune de o suspensie mai rigidă, iar această abordare complexă a problemei aerodinamice ajută la reducerea turbulenţelor cauzate de vânt, chiar şi la viteze de autostradă, pentru a oferi un plus de aderenţă şi control."
+      performance_sport_model:
+        heading: "DESIGN SPORT VIZIONAR"
+        copy: "Modelul Q50 sport se distinge printr-o bară paraşoc sport specifică şi un spoiler unic. Jantele de 19&quot;, din aluminiu şi aliaj, cu spiţe duble, fiecare cu pistoane şi rotoare sport pentru o putere de oprire demnă de o maşină sport, se potrivesc perfect în pasajele de roţi arcuite. Însă acest model Infiniti este conceput pentru a se deplasa. Iar din momentul în care vă adânciţi în scaunele sport cu elemente din piele, doar apăsarea unei padele de magneziu vă mai desparte de şapte dimensiuni vizionare ale performanţei."
+      performance_engine:
+        heading: "DOUĂ DIMENSIUNI ALE PUTERII MOTORULUI"
+        copy: "Alegerea vă aparţine - puteţi alege performanţa extraordinară a sistemului Direct Response Hybrid, care combină puterea motorului V6 de 3,5 litri, pe benzină, cu motorul electric care sporeşte eficienţa sau motorul turbo-diesel cu 4 cilindri, de 2,2 litri , care generează 170 CP, în timp ce emisiile de CO2 sunt de sub 115 g/km. Oricare ar fi alegerea dumneavoastră, un lucru este sigur: nu va trebuie să faceţi compromisuri între performanţă şi eficienţă."
+        disclaimer: "Cifrele finale privind emisiile de CO2 nu au fost omologate încă. Cifrele privind emisiile de CO2 pot varia în funcţie de motor, transmisie şi dimensiunea anvelopelor."
+      performance_hybrid_engine_1:
+        heading: "SUFLETUL PUTERII. ESENŢA PERFORMANŢEI"
+        copy: "Hibrid performant - o combinaţie sublimă dintre putere şi eficienţă, acest motor generează demaraje ameţitoare şi putere instantanee pentru performanţe care sunt, pur şi simplu, electrizante."
+      performance_hybrid_engine_2:
+        heading: "CEA MAI EVOLUATĂ EXPRESIE A PERFORMANŢEI INFINITI"
+        copy: "Hibrid performant - maşinile de lux convenţionale recurg la motoare mai mari pentru a îmbunătăţi performanţele. Modelul Q50 Hybrid utilizează o baterie litiu-ion pentru a descătuşa un val de putere suplimentară în momentul acceleraţiei. Această putere este canalizată prin sistemul inteligent de ambreiaj dublu, pentru a genera maximum de performanţă fără un consum de carburant suplimentar. Şi mai uimitor este faptul că sistemul se reîncarcă parţial de fiecare dată când apăsaţi pedala de frână."
+      performance_adaptive_steering:
+        heading: "TEHNOLOGIE DE DIRECŢIE ÎN PREMIERĂ MONDIALĂ"
+        copy: "Direcţie adaptivă directă (Direct Adaptive Steering) - Control. Precizie. Adaptabilitate. Manevrabilitate de cinci stele. Acum, după peste zece ani de cercetare şi dezvoltare, acest sistem este disponibil. Acest sistem dezvoltată în premieră mondială utilizează dispozitive electronice pentru a optimiza mecanismul de direcţie, pentru un plus de precizie la volan. Pe drumuri cu suprafaţă de rulare mai dură sau neuniformă, acest sistem reduce nevoia unor ajustări uşoare permanente, oferind o senzaţie de stabilitate şi protejându-vă împotriva vibraţiilor excesive cauzate de şosea."
+      performance_steer_by_wire:
+        sport: "Sport"
+        sport_copy: "O rezistenţă mai mare la rotirea volanului. Rază de bracaj mai mică."
+        standard: "Standard"
+        standard_copy: "Rezistenţă moderată la rotirea volanului. Rază de bracaj moderată."
+        touring: "Deplasări pe distanţe lungi"
+        touring_copy: "Servodirecţie îmbunătăţită. Rază de bracaj mai mare."
+        custom: "Personalizat"
+        custom_copy: "Personalizaţi setările în funcţie de preferinţele dumneavoastră."
+        steering_effort: "Rezistenţă direcţie"
+        heavy: "Mare"
+        middle: "Medie"
+        light: "Mică"
+        turning_radius: "Rază de<br />bracaj"
+        disclaimer: "Exclusiv în scop ilustrativ. Această demonstraţie nu prezintă raza de bracaj reală. Disponibilitatea modului depinde de motorul şi transmisia alese."
+      steer_by_wire_end:
+        heading: "DE LA CONDUSUL SPORT PÂNĂ LA TRASEELE LINIŞTITE DE DUMINICĂ"
+        copy: "Stiluri de condus personalizate - revoluţionarul sistem de direcţie adaptivă directă (Direct Adaptive Steering) de la Infiniti vă permite să selectaţi unul dintre cele trei moduri. Alegeţi modurile sport sau standard pentru a reflecta nevoia dumneavoastră de a utiliza un anumit stil sau pur şi simplu starea dumneavoastră de spirit. În modul personalizat, rezistenţa volanului şi reacţiile pot fi personalizate, oferindu-vă libertatea de a prelua controlul deplin."
+  #TECHNOLOGY PAGE
+  technology:
+    page_title: "Tehnologia noului Infiniti Q50 | Infiniti România"
+    page_description: "Site-ul oficial Infiniti România: descoperiţi tehnologia intuitivă a noului model Infiniti Q50, care dispune de dotări digitale, audio şi de siguranţă moderne."
+    page_canonical: "/ro-ron/technology/index.html"
+    loading:
+      line_1: "Descoperiţi tehnologia intuitivă"
+      line_2: "prin stilul de viaţă al unui întreprinzător."
+      line_3: "Călătoria este pe cale să înceapă."
+    chapters:
+      label_1: "Mediul digital"
+      label_2: "Rămâneţi conectat"
+      label_3: "Infiniti InTouch&#8482;"
+      label_4: "BOSE<sup>&reg;</sup> Audio"
+      label_5: "Intervenţie în cazul coliziunilor la mersul cu spatele"
+      label_6: "Pachetul de siguranţă preventivă"
+      label_7: "Monitor vedere perimetrică (AVM - Around View<sup>&reg;</sup> Monitor)"
+    content:
+      technology_overview:
+        heading: "NU PIERDEŢI NICIODATĂ CONTACTUL"
+        copy: "Lumea nu dispare în momentul în care urcaţi la volan. Acesta este motivul pentru care modelul Q50 dispune de tehnologii care vă permit să vă aduceţi propriul univers alături de dumneavoastră. Păstraţi ritmul cu singurul lucru care se mişcă la fel de rapid ca modelul Q50: viaţa dumneavoastră! Fiţi la curent cu totul, sincronizându-vă dispozitivele, programul şi momentele importante. Nu este doar tehnologie modernă. Este lux de ultimă generaţie care plasează în centrul atenţiei un singur lucru: pe dumneavoastră."
+      digital_environment:
+        heading: "PERSONALIZAT PENTRU DUMNEAVOASTRĂ"
+        copy: "Mediu digital personalizabil (Customisable Digital Environment) - acest sistem ştie nu doar poziţia dumneavoastră preferată la volan... Setările ideale de climatizare... Traseul panoramic preferat spre casă sau stilul de condus preferat... Vă cunoaşte pe dumneavoastră! Iar în momentul în care detectează cheia inteligentă Infiniti, se asigură că modelul Q50 este exact aşa cum vă doriţi să fie. Nu este vorba de magie, ci doar de tehnologie de ultimă generaţie."
+        video_disclaimer: "Imagini simulate pe ecran. Sunt prezentate interfaţa digitală şi designurile ecranului înaintea producţiei de serie, iar acestea pot fi diferite de cele din modelele de serie."
+        torque_response:
+          heading: "CUPLUL/REACŢIA MOTORULUI"
+          copy: "Ajustaţi modul preferat de utilizare a motorului, utilizând 4 moduri presetate."
+        adaptive_steering:
+          heading: "DIRECŢIA ADAPTIVĂ DIRECTĂ (DIRECT ADAPTIVE STEERING)"
+          copy: "Această tehnologie revoluţionară privind direcţia vă permite să ajustaţi rezistenţa la rotirea volanului, precum şi raportul de direcţie."
+        driver_position:
+          heading: "POZIŢIE ADAPTIVĂ A ŞOFERULUI (ADAPTIVE DRIVER POSITION)"
+          copy: "Ajustaţi poziţia preferată la volan, poziţiile oglinzilor, precum şi înălţimea volanului."
+        active_trace_control:
+          heading: "CONTROL ACTIV AL TRAIECTORIEI (ACTIVE TRACE CONTROL)"
+          copy: "În viraje, sistemul de control activ al traiectoriei poate acţiona automat frânele interioare sau exterioare ale modelului Q50 , pentru a optimiza traseul urmat în curbe."
+      infiniti_connection:
+        heading: "RĂMÂNEŢI CONECTAT"
+        copy: ""
+        calendar:
+          heading: "Sincronizaţi calendarul"
+      infiniti_intouch:
+        heading: "PĂSTRAŢI RITMUL"
+        copy: "Infiniti InTouch&#8482; - viaţa dumneavoastră este conectată. Infiniti InTouch&#8482; vă ajută să ţineţi ritmul. Acest sistem revoluţionar cu două ecrane vă permite să vă conectaţi la universul dumneavoastră digital, să-l controlaţi şi să-l personalizaţi uşor din maşină, fără a pierde nici cea mai măruntă informaţie. Aplicaţiile Infiniti InTouch&#8482;, funcţii precum e-mailul, navigaţia, sincronizarea telefoanelor inteligente şi multe altele sunt disponibile printr-o apăsare de buton sau prin comandă vocală. Este modalitatea cea mai conectată prin care vă puteţi deplasa prin lume. Este un întreg univers de conexiuni de fiecare dată când sunteţi pe drum."
+        facebook:
+          heading: "Rămâneţi conectat cu prietenii şi familia datorită compatibilităţii cu Facebook."
+        apps:
+          heading: "Accesaţi aplicaţiile Infiniti InTouch&#8482;."
+        places:
+          heading: "Atingeţi pentru a seta punctele de interes cu serviciul Google Places&#8482;."
+        pinch_zoom:
+          heading: "Apropiaţi-vă degetele şi măriţi pentru a identifica destinaţia, atingeţi pentru a stabili traseul, apoi permiteţi sistemului de navigaţie al modelului Q50 să calculeze cel mai rapid traseu şi să vă ghideze spre destinaţie."
+      bose_audio:
+        heading: "SUNET ÎN<br>NOTA INFINITI"
+        copy: "Noua generaţie BOSE<sup>&reg;</sup> Sound System - inginerii de sunet BOSE<sup>&reg;</sup> au creat o experienţă audio special pentru noul Infiniti Q50. Acest sistem cu 14 difuzoare conţine trei difuzoare de 25 de cm pentru frecvenţele joase care asigură un plus de claritate pentru sunetele joase şi o presiune sonoră îmbunătăţită. Celelalte difuzoare sunt aliniate pentru a vă înconjura cu un sunet optimizat pentru acustica habitaclului, filtrându-se zgomotele şi distorsiunile, pentru a oferi o calitate demnă de un spectacol live, cum numai Infiniti ştie."
+        speakers: "Sistem BOSE<sup>&reg;</sup> Sound System cu 14 difuzoare pentru o experienţă audio asemenea unui spectacol live"
+      bci:
+        heading: "INTERVENŢIE ÎN CAZUL COLIZIUNILOR LA MERSUL CU<br />SPATELE"
+        copy: "Protejaţi-vă la mersul cu spatele  - sistemul Infiniti de intervenţie în cazul coliziunilor la mersul cu spatele (BCI - Back-up Collision Intervention) reprezintă încă o evoluţie semnificativă menită să sporească încrederea la volan. Când vă deplasaţi cu spatele, sistemul BCI vă ajută să detectaţi vehiculele şi obiectele din spatele maşinii, atrăgându-vă atenţia prin alerte vizuale şi sonore. Dacă este cazul, sistemul BCI acţionează chiar şi frânele pentru a se evita o coliziune."
+        super1: "Când vă deplasaţi cu spatele, sistemul detectează obiectele din spatele maşinii."
+        super2: "Sunteţi avertizat prin alerte vizuale şi sonore."
+        super3: "Dacă este cazul, frânele sunt acţionate automat pentru a se evita o coliziune."
+      avm:
+        heading: "SIGURANŢĂ DE 360 DE GRADE"  
+        copy: "Monitor vedere perimetrică (AVM - Around View<sup>&reg;</sup> Monitor) - Infiniti a lansat primul monitor de vedere perimetrică (AVM - Around View<sup>&reg;</sup> Monitor) din lume, cu tehnologie modernă, dar intuitivă, care uşurează parcarea. Patru camere poziţionate în jurul maşini vă oferă o vedere panoramică virtuală de 360&deg; pe ecran. Infiniti a îmbunătăţit sistemul prin funcţia de detectare a obiectelor aflate în mişcare, alertându-vă cu privire la obiectele în mişcare. Oferindu-vă o nouă perspectivă asupra lumii înconjurătoare, modelul Q50 vă ajută să manevraţi maşina chiar şi în cele mai mici spaţii."
+        super1: "Patru camere oferă o vedere virtuală de 360&deg; asupra spaţiului din jurul maşinii."
+        super2: "Imaginile captate de camerele maşinii sunt afişate simultan pe ecran, oferindu-vă o vedere panoramică asupra zonei din jurul maşinii."
+        super3: "Liniile colorate ajută la orientare şi măsoară distanţele la care se află obiectele faţă de partea din spate a maşinii. <span style=\"display:block;margin-top:10px;\"></span>Senzorii de parcare faţă şi spate emit o avertizare sonoră în cazul în care maşina se apropie prea mult de un obiect." 
+        super4: "Senzorii din maşină urmăresc obiectele aflate în mişcare şi vă avertizează pe ecran cu privire la locul în care se află."
+  #GALLERY PAGE
+  gallery:
+    page_title: "Fotografii şi imagini panoramice la 360 de grade cu noul Infiniti Q50 | Infiniti România"
+    page_description: "Site-ul oficial Infiniti România: vedeţi fotografii exclusive şi imagini panoramice la 360 de grade cu noul model Infiniti Q50."
+    page_canonical: "/ro-ron/gallery/index.html"
+    back: "Înapoi la Galerie"
+    nav:
+      photos: "Fotografii"
+      exterior: "Exterior 360"
+      interior: "Interior 360"
+      next: "Înainte"
+      previous: "Înapoi"
+  #INTERIOR PANO
+  pano:
+    welcome:
+      title: "LUX PERSONAL ÎN FIECARE SCAUN"
+      description: "Interior intuitiv - ornament din lemn de arţar, finisat manual cu meticulozitate. Tapiţerie cusută manual, cu elemente din piele. Texturi cu notă artistică. Tablou de bord inteligent. Fiecare element este amplasat intuitiv, pentru a asigura maximum de confort şi control. Toate elementele formează un tablou de bord încântător, în două trepte, care învăluie fiecare pasager într-un confort deplin. Bun venit în universul luxului axat în jurul dumneavoastră, indiferent dacă vă aflaţi la volan sau doar alături de acesta."
+      instruction: "Descoperiţi luxul la 360 de grade. <em>Pentru a începe, daţi clic sau atingeţi</em>"
+    help: "Ajutor"
+    help_copy: "Pentru a modifica <br />perspectiva, <br />daţi clic pe <br />imaginea maşinii."
+  #EXTERIOR 360
+  threesixty:
+    title: "Exterior 360&deg;"
+    instructions: "Pentru a admira modelul Q50 din toate unghiurile, daţi clic şi trageţi pentru a roti maşina"
+    loading: "Se încarcă... Vă rugăm să aşteptaţi."
+  #SAFETY SHIELD
+  safetyshield:
+    title: "PACHETUL DE SIGURANŢĂ PREVENTIVĂ"
+    description: "Conceptul de pachet de siguranţă preventivă reprezintă abordarea noastră globală în ceea ce priveşte siguranţa. Infiniti Q50 oferă tehnologii multi-strat pentru a oferi siguranţă şi confort prin monitorizarea condiţiilor, avertizându-vă în cazul unor eventuale pericole, ajutându-vă să evitaţi coliziuni şi protejând toate persoanele din maşină dacă totuşi are loc un accident."
+    instructions: "Pentru detalii, daţi clic sau atingeţi cercurile &gt;"
+    risks:
+      no_risk:
+        title: "Riscul nu a apărut încă"
+        sub_title: "Ajută la asigurarea unei experienţe confortabile la volan."
+        cruise_title: "Intelligent Cruise Control (pe toată plaja de viteză)"
+        cruise_description: "Ajustează automat viteza, pentru a o adapta la fluxul de trafic."
+        distance_title: "Asistenţă la păstrarea distanţei"
+        distance_description: "Este un sistem dezvoltat în premieră mondială, care ajută intuitiv şoferul să ridice piciorul de pe pedala de acceleraţie şi să apese pedala de frână în condiţii de trafic care impun frânări frecvente."
+        monitor_title: "Monitor vedere perimetricăcu detectarea obiectelor aflate în mişcare"
+        monitor_description: "Primul monitor cu vedere perimetrică (AVM - Around View<sup>&reg;</sup> Monitor) dotat acum cu sistem de detectare a obiectelor aflate în mişcare oferă şoferului o perspectivă virtuală de 360&deg; asupra mediului în care parchează şi emite alerte vizuale şi sonore în cazul apariţiei unor obiecte în mişcare în imaginea afişată."
+      risk:
+        title: "Riscul a apărut"
+        sub_title: "Ajută şoferul să revină la condiţii de rulare mai sigure."
+        backup_title: "Intervenţie în cazul coliziunilor la mersul cu spatele"
+        backup_description: "Senzorii de tip radar şi sonar din părţile laterale şi din spatele maşinii alertează şoferul cu privire la o potenţială coliziune cu un obiect care traversează în timpul mersului cu spatele. În cazul în care şoferul continuă deplasarea, coliziunea fiind iminentă, frânele vor fi acţionate automat."
+        predictive_title: "Avertizare predictivă în cazul unei coliziuni frontale"
+        predictive_description: "Acest sistem, care reprezintă o premieră mondială, avertizează şoferul asupra riscurilor care se găsesc dincolo de câmpul său vizual. Sistemul poate detecta nu doar viteza relativă a unui vehicul aflat imediat înaintea maşinii şi distanţa faţă de acesta, ci şi viteza unui vehicul aflat în faţa acestuia, precum şi distanţa până la el."
+        blind_title: "Sistemele Blind Spot Intervention şi de avertizare cu privire la unghiul mort"
+        blind_description: "Această tehnologie dezvoltată în premieră mondială atenţionează şoferul, în momentul în care doreşte să schimbe banda de rulare, cu privire la prezenţa unui vehicul în unghiul mort. Totodată, acest sistem ajută şoferul să readucă maşina în centrul benzii de rulare."
+        lane_title: "Sistemele de avertizare la depăşirea benzii şi de prevenire a depăşirii benzii"
+        lane_description: "O altă premieră în industria auto, sistemul de prevenire a depăşirii benzii (LDP - Lane Departure Prevention) detectează părăsirea neintenţionată a benzii de rulare şi ajută automat şoferul să revină în centrul acesteia."
+      may_occur:
+        title: "Coliziunea poate avea loc"
+        sub_title: "Ajută şoferul să revină la condiţii de rulare mai sigure."
+        braking_title: "Frânarea de urgenţă la deplasarea înainte"
+        braking_description: "<p>Când sistemul consideră că se impune decelerarea, acesta atenţionează şoferul printr-un mesaj pe ecran şi printr-o alertă sonoră, după care generează o forţă care împinge pedala de acceleraţie în sus şi efectuează o frânare parţială, pentru a ajuta şoferul să încetinească maşina.</p><p>Când sistemul consideră că există posibilitatea unei coliziuni, va frâna mai puternic, pentru a se evita coliziunea.</p>"
+      unavoidable:
+        title: "Coliziune inevitabilă"
+        sub_title: "Ajută la minimizarea rănilor în cazul unei coliziuni inevitabile."
+        braking_title: "Frânarea de urgenţă la deplasarea înainte"
+        braking_description: "Dacă există condiţii în care o coliziune este inevitabilă, sistemul avertizează şoferul, acţionează automat frânele şi strânge centura de siguranţă a şoferului, pentru a reduce viteza şi daunele."
+      collision:
+        title: "Coliziune"
+        sub_title: "Ajută la minimizarea rănilor în cazul unei coliziuni."
+        restraints_title: "Echipamente de siguranţă şi structura caroseriei"
+        restraints_description: "Sistemul avansat de airbag-uri Infiniti; air bag-uri suplimentare de tip cortină, montate pe scaunele din faţă, destinate ambelor rânduri, pentru eventualitatea unui impact lateral; centuri de siguranţă faţă cu pretensionare; limitatoare de sarcină şi sistem de atenţionare în cazul necuplării centurii. Construcţie de tip „Zone Body“ cu zone de deformare faţă şi spate."
+    disclaimers:
+      title: "Disclaimers"
+      link: "View Disclaimers"
+      one: "<strong>Intelligent Cruise Control (pe toată plaja de viteză)</strong><br />Sistemul Intelligent Cruise Control (pe toată plaja de viteză) nu este un sistem de evitare a coliziunilor sau un dispozitiv de avertizare. Este conceput pentru a asigura o utilizare limitată a sistemului de frânare. Neutilizarea frânei poate duce la provocarea unui accident."
+      two: "<strong>Asistenţă la păstrarea distanţei (DCA - Distance Control Assist)</strong><br />Sistemul de Asistenţă la păstrarea distanţei (DCA - Distance Control Assist) ajută la menţinerea unei anumite distanţe faţă de vehiculul din faţă în anumite condiţii. Nu este un sistem pentru evitarea coliziunilor. Neutilizarea frânei poate duce la provocarea unui accident."
+      three: "<strong>Monitor vedere perimetrică (AVM - Around View<sup>reg;</sup> Monitor) cu detectarea obiectelor aflate în mişcare</strong><br />Monitorul de vedere perimetrică (AVM - Around View Monitor) cu detectarea obiectelor aflate în mişcare nu poate elimina complet unghiurile moarte şi nu poate detecta toate obiectele. Sistemul de detectare a obiectelor aflate în mişcare funcţionează la viteze de sub 8 km/h. Verificaţi întotdeauna spaţiul înconjurător înainte de a pune maşina în mişcare. Acest sistem nu înlocuieşte procedurile corespunzătoare aplicabile în cazul mersului cu spatele. Întoarceţi-vă întotdeauna pentru a vă asigura în spate înainte de a începe manevra."
+      four: "<strong>Intervenţia în cazul coliziunilor la mersul cu spatele (BCI - Backup Collision Intervention)</strong><br />Sistemul BCI nu detectează toate obiectele şi se aplică anumite limitări de viteză. Verificaţi întotdeauna spaţiul înconjurător înainte de a pune maşina în mişcare. Acest sistem nu înlocuieşte procedurile corespunzătoare aplicabile în cazul mersului cu spatele. Întoarceţi-vă întotdeauna pentru a vă asigura în spate înainte de a începe manevra. Pentru detalii, consultaţi manualul utilizatorului."
+      five: "<strong>Sistemele de avertizare cu privire la unghiul mort (BSW - Blind Spot Warning) şi Blind Spot Intervention</strong><br />Sistemele de avertizare cu privire la unghiul mort (BSW - Blind Spot Warning) şi Blind Spot Intervention<sup>reg;</sup> nu înlocuiesc procedurile corespunzătoare aplicabile în cazul schimbării benzii de rulare. Sistemele nu vor preveni contactul cu alte vehicule sau accidentele. Este posibil să nu detecteze toate vehiculele sau obiectele din jurul dumneavoastră."
+      six: "<p><strong>Sistemele de avertizare la depăşirea benzii (LDW - Lane Departure Warning) şi de prevenire a depăşirii benzii (LDP - Lane Departure Prevention)</strong><br />Sistemul de avertizare la depăşirea benzii (LDW - Lane Departure Warning) funcţionează doar când marcajele rutiere sunt clare. Se aplică anumite limitări de viteză. Pentru detalii, consultaţi manualul utilizatorului.</p><p>Sistemul de prevenire a depăşirii benzii (LDP - Lane Departure Prevention) funcţionează numai când marcajele rutiere sunt clare. Se aplică anumite limitări de viteză. Pentru detalii, consultaţi manualul utilizatorului.</p>"
+      seven: "<strong>Avertizare predictivă în cazul unei coliziuni frontale (Predictive Forward Collision Warning)</strong><br />Sistemul de avertizare predictivă în cazul unei coliziuni frontale are rolul de a vă avertiza înaintea unei coliziuni. Nu poate preveni impactul. Se aplică anumite limitări de viteză. Conduceţi întotdeauna cu atenţie."
+      eight: "<strong>Frânarea de urgenţă la deplasarea înainte</strong><br />Frânarea de urgenţă la deplasarea înainte nu poate preveni accidentele rezultate ca urmare a neatenţiei sau a unui stil de condus periculos. Este posibil să nu avertizeze şoferul sau să nu acţioneze frânele în anumite condiţii. Se aplică anumite limitări de viteză. Conduceţi întotdeauna cu atenţie."
+      nine: "<p><strong>Air bag-uri</strong><br />Airbag-urile sunt doar un sistem de siguranţă suplimentar. Folosiţi întotdeauna centura de siguranţă. Chiar şi cu senzorul de ocupare, scaunul de siguranţă pentru copii orientat cu spatele către direcţia de deplasare nu trebuie aşezat pe locul pasagerului din faţă. De asemenea, toţi copii sub vârsta de 12 ani ar trebui să călătorească pe bancheta din spate, fixaţi în scaune pentru copii, scaune înălţătoare sau cu centuri de siguranţă, în funcţie de talia lor. Airbag-urile se vor umfla doar în anumite accidente. Pentru mai multe detalii, consultaţi manualul utilizatorului.</p><p><strong>Precizări legale privind centura de siguranţă</strong> Purtaţi întotdeauna centura de siguranţă şi vă rugăm să nu conduceţi sub influenţa băuturilor alcoolice. ©2013 INFINITI Business Unit of Nissan North America, Inc</p>"
+  #MISC
+  misc:
+    loading: "Un model revoluţionar pentru dumneavoastră."
+    replay: "Redaţi"
+    continue: "Continuaţi"
+  disclaimers:
+    bose: "BOSE<sup>&reg;</sup> este o marcă comercială înregistrată deţinută de The Bose Corporation."
+    zero_gravity: "Valabil numai pentru scaunele faţă."
+    bci: "Sistemul BCI nu detectează toate obiectele şi se aplică anumite limitări de viteză. Verificaţi întotdeauna spaţiul înconjurător înainte de a pune maşina în mişcare. Acest sistem nu înlocuieşte procedurile corespunzătoare aplicabile în cazul mersului cu spatele. Întoarceţi-vă întotdeauna pentru a vă asigura în spate înainte de a începe manevra. Pentru detalii, consultaţi manualul utilizatorului. Disponibil numai cu transmisia automată."
+    avm: "Monitorul de vedere perimetrică (AVM - Around View<sup>&reg;</sup>  Monitor) cu detectarea obiectelor în mişcare nu poate elimina complet unghiurile moarte şi nu poate detecta toate obiectele. Verificaţi întotdeauna spaţiul înconjurător înainte de a pune maşina în mişcare. Acest sistem nu înlocuieşte procedurile corespunzătoare aplicabile în cazul mersului cu spatele. Întoarceţi-vă întotdeauna pentru a vă asigura în spate înainte de a începe manevra. Sistemul de detectare a obiectelor aflate în mişcare funcţionează la viteze de sub 8 km/h."
+    infiniti_connection: "Driving is serious business. Only use Infiniti Connection<sup>&trade;</sup> and Infiniti Connection Plus services when safe to do so. Subscription Agreement required to enroll. Initial 12 months, beginning on your date of purchase, included complimentary. Subsequently, your credit card (if on file) will be charged at the then current subscription rate and your service will continue for 1 year periods under the terms of your Subscription Agreement, unless cancelled. Services require compatible 2G GSM/GPRS cellular network. Cellular network and vehicle services, including Google Calendar<sup>&trade;</sup>, provided by independent companies not within Infiniti's control. Cellular network not available in all areas. 2G cellular network not available in all areas. In areas with 2G network coverage, signal strength may vary and/or not be available at all times. Cellular technology is evolving, and changes to cellular networks may affect future service functionality. Ask your cellular network carrier for details on anticipated 2G network availability in your area and how this may affect your planned usage. Should a cellular provider or service provider terminate/further restrict service, service may be suspended or terminated without notice or liability to Infiniti and its affiliates and agents. Infiniti not responsible for any equipment replacement or upgrades, or associated costs, that may be required for continued operation due to service changes.Terms and conditions of Subscription Agreement apply. Standard text rates and/or data usage may apply to communications received by email or SMS/text message."
+    infiniti_intouch: "Condusul înseamnă responsabilitate. Utilizaţi serviciile Infiniti InTouch&#8482; doar când puteţi face acest lucru în siguranţă. Pentru a vă înscrie, este necesar acordul dumneavoastră. Este necesar un telefon inteligent compatibil. Acoperirea reţelei poate fi limitată în anumite zone. S-ar putea ca hărţile GPS să nu fie detaliate pentru toate regiunile sau este posibil să nu reflecte reglementările rutiere curente. Anumite aplicaţii şi servicii, inclusiv punctele de interes Google şi Send to Car, sunt furnizate de companii independente care nu se află sub controlul Infiniti. În cazul în care furnizorul aplicaţiei sau serviciului termină/restricţionează furnizarea serviciului sau aplicaţiei, acest lucru poate fi realizat fără o notificare prealabilă sau fără asumarea responsabilităţii de către Infiniti şi/sau agenţii săi. Compania Infiniti nu este responsabilă pentru înlocuirile sau actualizările de echipamente sau aplicaţii ori pentru costurile asociate acestor operaţiuni, care ar putea fi necesare pentru continuarea furnizării serviciilor ca urmare a modificărilor privind aplicaţia sau serviciul. Disponibilitatea serviciului InTouch Apps&#8482; poate depinde de ţară. Se aplică Termenii şi condiţiile acceptate în momentul în care v-aţi înscris. Este posibil să se aplice tarife standard pentru mesajele text şi/sau traficul de date în cazul comunicaţiilor primite prin e-mail sau SMS/mesaj text."
+  #COLORS PAGE
+  colors:
+    page_title: "Color Options for the All-New 2014 Infiniti Q50"
+    page_description: "View exterior color options and 360 degree views of the All-New 2014 Infiniti Q50."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/colors/"	
+    tab_label: "Colors"
+    tab_heading: "Select a Color"
+    exterior_color: "Exterior Color"
+    interior_color: "Interior Color"
+    disclaimer_1: "**Please see the actual vehicle. Colors may vary."
+    cutline: "Infiniti Q50 Premium All-Wheel Drive with Optional Equipment Shown"
+  #SPECS PAGE
+  specs:
+    page_title: "2014 Infiniti Q50 Specs & Pricing"
+    page_description: "Compare specs, versions, packages and pricing of the All-New 2014 Infiniti Q50 and its competitors."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/specs-pricing/"
+    common:
+      specs: "Specifications"
+      compare: "Compare Competitors"
+      starting_at: "Starting At MSRP"
+      standard: "Standard"
+      standard_marker: "S"
+      na: "Not Available"
+      na_marker: "N/A"
+      optional: "Optional"
+      optional_marker: "O"
+    download:
+      specs: "Download Specifications PDF"
+      compare: "Download Compare PDF"
+    specs:
+      view_by: "View by"
+      standard: "Q50 Models"
+      hybrid: "Q50 Hybrid Models"
+      expand: "Expand all"
+      collapse: "Collapse"
+      na: "N/A Not Available"
+    packages: "Packages"
+  compare:
+    common:
+      starting_at: "Starting At MSRP" 
+ #BUILD PAGE
+  build:  
+    page_title: "Build Your 2014 Infiniti Q50"
+    page_description: "Infiniti USA Official Site: Build and reserve your All-New 2014 Infiniti Q50."
+    page_canonical: "http://www.infinitiusa.com/all-new-q50/build/"

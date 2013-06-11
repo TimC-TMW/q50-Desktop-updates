@@ -1,0 +1,403 @@
+hu-hun:
+  #CONFIG
+  context_path: "/hu-hun/"
+  locale: "hu-hun"
+  country: "hu"
+  language: "hun"
+  booth: "tdi-infinitihu"
+  metric: "metrics.infiniti.hu"
+  #HEADER
+  header:
+    logo: "Infiniti"
+    link: "/hu-hun/index.html"
+    title: "Bemutatjuk a vadonatúj Infiniti Q50-et <span>MEGVÁSÁROLHATÓ 2013 ŐSZÉTŐL</span>"
+    signup: "FELIRATKOZÁS A HÍREKRE"
+    signup_link: "http://form.infiniti.hu/hun-hu/Request-Further-Information/?moi=q50"
+  #NAV
+  nav:
+    home:
+      label: "Home"
+      link: "/hu-hun/index.html"
+    design:
+      label: "Csábító Formavilág"
+      link: "/hu-hun/design/index.html"
+      heading: "Tapasztalja meg a csábító formavilágot"
+    performance:
+      label: "Sportos Teljesítmény"
+      link: "/hu-hun/performance/index.html"
+      heading: "Tapasztalja meg Ön is, milyen az igazán sportos teljesítmény"
+    technology:
+      label: "Intuitív Technológia"
+      link: "/hu-hun/technology/index.html"
+      heading: "Tapasztalja meg Ön is az intuitív technológiát"
+    features:
+      label: "Minden jellemző"
+    gallery:
+      label: "Galéria"
+      link: "/hu-hun/gallery/index.html"
+    specs:
+      label: "Szemuveg &amp; Arak"
+      link: "/hu-hun/specs-pricing/index.html"
+    colors:
+      label: "Színek"
+      link: "/hu-hun/colors/index.html"
+    mute:
+      label: "Némítás"
+  #FOOTER
+  footer:
+    back:
+      label: "Infiniti Magyarország"
+      link: "http://www.infiniti.hu/"
+    feedback:
+      label: "Visszajelzés az oldalról"
+      link: "http://www.infinitiusersurvey.com/?l=hu&c=hu"
+    copyright:
+      label: "Jogi információk"
+      link: "http://www.infiniti.hu/about/legal.html"
+    privacy:
+      label: "Adatkezelés "
+      link: "http://www.infiniti.hu/about/privacy_policy.html"
+    microdisclaimer:
+      label: "Jogi nyilatkozat"
+      link: "#"
+    cookie_information:
+      label: "Cookie információk"
+      link: "http://www.infiniti.hu/about/cookies.html"
+    facebook:
+      link: "https://www.facebook.com/infinitieurope"
+    twitter:
+      link: "https://twitter.com/InfinitiEurope"
+    share:
+      label: "Megosztás"
+  #ADDTHIS
+  addthis:
+    url: ""
+    title: "A teljesen új Infiniti Q50"
+    description: ""
+  #FEATURES MODAL
+  features:
+    heading: "Minden jellemző"
+  #DISCLAIMER MODAL
+  disclaimer:
+    header: "Jogi nyilatkozat"
+    copy: "A honlapon található illusztrációk, fotók és műszaki adatok a tanulmányautó alapján készültek, és a kiadvány készítésének idején rendelkezésre álló legfrissebb termékinformációkat tartalmazzák. Tekintve, hogy prototípusról van szó, a tényleges és végső formavilág, felszereltség és kiegészítők az itt bemutatottaktól eltérhetnek. Rendelés leadása előtt kérjük, hogy Infiniti kereskedésében tekintse meg a végleges, legyártott modellt. A rendelhetőség és szállítási idők az egyes modellek és felszereltségi szintek függvényében eltérhetnek." 
+  #PANORAMA INSTRUCTION MODAL
+  panorama:
+    page_title: "Kezelési útmutató"
+    page_description: "A virtuális BELSŐ PANORÁMA FUNKCIÓ lehetővé teszi, hogy számítógépe képernyőjén keresztül körülnézzen az Infiniti Q50 lélegzetelállító belterében."
+    computer:
+      title: "Mac-en és PC-n egyaránt"
+      description: "Az új Infiniti Q50 belső panorámáját az egérrel „fogd-és-vidd” módon tekinthet meg. A Shift, illetve a Ctrl billentyű segítségével közelítheti, illetve távolíthatja a nézőpontot, de használhatja az egér görgetőkerekét is."
+      image_alt: "számítógép kurzor"
+    gyro:
+      title: "Apple iPad 2, iPhone 4 (vagy e fölötti verzió) és Android készülékek"
+      description: "A maximális vizuális élmény érdekében kérjük, iPad-en vízszintes tájolásban használja a körpanoráma funkciót.  Nagyításhoz távolítsa egymástól a képernyőre helyezett mutató- és hüvelykujját.  Kicsinyítéshez közelítse egymáshoz a képernyőre helyezett mutató- és hüvelykujját."
+      image_alt: "iPad"
+    touch:
+      title: "Apple iPad1, iPhone 3S,<br />iPod Touch"
+      description: "A teljesen új Infiniti Q50 belső panorámájának megtekintéséhez érintse meg ujjával a képernyőt és húzza a képet. Nagyításhoz távolítsa egymástól a képernyőre helyezett mutató- és hüvelykujját.  Kicsinyítéshez közelítse egymáshoz a képernyőre helyezett mutató- és hüvelykujját."
+      image_alt: "ujj"
+  #BROWSER / FLASH UPDATE MODAL(s)
+  browser:
+    heading: "A böngésző frissítése javasolt"
+    message: "Sajnos a számítógépén futó webböngésző nem támogatja az új Infiniti Q50-et bemutató interaktív webhely minden funkcióját. Kérjük, váltson az alább felsorolt ajánlott böngészők valamelyikének legújabb verziójára."
+    instruction: "A letöltési oldalra lépéshez kattintson egy ikonra:"
+    ie_message: "Ha az Internet Explorer 8-as vagy e feletti verzióját használja, kérjük, kapcsolja ki a Kompatibilitási nézetet."
+  flash:
+    heading: "Flash szükséges"
+    message: "Az új Infiniti Q50 weboldal interaktív funkcióinak teljes értékű használatához a Flash szoftver szükséges. Kérjük, telepítse a Flash szoftvert, vagy kapcsolja ki az esetleges Flash-t blokkoló alkalmazást."
+    instruction: "Kattintson az alábbi ikonra a Flash Player telepítéséhez:"
+  #ORIENTATION MESSAGE
+  orientation:
+    heading: "Bemutatjuk az új Infiniti Q50-et<br />Az optimális táblagépes megjelenítés érdekében kérjük, hogy az oldalakat vízszintes tájolásban tekintse meg."
+    message: "Kérjük, forgassa el a készülékét"
+  #VIDEO CONTROLS
+  controls:
+    play: "Lejátszás"
+    continue: "Tovább"
+    next_chapter: "Következő fejezet"
+    restart_chapter: "Fejezet újraindítása"
+    previous_chapter: "Előző fejezet"
+    next_journey: "Következő utazás:"
+  #HOME PAGE
+  home:
+    page_title: "A teljesen új Infiniti Q50 | Infiniti Magyarország"
+    page_description: "Az Infiniti Magyarország hivatalos weboldala: Bemutatjuk a teljesen új Infiniti Q50-et. Ismerje meg a forradalmian új Infiniti modell lélegzetelállító formavilágát, teljesítményét és technológiai színvonalát."
+    page_canonical: "/hu-hun/index.html"
+    headline: "VADONATÚJ INFINITI Q50 <span>AZ ÖN ÁLTAL IHLETETT FORRADALOM</span>"
+    tagline: "TEGYEN HÁROM IHLETETT UTAZÁST AZ INFINITI Q50-BEN"
+    experience: "Élmény"
+    design: "Formavilág"
+    performance: "Teljesítmény"
+    technology: "Technológia"
+  #DESIGN PAGE
+  design:
+    page_title: "A teljesen új Infiniti Q50 | Infiniti Magyarország"
+    page_description: "Az Infiniti Magyarország hivatalos weboldala: Ismerje meg az új Infiniti Q50 csábító formavilágát, amely az elegancia és luxus legmagasabb színvonalát képviseli."
+    page_canonical: "/hu-hun/design/index.html"
+    loading:
+      line_1: "Tapasztalja meg az érzéki"
+      line_2: "formavilágot egy profi fényképész lencséjén keresztül."
+      line_3: "Az utazás mindjárt kezdődik."
+    chapters:
+      label_1: "Formavilág áttekintés"
+      label_2: "Külső 360"
+      label_3: "Adaptív fényszórók"
+      label_4: "Luxus ülések"
+      label_5: "Intuitív belső tér"
+      label_6: "Belső panoráma"
+    content:
+      design_overview:
+        heading: "MINDEN EDDIGIT FELÜLMÚLÓ FORMAVILÁG"
+        copy: "Amikor a formavilágot azon mérik, hogy milyen szabályokat rúg fel, mely hagyományokkal szakít és milyen várakozásokkal megy szembe a mindenben megfelelés helyett... A forma és a funkció egysége új célt szolgálhat – az Önét."
+      wavehood:
+        heading: "HULLÁMOK ÁLTAL IHLETETT FORMA"
+        copy: "Úgy emelkedik és hullik alá, mint egy emelkedésének derekán járó hullám. A modern luxus formavilág esszenciája, ahogy azt csak az Infiniti képes megragadni."
+      crescent_window:
+        heading: "SUHANÓ ELEGANCIA"
+        copy: "A művészi, félhold alakú, hátrafelé mutató ívek a mozgást idézik, egyúttal a tágasság élményét és jobb kilátást biztosítanak a hátul utazóknak."
+      sculpted_body:
+        heading: "MŰVÉSZI KAROSSZÉRIA"
+        copy: "Széles vállak, ugrásra készen feszülő izmok, a robbanékonyságot sugalló hűtőrács. Ez a külső valódi sportteljesítményre termett."
+      headlights: 
+        loading: "Kis türelmet, betöltés folyamatban…"
+        heading: "INTELLIGENS ADAPTÍV FÉNYSZÓRÓK"
+        copy: "Kifejező világítás – Összetéveszthetetlen tekintet. A multifunkciós LED ikerfényszórókra épülő, egyedülálló megjelenés, hangsúlyos nappali menetfénysorral. A változó fényviszonyokhoz intelligensen alkalmazkodó, karakteres, egyedi megjelenésű fényszórók szürkületkor felkapcsolódnak, a SmartBeam technológia a fényszórók erősségét folyamatosan, oldalanként külön szabályozza a szembejövő forgalom függvényében. Az intelligens rendszer leveszi a terhet a vezető válláról, és mindig a helyzetnek és fényviszonyoknak megfelelő világítást választja ki."
+        instruction: "Kattintson a fényszóróikonra a további információkért"
+        super_1:
+          heading: "Nappali menetfénysor"
+          copy: "Alacsony intenzitású LED fénysor, amelynek köszönhetően járműve kitűnik a háttérből még fényes nappal is."
+        super_2:
+          heading: "Tompított világítás"
+          copy: "Ideális LED világítás az éjszakai autózáshoz."
+        super_3:
+          heading: "Ködlámpák"
+          copy: "Megnyugtatóan hatékony LED világítás, különösen a zord időjárási körülmények között."
+        super_4:
+          heading: "Intelligens SmartBeams távolsági fényszóró"
+          copy: "A LED fényszórók erős fénye messzebbre hatol a sötétben."
+      zero_gravity_seats:
+        heading: "ERGONOMIKUS ÜLÉSEK A LUXUS KÉNYELEMÉRT"
+        copy: "Az ergonomikus formatervezésben áttörést jelentő, a luxus jegyében készített ülések a tökéletes vezetői kényelem érdekében optimálisan támasztják a felsőtestet, így a vezető és jármű közötti tökéletes kapcsolatot és összhangot semmi se zavarja meg."
+  #PERFORMANCE PAGE
+  performance:
+    page_title: "A teljesen új Infiniti Q50 Teljesítmény | Infiniti Magyarország"
+    page_description: "Az Infiniti Magyarország hivatalos weboldala: Ismerje meg az új Infiniti Q50 sportos teljesítményét – nagyobb erő és magasabb hatékonyság."
+    page_canonical: "/hu-hun/performance/index.html"
+    loading:
+      line_1: "Tapasztalja meg Ön is, milyen a sportos teljesítmény"
+      line_2: "felszabadító érzése – egy profi autóversenyző reflexein keresztül."
+      line_3: "Az utazás mindjárt kezdődik."
+    chapters:
+      label_1: "Felhajtóerőt kizáró aerodinamika"
+      label_2: "Sport modell"
+      label_3: "Motorválaszték"
+      label_4: "Nagy teljesítményű hibrid"
+      label_5: "Közvetlen adaptív kormányzás"
+      label_6: "Személyre szabott vezetési módok"
+    video:
+      high_res_webm: "Performance_HU_540p.webm"
+      high_res_mp4: "Performance_HU_540p.mp4"
+      low_res_webm: "Performance_HU_360p.webm"
+      low_res_mp4: "Performance_HU_360p.mp4"
+    content:
+      performance_overview:
+        heading: "A MEGFELELŐSÉG NEM AD LUXUST"
+        copy: "A hagyományos iskola szerint az erő növeléséhez nagyobb lökettérfogatra van szükség. És a hatékonyság növeléséhez csökkenteni kell a kimenő teljesítményt. És ahhoz, hogy igazán megbecsülhessük a luxust, ki kell szakadnunk a körülöttünk levő világból. Ennyit a konvenciókról. Vadonatúj Infiniti Q50 – felszabadító teljesítmény"
+      performance_zero-lift:
+        heading: "FELHAJTÓERŐT KIZÁRÓ AERODINAMIKA"
+        copy: "Fogjuk be a szelet – A teljesítmény hagyományos ellenségét, a szelet, manapság akár szövetségesünkké is tehetjük. A Q50 felhajtóerőt nem gerjesztő aerodinamikus karosszériakialakítása – amely a jármű alatt, felett és mellett egyaránt gondoskodik a légáramlás irányított elvezetéséről – jelentősen javítja a jármű kezelhetőségét és úttartását annak teljes sebességtartományában. A feszesebbre hangolt futóművel karöltve a jármű precízen átgondolt aerodinamikai jellemzői hatékonyan csökkentik a turbulencia negatív hatásait, és nagy sebességnél is jelentősen javítják az irányíthatóságot és tapadást."
+      performance_sport_model:
+        heading: "JÖVŐT IDÉZŐ SPORTOS FORMATERV"
+        copy: "Q50 Sport – Összetéveszthetetlenül egyedi sportlökhárítóval és légterelővel. A magasan ívelő sárvédők alá pontosan illeszkedő, 19 colos, osztott küllős alumínium keréktárcsák, tökéletes fékhatást biztosító sport fékdugattyúkkal és féktárcsákkal. Ez az Infiniti modell száguldásra termett. Attól a pillanattól kezdve, hogy a bőr ülőfelületű sportülések körülölelik Önt, mindössze a magnézium váltófül egyetlen kattintására van attól, hogy megtapasztalja a teljesítmény és erő eddig ismeretlen dimenzióit."
+      performance_engine:
+        heading: "AZ ERŐ KÉT DIMENZIÓJA"
+        copy: "Válassza az Önhöz leginkább illőt: A 3,5 literes V6-os benzinmotor és a segédfunkciót ellátó elektromos motor erejét egyesítő Infiniti Direct Response Hybrid rendszer lehengerlő teljesítményét, vagy a 2,2 literes, 170 lóerős, kevesebb mint 115 g/km CO2 kibocsátású, négyhengeres turbódízel motor rugalmasságát. Bármelyikre essen is a választása, egy biztos: a teljesítmény és a hatékonyság ezeknél a motoroknál nem egymást kizáró tényezők."
+        disclaimer: "A CO2-adatok a hatósági engedélyezések után lesznek véglegesek. A CO2-adatok a motor, a váltó és a kerékméret függvényében eltérnek."
+      performance_hybrid_engine_1:
+        heading: "MAGA A MEGTESTESÜLT ERŐ. A TELJESÍTMÉNY ESSZENCIÁJA"
+        copy: "Nagy teljesítményű hibrid – Az erőt és a hatékonyságot nagyszerűen egyesítő hajtáslánc hihetetlen gyorsulást és erőt biztosít, ami mindenkit felvillanyoz."
+      performance_hybrid_engine_2:
+        heading: "AZ INFINITI TELJESÍTMÉNYRŐL ALKOTOTT ELKÉPZELÉSÉNEK LEGFEJLETTEBB MEGTESTESÜLÉSE"
+        copy: "Nagy teljesítményű hibrid – A hagyományos luxusautók a nagyobb teljesítmény érdekében nagyobb lökettérfogatú motorral készülnek. A Q50 Hybrid a gyorsításhoz szükséges többletteljesítményt lítium-ion akkumulátorból meríti. A hatékony erőátvitelről és az optimális fogyasztásról a fordulatszámot nyomatékcsúcson tartó, intelligens kettős tengelykapcsoló gondoskodik. Ráadásul a rendszer a fékezések során keletkező energiát az akkumulátorok töltésére használja fel."
+      performance_adaptive_steering:
+        heading: "VILÁGELSŐ TECHNOLÓGIA A KORMÁNYZÁS TERÉN"
+        copy: "Közvetlen adaptív kormányzás – Irányíthatóság, pontosság és állíthatóság – a kormányzás három alappillére. Több mint tízévnyi kutatás és fejlesztés eredményeként végre megtaláltuk a megoldást. A világ első adaptív kormányberendezése elektronikus vezérléssel gondoskodik a pontosabb kormányzásról és a közvetlenebb vezetési élményről. A rázós, egyenetlen utakon nincs szükség a folyamatos kézi korrigálásra – a rendszer a stabilitás érzetét közvetíti a vezető felé, és megóvja őt az útfelszín keltette kellemetlen vibrációktól."
+      performance_steer_by_wire:
+        sport: "Sport"
+        sport_copy: "Határozottabb, nagyobb erőt igénylő kormányzás. Szűkebb fordulókör."
+        standard: "Standard"
+        standard_copy: "érsékeltebb kormányzási erő, nagyobb rásegítés. Közepes fordulókör."
+        touring: "Touring"
+        touring_copy: "Mérsékeltebb kormányzási erő. Szélesebb fordulókör."
+        custom: "Custom"
+        custom_copy: "Állítsa be a paramétereket igényeinek megfelelően."
+        steering_effort: "Kormányzási erő"
+        heavy: "Nehezebb"
+        middle: "Közepes"
+        light: "Könnyebb"
+        turning_radius: "Fordulókör"
+        disclaimer: "Csak bemutató célokra. A demó nem a tényleges fordulókört mutatja. Az elérhető vezetési módok a motor- és sebességváltó-típustól függően változhatnak."
+      steer_by_wire_end:
+        heading: "OD SERPENTIN PO NEDĚLNÍ VYJÍŽĎKU"
+        copy: "Revoluční systém přímého adaptivního řízení (DAS – Direct Adaptive Steering) značky Infiniti umožňuje řidiči výběr ze tří přizpůsobených režimů řízení. Vyberte si sportovní nebo standardní režim – podle charakteru silnice nebo prostě podle nálady. Ve vlastním režimu si pak můžete sílu a odezvu řízení nastavit sami a plně tak převzít kontrolu nad silnicí do svých rukou."
+  #TECHNOLOGY PAGE
+  technology:
+    page_title: "A teljesen új Infiniti Q50 Technológia | Infiniti Magyarország"
+    page_description: "Az Infiniti Magyarország hivatalos weboldala: Ismerje meg az új Infiniti Q50 technológiai újításait, modern digitális, audio- és biztonsági funkcióit."
+    page_canonical: "/hu-hun/technology/index.html"
+    loading:
+      line_1: "Pillantson bele az intuitív technológia"
+      line_2: "világába egy vállalkozó életstílusán keresztül."
+      line_3: "Az utazás mindjárt kezdődik."
+    chapters:
+      label_1: "Digitális környezet"
+      label_2: "Maradjon kapcsolatban"
+      label_3: "Infiniti InTouch&#8482;"
+      label_4: "BOSE<sup>&reg;</sup> Audio"
+      label_5: "Ütközést megakadályozó tolatórendszer"
+      label_6: "Safety Shield"
+      label_7: "Around View<sup>&reg;</sup> panoráma monitor"
+    content:
+      technology_overview:
+        heading: "MARADJON MINDIG KAPCSOLATBAN"
+        copy: "A világ nem szűnik meg abban a pillanatban, amikor a kormány mögé ülünk. A Q50 ezért olyan technológiai megoldásokat sorakoztat fel, amelyek lehetővé teszik, hogy saját világunk is velünk utazzon. Sebességben egyedül a múló idő veheti fel a versenyt a Q50-el – és hogy Ön ne mulasszon el egyetlen fontos találkozót vagy eseményt sem, arról a Q50 gondoskodik online kapcsolatot teremtve eszközeivel, szinkronizálva programjait, naptárját, közösségi oldalait. Ez több mint modern technológia. Ez maga a megtestesült, modern luxus, amelynek egyetlen célja, hogy Ön kényelemben érezhesse magát."
+      digital_environment:
+        heading: "SZEMÉLYESEN AZ ÖN IGÉNYEIRE SZABVA"
+        copy: "Személyre szabható digitális környezet – Nem csupán kedvenc üléspozícióját ismeri. Nem csak az ideális klímabeállításokat. Nem csupán kedvenc útvonalát hazafelé vagy kedvenc vezetési módját. Hanem Önt! És amint érzékeli az Ön intelligens Infiniti kulcsát, gondoskodik róla, hogy a Q50 minden beállítása pontosan olyan legyen, ahogyan azt Ön szereti. Nem varázslat, csak annak tűnik. Ez a modern technológia."
+        video_disclaimer: "A képernyőképek szimuláltak.  A digitális kezelőfelület és képernyő-kialakítás az előszériából származik, eltérhet a tényleges sorozatgyártástól."
+        torque_response:
+          heading: "NYOMATÉK/MOTOR-VÁLASZKÉSZSÉG"
+          copy: "Igény szerint 4 előre programozott mód közül választhatunk a motor gázreakciójának beállításához."
+        adaptive_steering:
+          heading: "KÖZVETLEN ADAPTÍV KORMÁNYZÁS"
+          copy: "Ez a forradalmian új technológia lehetővé teszi, hogy beállítsa az Önnek legmegfelelőbb rásegítési erőt és kormányzási áttételt."
+        driver_position:
+          heading: "ADAPTÍV VEZETÉSI POZÍCIÓ ÁLLÍTÁS"
+          copy: "Állítsa be az önnek legmegfelelőbb üléspozíciót, a tükröket és a kormánymagasságot."
+        active_trace_control:
+          heading: "AKTÍV MENETSTABILIZÁTOR (ACTIVE TRACE CONTROL)"
+          copy: "Kanyarodás közben az ATC rendszer automatikusan működésbe hozza a kanyar belső vagy külső ívén futó kerekek fékjét az optimális kanyarív biztosítása érdekében."
+      infiniti_connection:
+        heading: "MARADJON KAPCSOLATBAN"
+        copy: ""
+        calendar:
+          heading: "Szinkronizálja naptárát"
+      infiniti_intouch:
+        heading: "MARADJON ÉRINTÉSNYI TÁVOLSÁGON BELÜL"
+        copy: "Infiniti InTouch&#8482; - Társasági életünk alapját a kapcsolatok jelentik. Az Infiniti InTouch&#8482; gondoskodik róla, hogy mindig kapcsolatban maradjunk és ne maradjunk le semmiről. A forradalmian új, két képernyős rendszer segítségével az utastérből az összes modern, online digitális alkalmazás elérhető, biztosítva, hogy a digitális társasági élet egyetlen fontos mozzanatáról se maradjunk le. Az Infiniti InTouch&#8482; alkalmazásai, e-mail, navigáció, okostelefon-szinkronizálás és egyéb szolgáltatások egy érintéssel vagy hangutasítással elérhetőek. Így amíg a valós világban suhanunk, mindvégig kapcsolatban maradhatunk a digitális világgal is."
+        facebook:
+          heading: "Maradjon kapcsolatban barátaival és családtagjaival a Facebook segítségével."
+        apps:
+          heading: "Használja az Infiniti InTouch&#8482; alkalmazásait."
+        places:
+          heading: "Kattintson új nevezetes pontok hozzáadásához a Places Powered by Google&#8482; segítségével."
+        pinch_zoom:
+          heading: "Nagyítson rá a képernyőre a célállomás kijelöléséhez, kattintson az útvonal beállításához, és a Q50 kiszámítja a leggyorsabb utat és elirányítja önt a kívánt célállomásra."
+      bose_audio:
+        heading: "PÁRATLAN HIFI<br>HANGÉLMÉNY AZ INFINITIBEN"
+        copy: "Következő generációs BOSE<sup>&reg;</sup> hifi rendszer – A BOSE<sup>&reg;</sup> hangmérnökei a hifirendszert kifejezetten az új Infiniti Q50 belteréhez fejlesztették és alakították ki. A 14 hangszórós rendszer alapját három, 25 cm átmérőjű mélynyomó adja, gondoskodva a mély hangok tisztaságáról és megfelelő erejéről.  A többi hangszóró az utastér akusztikájához optimalizálva került elhelyezésre, tökéletesen zaj- és torzításmentes, az élő koncerteket idéző zenei élményt biztosítva, olyan minőségben, amire csak az Infiniti képes."
+        speakers: "A 14 hangszórós Bose<sup>&reg;</sup> hifi rendszer az élő zene tisztaságát és élményét idézi"
+      bci:
+        heading: "ÜTKÖZÉST MEGAKADÁLYOZÓ TOLATÓRENDSZER"
+        copy: "A biztonságos tolatásért – Az Infiniti tolatás közbeni ütközést megakadályozó BCI rendszere újabb jelentős lépés a maximális biztonságú autózás felé. Hátramenetben a BCI rendszer érzékeli a jármű mögötti tárgyakat és elhaladó járműveket, és vizuálisan és hangjelzéssel figyelmezteti a vezetőt. Szükség esetén a BCI automatikusan fékez az ütközés elkerülése érdekében."
+        super1: "Hátramenetben a rendszer érzékeli a jármű mögött keresztben elhaladó tárgyakat."
+        super2: "Ezekre vizuálisan és hangjelzéssel figyelmezteti a vezetőt."
+        super3: "Szükség esetén a BCI automatikusan fékez az ütközés elkerülése érdekében."
+      avm:
+        heading: "360 FOKOS<br />BIZTONSÁG"
+        copy: "Around View<sup>&reg;</sup> Monitor - Az Infiniti mutatta be a világ első parkolássegítő, 360 fokos panorámaképet biztosító, legmodernebb technológián alapuló monitorát. A járművön négy, különböző irányban elhelyezett kamera képe alapján a rendszer virtuális, 360 fokos felülnézeti képet ad az autóról. Az Infiniti a rendszert most mozgásérzékelővel (MOB) is ellátta, amely figyelmezteti a vezetőt a mozgó tárgyak jelenlétére a jármű közelében. A jármű környezetének új perspektívából való bemutatásával a Q50 lehetővé teszi a legszűkebb helyekre történő beállást is."
+        super1: "A négy kamera a jármű környezetének virtuális 360 fokos képét adja."
+        super2: "A járműre szerelt kamerák képe a képernyőn egyszerre jelenik meg, virtuális felülnézeti képet adva a jármű környezetéről."
+        super3: "A manőverezést és a hátul található tárgyak távolságának felmérését színes vonalak segítik. <span style=\"display:block;margin-top:10px;\"></span>Az első és hátsó parkolószenzorok hangjelzéssel figyelmeztetnek, ha a jármű túl közel kerül valamihez." 
+        super4: "A járműszenzorok a mozgó tárgyakat figyelik, és a vezetőt figyelmeztetve a kijelzőn megjelenítik helyzetüket."
+  #GALLERY PAGE
+  gallery:
+    page_title: "A teljesen új Infiniti Q50 Fotók és 360 fokos panoráma | Infiniti Magyarország"
+    page_description: "Az Infiniti Magyarország hivatalos weboldala: Tekintse meg az új Infiniti Q50 exkluzív fotóit és 360 fokos panorámaképeit."
+    page_canonical: "/hu-hun/gallery/index.html"
+    back: "Vissza a galériához"
+    nav:
+      photos: "Fotók"
+      exterior: "Külső 360"
+      interior: "Beltér 360"
+      next: "Következő"
+      previous: "Vissza"
+  #INTERIOR PANO
+  pano:
+    welcome:
+      title: "SZEMÉLYRE SZABOTT LUXUS MINDEN ÜLÉSBEN"
+      description: "Intuitív belső tér – Aprólékos munkával, kézzel csiszolt juharfa betétek. Kézzel varrott bőrkárpit. Művészien párosított, harmonizáló felületek és anyagok. Intelligens Display elven működő műszerek. Minden elem elhelyezése a maximális kényelmet és optimális kezelhetőséget szolgálja. Az egyedi kialakítású, kettős ívű műszerfal gyönyörűen keretbe foglalja a kijelzőket és kapcsolókat, és kényelmesen körülveszi a járműben utazókat. Üdvözöljük az Önt körülölelő luxus világában, akár vezetőként, akár utasként vesz részt az Infiniti nyújtotta élményutazásban."
+      instruction: "Nézzen körbe a beltéri luxusban. <em>Kattintson vagy érintse meg a képernyőt a kezdéshez</em>"
+    help: "Segítség"
+    help_copy: "Kattintson a <br />járműikonra a <br />perspektíva <br />váltásához."
+  #EXTERIOR 360
+  threesixty:
+    title: "Külső 360&deg;"
+    instructions: "A Q50 külső megtekintése minden szögből – kattintson és húzza az egeret a forgatáshoz"
+    loading: "Kis türelmet, betöltés folyamatban…"
+  #SAFETY SHIELD
+  safetyshield:
+    title: "INFINITI SAFETY SHIELD ÁTFOGÓ BIZTONSÁGI RENDSZER"
+    description: "Az Infiniti Safety Shield társaságunk maximális védelmet biztosító, átfogó biztonsági rendszere. Az új Q50-ben számos biztonsági funkció gondoskodik a járműben utazók biztonságáról. A rendszer folyamatosan figyeli a jármű környezetét, figyelmeztet a potenciális veszélyekre, segít az ütközések elkerülésében, és ha ez mégsem sikerül, óvja az utazókat a becsapódás erejétől."
+    instructions: "A részletekért kattintson a gyűrűkre &gt;"
+    risks:
+      no_risk:
+        title: "Veszély nem érzékelhető"
+        sub_title: "Segít a kényelmes és nyugodt vezetés fenntartásában."
+        cruise_title: "Intelligens sebességtartó automatika (ICC) (teljes sebességtartományra)"
+        cruise_description: "Automatikusan a forgalom ritmusához igazítja a jármű sebességét."
+        distance_title: "Távolságtartó automatika (DCA)"
+        distance_description: "A gyakori fékezést igénylő közlekedési helyzetekben az Infiniti által a világon elsőként bevezetett technológia a forgalmat figyelve segít a vezetőnek a gázelvételben és fékezésben."
+        monitor_title: "Panoráma monitor (AVM) mozgásérzékelővel (MOD)"
+        monitor_description: "Az Around View<sup>&reg;</sup> Monitor, a világ első panoráma monitora mozgásérzékelővel felszerelve, a vezetőnek virtuális 360 fokos kilátást biztosít a parkolás során, vizuálisan és hangjelzéssel is figyelmezteti a vezetőt a mozgó tárgyakra."
+      risk:
+        title: "A rendszer veszélyt észlel"
+        sub_title: "Segít a vészhelyzet elhárításában."
+        backup_title: "Ütközést megakadályozó tolatórendszer"
+        backup_description: "A jármű oldalán és hátulján elhelyezett radar és szonár érzékelők segítségével a rendszer tolatás közben képes a vezetőt figyelmeztetni a jármű útjában található vagy elhaladó tárgyakra. Amennyiben a vezető ennek ellenére továbbhalad a potenciális ütközéshez vezető útvonalon, a rendszer automatikusan működésbe hozza a fékeket."
+        predictive_title: "Ráfutásos ütközésekre figyelmeztető rendszer (FCW)"
+        predictive_description: "A világelső technológiai megoldás figyelmezteti a vezetőt a látóterén túli veszélyekre. Nem csak a közvetlenül előtte haladó jármű sebességét és távolságát érzékeli, de az az előtt haladó és emiatt nem látható járművét is."
+        blind_title: "Holttérfigyelő rendszer (BSW) és a holttérben haladó járművel való ütközést megakadályozó rendszer (BSI)"
+        blind_description: "A világelső technológiai megoldás sávváltáskor figyelmezteti a vezetőt, ha a holttérben másik jármű található. Emellett segít a vezetőnek a járművet saját sávjába visszakormányozni."
+        lane_title: "Sávelhagyásra figyelmeztető rendszer (LDW) és a sávelhagyást megelőző rendszer (LDP)"
+        lane_description: "Az Infiniti által elsőként kínált sávelhagyást megelőző rendszer érzékeli a nem kívánt sávelhagyást és automatikusan segít a vezetőnek a járművet saját sávjának közepe felé visszakormányozni."
+      may_occur:
+        title: "Ütközésveszély"
+        sub_title: "Segít a vészhelyzet elhárításában."
+        braking_title: "Ütközés előtti vészfékező rendszer (FEB)"
+        braking_description: "<p>Ha a rendszer úgy érzékeli, hogy a jármű lassítása szükséges, a kijelzőn megjelenő üzenettel és hangjelzéssel is figyelmezteti a vezetőt, majd ellenerőt fejt ki a gázpedálra, és enyhe fékezésbe kezd, hogy segítsen a vezetőnek a jármű lassításában.</p><p>Ha a rendszer úgy érzékeli, hogy az ütközés valószínűsíthető, automatikusan és erőteljesebben fékez az ütközés elkerülése érdekében.</p>"
+      unavoidable:
+        title: "Az ütközés elkerülhetetlen"
+        sub_title: "Elkerülhetetlen ütközés esetén segít a sérülések minimalizálásában."
+        braking_title: "Ütközés előtti vészfékező rendszer (FEB)"
+        braking_description: "Amennyiben a rendszer elkerülhetetlen ütközést észlel, figyelmezteti a vezetőt, és a sebesség és a károk csökkentése érdekében megfeszíti a vezető biztonsági övét és működésbe hozza a fékeket."
+      collision:
+        title: "Ütközés"
+        sub_title: "A bekövetkező ütközés esetén segít a sérülések minimalizálásában."
+        restraints_title: "Passzív biztonsági rendszer és karosszéria"
+        restraints_description: "Infiniti Advanced légzsákrendszer; ülésbe épített oldalsó függönylégzsákok az elöl utazók védelmére; első biztonsági övek előfeszítővel, terheléskorlátozóval, és övbekötés-figyelmeztetővel. Zónás karosszéria-felépítés első és hátsó gyűrődési zónával."
+    disclaimers:
+      title: "Disclaimers"
+      link: "View Disclaimers"
+      one: "<strong>Intelligens sebességtartó automatika (ICC) (teljes sebességtartományra)</strong><br />Az intelligens sebességtartó automatika (teljes sebességtartományra) nem ütközéselkerülésre szolgáló vagy figyelmeztető rendszer. Kizárólag enyhébb fékezések végrehajtására lett tervezve. A fékezés elmulasztása a vezető részéről ütközéshez vezethet."
+      two: "<strong>Távolságtartó automatika (DCA)</strong><br />A távolságtartó automatika megadott körülmények között segít az előttünk haladó járműhöz viszonyított követési távolság tartásában. Nem ütközéselkerülésre szolgáló rendszer. A fékezés elmulasztása a vezető részéről ütközéshez vezethet."
+      three: "<strong>Panoráma monitor (AVM) mozgásérzékelővel (MOD)</strong><br />A mozgásérzékelővel ellátott panoráma monitor nem képes a holttér teljes kiiktatására és minden tárgy érzékelésére. A MOD rendszer csak 8 km/h alatti sebességnél működik. Mindig nézzen körül, mielőtt elindul. A rendszer nem helyettesíti a megfelelő tolatási technikák ismeretét. Tolatás előtt/közben mindig forduljon hátra, és ellenőrizze, hogy szabad-e az út."
+      four: "<strong>Ütközést megakadályozó tolatórendszer</strong><br />A BCI nem minden tárgyat érzékel és csak korlátozott sebességig működik. Mindig nézzen körül, mielőtt elindul. A rendszer nem helyettesíti a megfelelő tolatási technikák ismeretét. Tolatás előtt/közben mindig forduljon hátra, és ellenőrizze, hogy szabad-e az út. A részletek a jármű használati utasításában találhatók."
+      five: "<strong>Holttérfigyelő rendszer / Holttérben haladó járművel való ütközést megakadályozó rendszer</strong><br />A holttérfigyelő rendszer / holttérben haladó járművel való ütközést megakadályozó rendszerek&reg; nem helyettesítik a megfelelő sávváltási manőverek ismeretét. A rendszer nem képes a más járművekkel történő ütközést vagy baleseteket megakadályozni. Előfordulhat, hogy nem érzékel minden járművet vagy tárgyat a járművünk körül."
+      six: "<p><strong>Sávelhagyásra figyelmeztető rendszer és sávelhagyást megelőző rendszer</strong><br />A sávelhagyásra figyelmeztető rendszer csak akkor működik, ha a sávok felfestése az útburkolaton jól látható. Nem minden sebességtartományban működik. Részletek a jármű használati utasításában találhatók.</p><p>A sávelhagyást megelőző rendszer csak akkor működik, ha a sávok felfestése az útburkolaton jól látható. Nem minden sebességtartományban működik. Részletek a jármű használati utasításában találhatók.</p>"
+      seven: "<strong>Ráfutásos ütközésekre figyelmeztető rendszer</strong><br />A ráfutásos ütközésekre figyelmeztető rendszer célja a vezető figyelmeztetése egy esetleges ütközés előtt; a rendszer az ütközést nem tudja megakadályozni. Nem minden sebességtartományban működik. Mindig vezessen óvatosan és körültekintően."
+      eight: "<strong>Ütközés előtti vészfékező rendszer</strong><br />Az Ütközés előtti vészfékező rendszer (FEB) nem képes a gondatlanságból vagy veszélyes vezetési technikákból fakadó balesetek megelőzésére. A rendszer bizonyos helyzetekben nem küld figyelmeztetést vagy nem fékez. Nem minden sebességtartományban működik. Mindig vezessen óvatosan és körültekintően."
+      nine: "<p><strong>Légzsákok</strong><br />A légzsákok kiegészítő passzív biztonsági berendezések; mindig csatoljuk be a biztonsági öveket. Noha a jármű képes az első ülésen utazó személy vagy tárgy méretét és súlyát érzékelni, az előrenéző gyerekülések elhelyezése az első ülésen továbbra is tilos. A 12 éven aluli gyermekek a testmagasságuknak megfelelő gyerekülésben elhelyezve, biztonsági övvel rögzítve a hátsó ülésen utazhatnak. A légzsákok csak bizonyos helyzetekben aktiválódnak; a részletekért olvassa el a jármű használati utasítását.</p><p><strong>Biztonsági öv figyelmeztetés</strong> Mindig csatolja be a biztonsági övet, és kérjük, hogy ittas állapotban ne vezessen. ©2013 A Nissan North America, Inc. INFINITI üzleti egysége</p>"
+  #MISC
+  misc:
+    loading: "Az Ön által ihletett forradalom."
+    replay: "Lejátszás újra"
+    continue: "Tovább"
+  disclaimers:
+    bose: "A BOSE<sup>&reg;</sup>  a The Bose Corporation bejegyzett védjegye."
+    zero_gravity: "Csak az első ülések kialakítására vonatkozik."
+    bci: "A BCI nem minden tárgyat érzékel és csak korlátozott sebességig működik. Mindig nézzen körül, mielőtt elindul. A rendszer nem helyettesíti a megfelelő tolatási technikák ismeretét. Tolatás előtt/közben mindig forduljon hátra, és ellenőrizze, hogy szabad-e az út. További részletek a jármű használati utasításában találhatók. Csak automata váltóhoz rendelhető."
+    avm: "A mozgásérzékelővel ellátott panoráma monitor nem képes a holttér teljes kiiktatására és minden tárgy érzékelésére. A MOD rendszer csak 8 km/h alatti sebességnél működik. Mindig nézzen körül, mielőtt elindul. A rendszer nem helyettesíti a helyes tolatási technikák ismeretét és alkalmazását. Tolatás előtt/közben mindig forduljon hátra, és ellenőrizze, hogy szabad-e az út. A mozgásérzékelési (MOD) rendszer csak 8 km/h alatti sebességnél működik."
+    infiniti_connection: "Driving is serious business. Only use Infiniti Connection<sup>&trade;</sup> and Infiniti Connection Plus services when safe to do so. Subscription Agreement required to enroll. Initial 12 months, beginning on your date of purchase, included complimentary. Subsequently, your credit card (if on file) will be charged at the then current subscription rate and your service will continue for 1 year periods under the terms of your Subscription Agreement, unless cancelled. Services require compatible 2G GSM/GPRS cellular network. Cellular network and vehicle services, including Google Calendar<sup>&trade;</sup>, provided by independent companies not within Infiniti's control. Cellular network not available in all areas. 2G cellular network not available in all areas. In areas with 2G network coverage, signal strength may vary and/or not be available at all times. Cellular technology is evolving, and changes to cellular networks may affect future service functionality. Ask your cellular network carrier for details on anticipated 2G network availability in your area and how this may affect your planned usage. Should a cellular provider or service provider terminate/further restrict service, service may be suspended or terminated without notice or liability to Infiniti and its affiliates and agents. Infiniti not responsible for any equipment replacement or upgrades, or associated costs, that may be required for continued operation due to service changes.Terms and conditions of Subscription Agreement apply. Standard text rates and/or data usage may apply to communications received by email or SMS/text message."
+    infiniti_intouch: "A vezetés veszélyes üzem. Csak akkor használja az Infiniti InTouch Apps&#8482; szolgáltatásokat, ha ez a közlekedésbiztonságot nem veszélyezteti. Az aktiváláshoz előfizetői szerződés szükséges. Kompatibilis okostelefon szükséges; a hálózati lefedettség egyes területeken korlátozott lehet. A GPS térkép nem minden területen részletes vagy tükrözi a jelenlegi közúti szabályokat. Bizonyos alkalmazásokat és szolgáltatásokat – például a Google Points of Interest és Send to Car – független társaságok nyújtanak, akiknek tevékenységéért az Infiniti nem tartozik felelősséggel, arra ráhatása nincs. Amennyiben a szolgáltató egy adott szolgáltatás nyújtását korlátozza vagy felfüggeszti, a szolgáltatás az Infiniti és/vagy ügynökei felé előzetes értesítés vagy további jogkövetkezmények nélkül felfüggeszthető vagy megszüntethető. Az Infiniti nem felelős azért, ha valamely alkalmazás vagy szolgáltatás további működtetéséhez egyéb berendezésekre, alkalmazásokra, frissítésekre van szükség, amely többletkiadást eredményez.  Az InTouch AppsTM hozzáférhetősége országonként eltérő lehet.   A szolgáltatásra az előfizetési szerződés rendelkezései vonatkoznak.  Az e-mailben vagy SMS-ben történő bejövő kommunikáció elszámolása standard SMS és/vagy adatforgalmi tarifák szerint történik."
