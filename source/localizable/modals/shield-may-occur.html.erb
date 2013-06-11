@@ -1,0 +1,10 @@
+---
+layout: false
+---
+<div id="modal-may-occur-content" class="wf">
+	<h2><%= I18n.t("safetyshield.risks.may_occur.title") %> <span><%= I18n.t("safetyshield.risks.may_occur.sub_title") %></span></h2>
+	<div class="left">
+		<h3><%= I18n.t("safetyshield.risks.may_occur.braking_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html", :anchor=>"forward_braking", :class => "disclaimer_tooltip" %></h3>
+		<%= I18n.t("safetyshield.risks.may_occur.braking_description") %>
+	</div>
+</div>

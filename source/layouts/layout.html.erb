@@ -1,0 +1,15 @@
+<!-- origianly set to data.q50[I18n.locale.to_s].cfg but this requires all trans to be in a single file. hardcoded for QA testing. -->
+
+<% @cfg = data.q50[I18n.locale.to_s].cfg %>
+
+<% wrap_layout :shell do %>
+	<div id="wrapper">	
+		
+		<%= partial "partials/header" %>
+		<%= yield_content :pagecontent %>
+		<%= partial "partials/effects" %>
+		<%= partial "partials/primary_nav" %>
+		<%= partial "partials/footer" %>
+	</div>
+	<%= partial "partials/orientation_message" %>
+<% end %>

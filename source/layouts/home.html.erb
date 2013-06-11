@@ -1,0 +1,9 @@
+<% wrap_layout :shell do %>
+	<div id="wrapper">
+		<%= partial "partials/header" %>
+		<%= yield_content :pagecontent %>
+		<%= partial "partials/effects" %>
+		<%= partial "partials/footer" %>
+	</div>
+	<%= partial "partials/orientation_message" %>
+<% end %>

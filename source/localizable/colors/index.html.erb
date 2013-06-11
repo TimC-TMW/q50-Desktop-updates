@@ -1,0 +1,46 @@
+---
+pageid: page_colors
+crmpageid: 31018
+current_nav: 5
+---
+<% @current_nav = 5 %>
+<% content_for :pageid do %>page_colors<% end %>
+
+<% content_for :seo do %>
+	<title><%= I18n.t("colors.page_title") %></title>
+	<meta name="description" content="<%= I18n.t("colors.page_description") %>">
+	<link rel="canonical" href="<%= I18n.t("colors.page_canonical") %>" />
+<% end %>
+
+<% content_for :pagecss do %>
+	<%= stylesheet_link_tag 'build' %>
+	<%= stylesheet_link_tag 'colours' %>
+<% end %>
+
+<% content_for :pagecontent do %>
+	<!-- exterior 360 -->
+	<section id="threesixty">
+		<div class="threesixty">
+			<div class="hint wf">
+			</div>
+		</div>
+	</section>
+
+	<div id="build">
+		<%= partial "partials/_colors_swatches" %>
+	</div>
+<% end %>
+
+<% content_for :pagescript do %>
+	<script>
+		// init page
+		NNA.pageInit(function(){
+			var videoData = <%= minify_inline_js partial "partials/video_data" %>;
+			new NNA.PageControllers.Colors(videoData);
+		});
+	</script>
+<% end %>
+
+<% content_for :addthis do %>
+	addthis:url="<%= I18n.t("colors.page_canonical") %>" addthis:description="<%= I18n.t("colors.page_description") %>" addthis:title="<%= I18n.t("colors.page_title") %>"
+<% end %>

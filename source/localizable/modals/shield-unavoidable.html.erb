@@ -1,0 +1,10 @@
+---
+layout: false
+---
+<div id="modal-unavoidable-content" class="wf">
+	<h2><%= I18n.t("safetyshield.risks.unavoidable.title") %> <span><%= I18n.t("safetyshield.risks.unavoidable.sub_title") %></span></h2>
+	<div class="left">
+		<h3><%= I18n.t("safetyshield.risks.unavoidable.braking_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html",:anchor=>"forward_braking", :class => "disclaimer_tooltip" %></h3>
+		<p><%= I18n.t("safetyshield.risks.unavoidable.braking_description") %></p>
+	</div>
+</div>

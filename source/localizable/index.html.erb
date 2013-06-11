@@ -1,0 +1,143 @@
+---
+layout: home
+crmpageid: 30927
+---
+
+<% content_for :pageid do %>page_home<% end %>
+
+<% content_for :seo do %>
+	<title><%= I18n.t("home.page_title") %></title>
+	<meta name="description" content="<%= I18n.t("home.page_description") %>">
+	<link rel="canonical" href="<%= I18n.t("home.page_canonical") %>" />
+<% end %>
+
+<% content_for :pagecss do %>
+<% end %>
+
+<% content_for :pagecontent do %>
+<script language="JavaScript" type="text/javascript">
+var s_account = "tdi-infinitiglobal,<%= I18n.t("booth") %>"
+</script>
+<script language="JavaScript" type="text/javascript" src="<%= asset_path :js, "s_code.js?v=1.0" %>"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="Microsite_Q50_home"
+s.server=""
+s.channel="microsite"
+s.pageType=""
+s.prop1=""
+s.prop2="<%= I18n.t("country") %>"
+s.prop3="<%= I18n.t("language") %>"
+s.prop4="<%= I18n.t("locale") %>;q=0.5"
+s.prop5=""
+s.prop7="Q50"
+s.prop10="Microsite_Q50_home"
+s.prop15=""
+s.prop16="Microsite_Q50_home"
+
+/* Conversion Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3="Q50"
+s.eVar4=""
+s.eVar5=""
+s.eVar6=""
+s.eVar15=""
+s.linkTrackVars = ""
+s.linkTrackEvents = ""
+s.visitorNamespace = "nissanglobal"
+s.trackingServer = "<%= I18n.t("metric") %>"
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://<%= I18n.t("metric") %>/b/ss/tdi-infinitiglobal,<%= I18n.t("booth") %>/1/H.24.3--NS/0?[AQB]&cdp=3&[AQE]"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.24.3. -->
+
+	<!-- page content -->
+	<a class="see_all_features all_features wf" href="#"><%= I18n.t("nav.features.label") %></a>
+	<section id="home">
+		<h1><%= I18n.t("home.headline") %></h1>
+		<h2><%= I18n.t("home.tagline") %>
+			<div class="sound" style="left: 1474px;"><%= I18n.t("nav.mute.label") %></div>
+		</h2>
+		<div class="background">
+			<video id="home-intro-video" class="video-js" preload="auto" width="1280" height="720" src="<%= image_path 'home/intro.mp4' %>">
+				<source src="<%= image_path 'home/intro.mp4' %>" type="video/mp4"></source>
+				<source src="<%= image_path 'home/intro.webm' %>" type="video/webm"></source>
+			</video>
+			<%= image_tag "home/home-bg.jpg", :width=>1280, :height=>720 %>
+		</div>
+    	<%= image_tag "home/feature-car.png", :alt => "2014 Q50", :width => 672, :height => 260, :id => "feature_car" %>
+		<ul>
+			<li class="design feature-box">
+				<% link_to I18n.t("nav.design.link") do %>
+					<span></span>
+				<% end %>
+				<h3 class="wf"><%= I18n.t("nav.design.label") %><br /><span><%= I18n.t("home.experience") %></span></h3>
+				<%= image_tag "home/design.jpg", :alt => "" %>
+				<video id="home-design-video" class="video-js" preload="auto" width="306" height="294" src="<%= image_path 'home/design.mp4' %>">
+					<source src="<%= image_path 'home/design.mp4' %>" type="video/mp4"></source>
+					<source src="<%= image_path 'home/design.webm' %>" type="video/webm"></source>
+				</video>
+			</li>
+			<li class="performance feature-box">
+				<% link_to I18n.t("nav.performance.link") do %>
+					<span></span>
+				<% end %>
+				<h3 class="wf"><%= I18n.t("nav.performance.label") %><br /><span><%= I18n.t("home.experience") %></span></h3>
+				<%= image_tag "home/performance.jpg", :alt => "" %>
+				<video id="home-performance-video" class="video-js" preload="auto" width="306" height="294" src="<%= image_path 'home/performance.mp4' %>">
+					<source src="<%= image_path 'home/performance.mp4' %>" type='video/mp4' />
+					<source src="<%= image_path 'home/performance.webm' %>" type='video/webm' />
+				</video>
+			</li>
+			<li class="technology feature-box">
+				<% link_to I18n.t("nav.technology.link") do %>
+					<span></span>
+				<% end %>
+				<h3 class="wf"><%= I18n.t("nav.technology.label") %><br /><span><%= I18n.t("home.experience") %></span></h3>
+				<%= image_tag "home/technology.jpg", :alt => "" %>
+				<video id="home-technology-video" class="video-js" preload="auto" width="306" height="294" src="<%= image_path 'home/technology.mp4' %>">
+					<source src="<%= image_path 'home/technology.mp4' %>" type='video/mp4' />
+					<source src="<%= image_path 'home/technology.webm' %>" type='video/webm' />
+				</video>
+			</li>
+		</ul>
+	</section>
+<% end %>
+
+<% content_for :pagescript do %>
+	<script>
+		// add more images to preload just for this page
+		NNA.PRELOAD.push(
+			'<%= asset_path :images, "home/home-bg.jpg" %>',
+			'<%= asset_path :images, "home/design.jpg" %>',
+			'<%= asset_path :images, "home/performance.jpg" %>',
+			'<%= asset_path :images, "home/technology.jpg" %>',
+			'<%= asset_path :images, "home/feature-car.png" %>',
+			'<%= asset_path :images, "home/icon-carrot.png" %>'
+		);
+
+		// init page
+		NNA.pageInit(function(){
+			var videoData = <%= minify_inline_js partial "partials/video_data" %>;
+			new NNA.PageControllers.Home(videoData);
+
+			jQuery.publish('/nna/crm/pageload'); // fire when visitor arrives at landing page
+		});
+	</script>
+<% end %>
+<% content_for :addthis do %>
+	addthis:url="<%= I18n.t("home.page_canonical") %>" addthis:description="<%= I18n.t("home.page_description") %>" addthis:title="<%= I18n.t("home.page_title") %>"
+<% end %>

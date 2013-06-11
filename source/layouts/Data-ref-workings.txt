@@ -1,0 +1,8 @@
+test = data.q50_eu_enu.data.cfg
+test2 = I18n.locale
+test3 = I18n.t:country
+test4 = [I18n.locale.to_s]
+test5 = I18n.t("cfg")
+test6 = "data.foo.bar.en.cfg"
+test7 = data.q50[I18n.locale.to_s].cfg
+DataFileLocale =  "data.q50_" + I18n.t("country") + "_" +  I18n.t("language") + ".data.cfg"

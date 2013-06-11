@@ -1,0 +1,77 @@
+---
+pageid: page_specs
+page_scroll: true
+crmpageid: 31017
+current_nav: 4
+transparent_nav: false
+transparent_footer: false
+---
+<% @current_nav = 4 %>
+<% content_for :pageid do %>page_specs<% end %>
+
+<% content_for :seo do %>
+<title><%= I18n.t("specs.page_title") %></title>
+<meta name="description" content="<%= I18n.t("specs.page_description") %>">
+<link rel="canonical" href="<%= I18n.t("specs.page_canonical") %>" />
+<% end %>
+
+<% content_for :pagecss do %>
+<%= stylesheet_link_tag 'specs' %>
+<% end %>
+
+<% content_for :pagecontent do %>
+<div id="specs">
+	<div class="wrapper">
+		<div class="top"></div>
+		<div class="middle">
+			<!-- tabs -->
+			<ul class="tabs">
+				<li class="first selected" data-tab="Specifications"><%= I18n.t("specs.common.specs") %></li>						
+			</ul>
+			<!-- downloads -->
+			<ul class="download">
+				<li>
+					<%= link_to I18n.t("specs.download.specs"), "/media/specs/eSpec_Q50_v2.pdf" %>
+				</li>
+			</ul>
+			<!-- tab contents -->
+			<div class="tab_contents">
+				<%= partial "partials/_specs_specifications", :locals => {:models => [91114,91314,91514,91014,91214,91414,91714,91914,91614,91814]} %>
+				<%= partial "partials/_specs_compare" %>
+			</div>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</div>
+<% end %>
+
+<% content_for :pagescript do %>
+	<script>
+		// add more images to preload just for this page
+		NNA.PRELOAD.push(
+			'<%= asset_path :images, "specs/tabs.png" %>',
+			'<%= asset_path :images, "specs/background.jpg" %>',
+			'<%= asset_path :images, "specs/bg-wrapper-top.png" %>',
+			'<%= asset_path :images, "specs/bg-wrapper-middle.png" %>',
+			'<%= asset_path :images, "specs/bg-wrapper-bottom.png" %>',
+			'<%= asset_path :images, "specs/bg-header-specs.png" %>',
+			'<%= asset_path :images, "specs/bg-header-compare.png" %>',
+			'<%= asset_path :images, "specs/bg-accordion-header.png" %>',
+			'<%= asset_path :images, "specs/available-invert.png" %>'
+		);
+
+		// init page
+		NNA.pageInit(function(){
+			var videoData = <%= minify_inline_js partial "partials/video_data" %>;
+			new NNA.PageControllers.Specs(videoData, {
+				restrictTabletOrientation: false
+			});
+
+			jQuery.publish('/nna/crm/pageload'); // fire when visitor arrives at landing page
+		});
+	</script>
+<% end %>
+
+<% content_for :addthis do %>
+addthis:url="<%= I18n.t("specs.page_canonical") %>" addthis:description="<%= I18n.t("specs.page_description") %>" addthis:title="<%= I18n.t("specs.page_title") %>"
+<% end %>

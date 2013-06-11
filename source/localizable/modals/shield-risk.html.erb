@@ -1,0 +1,20 @@
+---
+layout: false
+---
+<div id="modal-risk-content" class="wf">
+	<h2><%= I18n.t("safetyshield.risks.risk.title") %> <span><%= I18n.t("safetyshield.risks.risk.sub_title") %></span></h2>
+	<div class="left">
+		<h3><%= I18n.t("safetyshield.risks.risk.backup_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html", :anchor=>"backup_collision", :class => "disclaimer_tooltip" %></h3>
+		<p><%= I18n.t("safetyshield.risks.risk.backup_description") %></p>
+	</div>
+	<div class="middle">
+		<h3><%= I18n.t("safetyshield.risks.risk.predictive_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html", :anchor=>"predictive_collision", :class => "disclaimer_tooltip" %></h3>
+		<p><%= I18n.t("safetyshield.risks.risk.predictive_description") %></p>
+	</div>
+	<div class="right">
+		<h3><%= I18n.t("safetyshield.risks.risk.blind_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html", :anchor=>"blind_spot", :class => "disclaimer_tooltip" %></h3>
+		<p><%= I18n.t("safetyshield.risks.risk.blind_description") %></p>
+		<h3><%= I18n.t("safetyshield.risks.risk.lane_title") %> <%= link_to "[*]", "/" + I18n.t("locale") + "/disclaimers/disclaimers.html", :anchor=>"lane_departure", :class => "disclaimer_tooltip" %></h3>
+		<p><%= I18n.t("safetyshield.risks.risk.lane_description") %></p>
+	</div>
+</div>

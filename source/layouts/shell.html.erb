@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="page-loading no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="page-loading no-js lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="page-loading no-js lt-ie9 ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="page-loading no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- seo -->
+		<%= yield_content :seo %>
+
+		<!-- meta -->
+		<meta name="viewport" content="width=1024">
+
+		<!-- styles -->
+		<%= stylesheet_link_tag 'application' %>
+		<%= yield_content :pagecss %>        
+		
+		<script language="javascript" type="text/javascript">
+			var pageLocale = '<%= I18n.t("locale") %>';
+		</script>
+		<!-- modernizr / font loader / soundmanager init -->
+		<%= javascript_include_tag 'app/head_js' %>
+		<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+        <%= javascript_include_tag 'libs/soundmanager/soundmanager_init' %>
+		
+		<link rel="shortcut icon" type="image/x-icon" href="<%= image_path 'common/icon/favicon.ico' %>" />
+		
+	</head>
+	<body<%= content_for?(:pageid)? " id='#{yield_content :pageid}'" : "" %> class='page_scroll'>	
+		<%= yield %>
+
+		<!-- for engine.js -->
+		<div id="pageTags"></div>
+
+		<%= javascript_include_tag 'app/libs' %>
+		<script src="<%= asset_path :js, "nna.js?contextPath=#{asset_url I18n.t('context_path')}&jsDir=#{(http_prefix != '/') ? http_prefix : ''}/#{js_dir}/" %>"></script>
+		<%= javascript_include_tag 'app/framework' %>
+		<!-- page script -->
+		<%= yield_content :pagescript %>
+		
+		
+
+	</body>
+</html>

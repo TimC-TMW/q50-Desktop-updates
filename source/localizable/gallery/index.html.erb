@@ -1,0 +1,172 @@
+---
+crmpageid: 30943
+---
+<% @current_nav = 3 %>
+
+<% content_for :pageid do %>page_gallery<% end %>
+
+<% content_for :seo do %>
+	<title><%= I18n.t("gallery.page_title") %></title>
+	<meta name="description" content="<%= I18n.t("gallery.page_description") %>">
+	<link rel="canonical" href="<%= I18n.t("gallery.page_canonical") %>" />
+<% end %>
+
+<% content_for :pagecss do %>
+<% end %>
+
+<% content_for :pagecontent do %>
+
+<script language="JavaScript" type="text/javascript">
+var s_account = "tdi-infinitiglobal,<%= I18n.t("booth") %>"
+</script>
+<script language="JavaScript" type="text/javascript" src="<%= asset_path :js, "s_code.js?v=1.0" %>"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="Micorsite_Q50_gallery"
+s.server=""
+s.channel="microsite"
+s.pageType=""
+s.prop1=""
+s.prop2="<%= I18n.t("country") %>"
+s.prop3="<%= I18n.t("language") %>"
+s.prop4="<%= I18n.t("locale") %>;q=0.5"
+s.prop5=""
+s.prop7="Q50"
+s.prop10="Micorsite_Q50_gallery"
+s.prop15=""
+s.prop16="Micorsite_Q50_gallery"
+
+/* Conversion Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3="Q50"
+s.eVar4=""
+s.eVar5=""
+s.eVar6=""
+s.eVar15=""
+s.linkTrackVars = ""
+s.linkTrackEvents = ""
+s.visitorNamespace = "nissanglobal"
+s.trackingServer = "<%= I18n.t("metric") %>"
+
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://<%= I18n.t("metric") %>/b/ss/tdi-infinitiglobal,<%= I18n.t("booth") %>/1/H.24.3--NS/0?[AQB]&cdp=3&[AQE]"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.24.3. -->
+
+	<!--<div id="gallery_share" class="addthis_toolbox" addthis:url="<%= I18n.t("gallery.page_canonical") %>" addthis:description="<%= I18n.t("gallery.page_description") %>" addthis:title="<%= I18n.t("gallery.page_title") %>">
+		<span>
+			<a class="addthis_button_twitter share_link"><%= image_tag "common/bg/transparent.gif" %></a>
+			<a class="addthis_button_facebook share_link"><%= image_tag "common/bg/transparent.gif" %></a>
+			<a class="addthis_button_google_plusone_share share_link"><%= image_tag "common/bg/transparent.gif" %></a>
+			<a class="addthis_button_email share_link" href="http://www.addthis.com/bookmark.php"><%= image_tag "common/bg/transparent.gif" %></a>
+			<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+			<a class="pintrest" target="_blank" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.infinitiusa.com&media=http%3A%2F%2Fwww.infinitiusa.com/all-new-q50/image.jpg" class="pin-it-button" count-layout="none">Pintrest<img border="0" src="//assets.pinterest.com/images/PinExt.png" alt="Pin It" /></a>
+		</span>
+	 </div>
+	 <script src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4feb315c254fd382" type="text/javascript"></script>-->
+	 
+	 <!-- gallery -->
+	<section id="gallery" class="gallery_slide">
+		<ul class = 'slider'>
+			<li class = 'item item1 background'> <%= image_tag "gallery/gallery/feature-1.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item2 background'> <%= image_tag "gallery/gallery/feature-2.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item3 background'> <%= image_tag "gallery/gallery/feature-3.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item4 background'> <%= image_tag "gallery/gallery/feature-4.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item5 background'> <%= image_tag "gallery/gallery/feature-5.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item6 background'> <%= image_tag "gallery/gallery/feature-6.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item7 background'> <%= image_tag "gallery/gallery/feature-7.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item8 background'> <%= image_tag "gallery/gallery/feature-8.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item9 background'> <%= image_tag "gallery/gallery/feature-9.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item10 background'><%= image_tag "gallery/gallery/feature-10.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item11 background'><%= image_tag "gallery/gallery/feature-11.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item12 background'><%= image_tag "gallery/gallery/feature-12.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item13 background'><%= image_tag "gallery/gallery/feature-13.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item14 background'><%= image_tag "gallery/gallery/feature-14.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item15 background'><%= image_tag "gallery/gallery/feature-15.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item16 background'><%= image_tag "gallery/gallery/feature-16.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item17 background'><%= image_tag "gallery/gallery/feature-17.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item18 background'><%= image_tag "gallery/gallery/feature-18.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item19 background'><%= image_tag "gallery/gallery/feature-19.jpg", :width=>1280, :height=>720 %></li>
+			<li class = 'item item20 background'><%= image_tag "gallery/gallery/feature-20.jpg", :width=>1280, :height=>720 %></li>
+		</ul>
+	</section>
+
+	<!-- exterior 360 -->
+	<section id="threesixty">
+		<div class="threesixty">
+			<div class="hint wf">
+				<h2><%= I18n.t("threesixty.title") %></h2>
+				< &nbsp;&nbsp;<%= I18n.t("threesixty.instructions") %>&nbsp;&nbsp; >
+			</div>
+		</div>
+	</section>
+
+	<section id="pano">
+		<%= partial "partials/pano" %>
+	</section>
+
+	<span id="back_to_gallery"><%= I18n.t("gallery.back") %></span>
+
+	<ul id="gallery_nav" class="wf">
+		<li class="slider_nav">
+			<h3><%= I18n.t("gallery.nav.photos") %></h3>
+			<div class="gallery_slide_nav">
+				<ul class='slider'>
+					<li class='button first item1'><%= image_tag "gallery/gallery/thumb-1.jpg", :width=>82, :height=>36, :alt=> "Thumb 1"  %></li>					
+					<li class='button item2'>      <%= image_tag "gallery/gallery/thumb-2.jpg", :width=>82, :height=>36, :alt=> "Thumb 2"  %></li>
+					<li class='button item3'>      <%= image_tag "gallery/gallery/thumb-3.jpg", :width=>82, :height=>36, :alt=> "Thumb 3"  %></li>
+					<li class='button item4'>      <%= image_tag "gallery/gallery/thumb-4.jpg", :width=>82, :height=>36, :alt=> "Thumb 4"  %></li>
+					<li class='button item5'>      <%= image_tag "gallery/gallery/thumb-5.jpg", :width=>82, :height=>36, :alt=> "Thumb 5"  %></li>					
+					<li class='button item6'>      <%= image_tag "gallery/gallery/thumb-6.jpg", :width=>82, :height=>36, :alt=> "Thumb 6"  %></li>
+					<li class='button item7'>      <%= image_tag "gallery/gallery/thumb-7.jpg", :width=>82, :height=>36, :alt=> "Thumb 7"  %></li>
+					<li class='button item8'>      <%= image_tag "gallery/gallery/thumb-8.jpg", :width=>82, :height=>36, :alt=> "Thumb 8"  %></li>
+					<li class='button item9'>      <%= image_tag "gallery/gallery/thumb-9.jpg", :width=>82, :height=>36, :alt=> "Thumb 9"  %></li>					
+					<li class='button item10'>     <%= image_tag "gallery/gallery/thumb-10.jpg", :width=>82, :height=>36, :alt=> "Thumb 10" %></li>
+					<li class='button item11'>     <%= image_tag "gallery/gallery/thumb-11.jpg", :width=>82, :height=>36, :alt=> "Thumb 11" %></li>
+					<li class='button item12'>     <%= image_tag "gallery/gallery/thumb-12.jpg", :width=>82, :height=>36, :alt=> "Thumb 12" %></li>
+					<li class='button item13'>     <%= image_tag "gallery/gallery/thumb-13.jpg", :width=>82, :height=>36, :alt=> "Thumb 13" %></li>
+					<li class='button item14'>     <%= image_tag "gallery/gallery/thumb-14.jpg", :width=>82, :height=>36, :alt=> "Thumb 14" %></li>
+					<li class='button item15'>     <%= image_tag "gallery/gallery/thumb-15.jpg", :width=>82, :height=>36, :alt=> "Thumb 15" %></li>
+					<li class='button item16'>     <%= image_tag "gallery/gallery/thumb-16.jpg", :width=>82, :height=>36, :alt=> "Thumb 16" %></li>
+					<li class='button item17'>     <%= image_tag "gallery/gallery/thumb-17.jpg", :width=>82, :height=>36, :alt=> "Thumb 17" %></li>
+					<li class='button item18'>     <%= image_tag "gallery/gallery/thumb-18.jpg", :width=>82, :height=>36, :alt=> "Thumb 18" %></li>
+					<li class='button item19'>     <%= image_tag "gallery/gallery/thumb-19.jpg", :width=>82, :height=>36, :alt=> "Thumb 19" %></li>
+					<li class='button item20'>     <%= image_tag "gallery/gallery/thumb-20.jpg", :width=>82, :height=>36, :alt=> "Thumb 20" %></li>
+				</ul>
+			</div>
+		</li>
+		<li class="exterior"><h3><%= I18n.t("gallery.nav.exterior") %></h3><a class="show_exterior" href="#"><%= image_tag "gallery/thumb-exterior.jpg", :width=>82, :height=>36, :alt=> I18n.t("gallery.nav.exterior") %></a></li>
+		<li class="interior"><h3><%= I18n.t("gallery.nav.interior") %></h3><a class="show_interior" href="#"><%= image_tag "gallery/thumb-interior.jpg", :width=>82, :height=>36, :alt=> I18n.t("gallery.nav.interior") %></a></li>
+	</ul>
+	<span class="slider_thumb_next"><%= I18n.t("gallery.nav.next") %></span>
+	<span class="slider_thumb_prev"><%= I18n.t("gallery.nav.previous") %></span>
+	<span class="slider_next"><%= I18n.t("gallery.nav.next") %></span>
+	<span class="slider_prev"><%= I18n.t("gallery.nav.previous") %></span>
+<% end %>
+
+<% content_for :pagescript do %>
+	<script>
+		// init page
+		NNA.pageInit(function(){
+			var videoData = <%= minify_inline_js partial "partials/video_data" %>;
+			new NNA.PageControllers.Gallery(videoData);
+		});
+	</script>
+<% end %>
+
+<% content_for :addthis do %>
+	addthis:url="<%= I18n.t("gallery.page_canonical") %>" addthis:description="<%= I18n.t("gallery.page_description") %>" addthis:title="<%= I18n.t("gallery.page_title") %>"
+<% end %>
