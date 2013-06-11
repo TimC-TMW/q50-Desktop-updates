@@ -1,0 +1,342 @@
+(function(NNA, $){
+
+	NNA.PageControllers.Gallery = NNA.PageController.extend({
+		init: function(videoData, options){
+			this._super(videoData, options);
+			
+			this.threeSixtyWrapper = $('#threesixty');
+			this.threeSixtyElement = this.threeSixtyWrapper.find('.threesixty');
+			this.panoElement = $('#pano');
+			this.backButton = $('#back_to_gallery');
+			this.gallery = $('.gallery_slide');
+			this.gallerySlideNav = $('.gallery_slide_nav');
+
+			this.initGallery();
+			this.attachGalleryEvents();
+			
+			debug.log('NNA.PageControllers.Gallery: initialized');
+		},
+
+		// attach event handlers
+		attachGalleryEvents: function(){
+			var self = this;
+			
+			//Share hide/show
+			$("#gallery_share").mouseenter(function(){
+				$("#gallery_share span").show();	
+			}).mouseleave(function(){
+				$("#gallery_share span").hide();	
+			});
+
+			// show the exterior
+			this.bodyElement.on('click', '.show_exterior', function(e){
+				e.preventDefault();
+				self.show('EXTERIOR');
+			});
+			
+			// show the interior
+			this.bodyElement.on('click', '.show_interior', function(e){
+				e.preventDefault();
+				self.show('INTERIOR');
+			});
+
+			this.backButton.on('click', function(e){
+				e.preventDefault();
+				self.show('GALLERY');
+			});
+
+			// gallery resize handler
+			this.windowElement.on("resize", $.proxy(this.galleryResize, this));
+		},
+		
+		// initialize the swipe gallery
+		initGallery: function(){
+			var self = this,
+				galleryStart;
+			var gallery_loaded = false;	
+				
+			// deeplinking
+			var galleryParam = "?feature=";
+			if(window.location.href.indexOf(galleryParam) > -1){
+				var galleryUrl = window.location.href;				
+				galleryStart = galleryUrl.split("=").pop();
+			}else{
+				galleryStart = 1;
+			}
+
+			$('.slider_prev').on('click', function(e){
+				$.publish('/nna/gallery/prev_arrow');
+			});
+
+			$('.slider_next').on('click', function(e){
+				$.publish('/nna/gallery/next_arrow');
+			});
+
+			$("#gallery_share a").on('click', function(e){
+				$.publish('/nna/gallery/share', [e]);
+			});
+
+
+			// gallery images
+			this.gallery.iosSlider({
+				startAtSlide: galleryStart,
+				scrollbar: false,
+				snapToChildren: true,
+				desktopClickDrag: true,
+				infiniteSlider: false,
+				navSlideSelector: $('.gallery_slide_nav .button'),
+				navPrevSelector: $('.slider_prev'),
+				navNextSelector: $('.slider_next'),
+				onSliderLoaded: doubleSlider2Load,
+				onSlideChange: doubleSlider2Load,
+				onSlideComplete: slideGalleryNav
+			});
+			
+			// gallery thumbnails
+			this.gallerySlideNav.iosSlider({
+				startAtSlide: galleryStart,
+				desktopClickDrag: false,
+				snapToChildren: true,
+				snapSlideCenter: false,
+				infiniteSlider: false
+			});
+			
+			// Toggle Thumbs
+			var thumbPos = 1;
+			this.bodyElement.on('click', '.slider_thumb_next', function(e){
+				$.publish('/nna/gallery/thumb_next');
+				e.preventDefault();
+				if(thumbPos < 3){
+					thumbPos = thumbPos + 1;
+				}
+				updateGalleryNav();
+			});
+			this.bodyElement.on('click', '.slider_thumb_prev', function(e){
+				$.publish('/nna/gallery/thumb_previous');
+				e.preventDefault();
+				if(thumbPos > 1){
+					thumbPos = thumbPos - 1;
+				}
+				updateGalleryNav();
+			});
+
+			$(".gallery_slide_nav").on('click',  function(e){
+				$.publish('/nna/placement/thumb_nail');
+			});
+
+			function updateGalleryNav(){
+				if(thumbPos == 1){
+					self.gallerySlideNav.iosSlider('goToSlide', 1);
+				}
+				if(thumbPos == 2){
+					self.gallerySlideNav.iosSlider('goToSlide', 8);
+				}
+				if(thumbPos == 3){
+					self.gallerySlideNav.iosSlider('goToSlide', 14);
+				}
+			}
+			
+			// ties gallery and thumbnails together
+			function doubleSlider2Load(args) {
+
+				if(!gallery_loaded){
+					gallery_loaded = true; // track the very first slide when loaded
+					$.publish('/nna/gallery/slideChange',[args.currentSlideNumber]);
+				}
+				
+				/* update indicator */
+				$('.gallery_slide_nav .button').removeClass('selected');
+				$('.gallery_slide_nav .button:eq(' + (args.currentSlideNumber-1) + ')').addClass('selected');
+				$('.slider_nav h3').html('Photos '+(args.currentSlideNumber)+'/'+$(".gallery_slide_nav .button").length);
+				
+				//deep linking
+				var imgTitle = $('.gallery_slide_nav .button:eq(' + (args.currentSlideNumber-1) + ')').children('img').attr("alt");
+				var imgRef = args.currentSlideNumber;
+				var currentImagePath = $('#gallery ul li.item' + args.currentSlideNumber + ' img').attr("src");
+				$('#gallery_share').attr("addthis:url", window.location.href + galleryParam + imgRef);
+				$('#gallery_share span a.pintrest').attr("href", "http://pinterest.com/pin/create/button/?url=" + window.location.href + galleryParam + imgRef + "&media=http://www.infinitiusa.com/all-new-q50" + currentImagePath);
+			}
+
+			var prevThumbPos = 1;
+			
+			function slideGalleryNav(args){
+				$.publish('/nna/gallery/slideChange',[args.currentSlideNumber]);
+
+				if(args.currentSlideNumber == 6 && prevThumbPos == 7 || args.currentSlideNumber == 7 && prevThumbPos == 8 || args.currentSlideNumber < 7 && thumbPos != 1){
+					self.gallerySlideNav.iosSlider('goToSlide', 1);
+					thumbPos = 1;
+				}
+				if(args.currentSlideNumber == 7 && prevThumbPos < 7 || args.currentSlideNumber == 8 && prevThumbPos == 7 || args.currentSlideNumber == 12 && prevThumbPos == 13 || args.currentSlideNumber == 13 && prevThumbPos == 14 || args.currentSlideNumber > 7 && args.currentSlideNumber < 13 && thumbPos != 2){
+					self.gallerySlideNav.iosSlider('goToSlide', 7);
+					thumbPos = 2;
+				}
+				if(args.currentSlideNumber == 13 && prevThumbPos < 13 || args.currentSlideNumber == 14 && prevThumbPos < 13 || args.currentSlideNumber == 18 && prevThumbPos > 18 || args.currentSlideNumber > 13 && args.currentSlideNumber < 19 && thumbPos != 3){
+					self.gallerySlideNav.iosSlider('goToSlide', 13);
+					thumbPos = 3;
+				}
+				if(args.currentSlideNumber == 19 && prevThumbPos < 19){
+					self.gallerySlideNav.iosSlider('goToSlide', 20);
+					thumbPos = 3;
+				}
+				prevThumbPos = args.currentSlideNumber;
+			}
+			
+			// initial resize
+			self.galleryResize();
+		},
+
+		// show something
+		show: function(what){
+			switch(what){
+				case 'GALLERY':
+					this.hideInterior();
+					this.hideExterior();
+					break;
+				case 'INTERIOR':
+					this.showInterior();
+					this.hideExterior();
+					break;
+				case 'EXTERIOR':
+					this.hideInterior();
+					this.showExterior();
+					break;
+			}
+		},
+
+		// show exterior 360
+		showExterior: function(){
+			var self = this;
+			var startFrame = 3;
+			var hintElement = this.threeSixtyWrapper.find('.hint');
+
+			// Create image array
+			var images = [];
+			for(var i = 0; i < 43; i++){
+				var index = (i < 10) ? "0"+i : i;
+				images.push('<%= asset_path :images, "gallery/exterior/" %>' + index + ".jpg");
+			}
+
+			// preload images
+			$.publish('/nna/effects/showLoading');
+			NNA.Utils.preloadImages(images).done(function(){				
+				// show exterior threesixty and back button and hint
+				self.threeSixtyWrapper.show();
+				self.backButton.addClass("white").show();
+				hintElement.show();
+
+				// threesixty is only created the first time after that we just reuse the existing one
+				var threesixty = self.threeSixtyElement.data('ThreeSixty');
+				if(threesixty === undefined){
+					// init threesixty
+					self.threeSixtyElement.threesixty({
+						useBuiltInLoader: false,
+						imageList: images,
+						width: 950,
+						height: 535,
+						frameSteps: 8,
+						startFrame : startFrame,
+						reverse: true,
+						redrawOnResize: true,
+						parentElement: $(window),
+						onLoadComplete: function(){
+							hintElement.show();
+							$.publish('/nna/gallery/threesixty', ['Exterior']);
+						},
+						onRotate: function(){
+							hintElement.hide();
+							$.publish('/nna/gallery/exterior360Rotate');
+						},
+						onRotateEnd : function(frame, isAutoPlay) {
+							//hintElement.show();
+						}
+					});
+				}
+				
+				$.publish('/nna/effects/hideLoading');
+			}).fail(function(){
+				$.publish('/nna/effects/hideLoading');
+			});
+		},
+
+		hideExterior: function(){
+			this.threeSixtyWrapper.fadeOut(250);
+			this.backButton.fadeOut(250).removeClass("white");
+		},
+
+		// show interior panorama
+		showInterior: function(){
+			var self = this;
+
+			$.publish('/nna/effects/showLoading');
+
+			// wait for loader to be fully visible
+			setTimeout($.proxy(function(){
+				this.panoElement.show();
+				this.backButton.show();
+
+				this.gallery.iosSlider('destroy');
+				this.gallerySlideNav.iosSlider('destroy');
+
+				if(this.pano === undefined){
+					this.panoWrapper = this.panoElement.find('.pano_wrapper').eq(0);
+					this.pano = new NNA.Panorama(this.panoWrapper, {
+						onReady: function(){
+							$.publish('/nna/effects/hideLoading');
+							$.publish('/nna/gallery/threesixty', ['Interior']);
+						}
+					});
+				}
+			}, this), 250);
+		},
+
+		hideInterior: function(){
+			this.panoElement.fadeOut(250);
+			this.backButton.fadeOut(250);
+			this.initGallery();
+		},
+
+		// resize gallery elements
+		galleryResize: function(){
+			// dimensions
+			var containerWidth = $("#wrapper").width();
+			var containerHeight = $("#wrapper").height();
+			var backgroundWidth = 1280;
+			var backgroundHeight = 720;
+			var containerRatio = containerHeight / containerWidth;
+			var backgroundRatio = backgroundHeight / backgroundWidth;
+			var width, height, top, left;
+
+			// determine if cropping will be veritcal or horizontal
+			if(backgroundRatio > containerRatio){
+				// new dimensions
+				width = containerWidth;
+				height = (containerWidth * backgroundRatio);
+				left = 0;
+				top = (height - containerHeight) / -2;
+
+				// size and position poster image
+				$(".background img").css({
+					width: width + 'px',
+					height: height + 'px',
+					left: left + 'px',
+					top: top + 'px'
+				});
+			}else{
+				// new dimensions
+				width = (containerHeight / backgroundRatio);
+				height = containerHeight;
+				top = 0;
+				left = (width - containerWidth) / -2;
+
+				// size and position poster image
+				$(".background img").css({
+					width: width + 'px',
+					height: height + 'px',
+					left: left + 'px',
+					top: top + 'px'
+				});
+			}
+		}
+	});
+	
+})(NNA, jQuery);

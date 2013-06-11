@@ -1,0 +1,380 @@
+(function(NNA, $){
+	
+	NNA.PageController = Class.extend({
+		init: function(videoData, options){
+			// configurable options
+			this.options = {
+				restrictTabletOrientation: true,
+				modalTemplates: {
+					handraiser: 'modals/handraiser.html',
+					allFeatures: 'modals/all-feature.html',
+					panoInstructions: 'modals/pano-instructions.html',
+					disclaimer: 'modals/disclaimer.html'
+				},
+				backgroundAudio: {
+					track: null,
+					volume: 70
+				}
+			};
+			$.extend(true, this.options, options);
+
+			// class attributes
+			this.videoData = videoData;
+			this.audioMuted = false;			
+
+			// collect elements
+			this.bodyElement = $(document.body);
+			this.windowElement = $(window);
+			this.orientationMessage = $('#orientation_message');
+
+			// init
+			this.bindLinkTracking("cmp","cmp","sign_up");
+			this.nav = new NNA.Nav(this.videoData);
+			this.footer = new NNA.Footer();
+			this.modal = new NNA.Modal({ centerOnResize: !Modernizr.touch });
+			this.effects = new NNA.Effects();
+			this.audioEngine = new NNA.AudioEngine();
+			this.disclaimers = new NNA.Disclaimers($("body"));
+			this.tracker = new NNA.CRMTracker({
+				queuedMode: true,
+				queueInterval: 750
+			});
+			setTimeout(function(){
+				new NNA.BrowserUpgrade();
+			}, 1000);
+			this.attach();
+			this.windowAdjustment();
+			this.chromeDetect();
+			this.initSubscriptions();
+			this.startBackgroundAudio();
+			this.checkAudio();
+			this.pinterestUrl();
+			
+			debug.log('NNA.PageController: initialized');
+
+		},
+
+		// attach event handlers
+		attach: function(){
+			var self = this;
+
+			// orientation detection for tablets
+			if(Modernizr.touch && this.options.restrictTabletOrientation){
+				this.windowElement.on('orientationchange', function(e){
+					self.detectOrientation();
+				}).trigger('orientationchange');
+			}
+
+			
+			// all features modal delegate
+			this.bodyElement.on('click', '.all_features', function(e){
+				e.preventDefault();
+				self.showAllFeaturesModal();
+			});
+			// disclaimer modal delegate
+			this.bodyElement.on('click', '.microsite-disclaimer', function(e){
+				e.preventDefault();
+				self.showDisclaimerModal();
+			});			
+			
+			// Modal Deep Links
+			$(window).on("hashchange", function(e) {
+				self.openModalDeepLink();
+			});
+			$(window).trigger("hashchange");
+							
+			// window resize class
+			this.windowElement.resize($.throttle( 250, function(){
+				self.windowAdjustment();
+			}));
+
+			// CRM Placement Clicks
+			this.bodyElement.on('click', '#bottom_nav a, footer a', function(clickEvt){
+				// publish event
+				$.publish('/nna/crm/placement/bottom_nav',[clickEvt]);
+			});			
+			this.bodyElement.on('click', 'header a', function(clickEvt){
+				// publish event
+				$.publish('/nna/crm/placement/top_nav',[clickEvt]);
+			});
+		},
+
+		// initalize subscriptions the page controller is responsible for
+		initSubscriptions: function(){
+			$.subscribe('/nna/toggleAudio', $.proxy(this.toggleAudio, this));
+		},
+
+		// control mute and un mute of sound
+		toggleAudio: function(){
+			if(this.audioMuted) this.setAudio(true);
+			else this.setAudio(false);
+		},
+		
+		// Bind tracking Querystring to SignUp URL
+		bindLinkTracking: function(inBoundCampaignCodeKey,outBoundCampaignCodeKey,linkClass){
+			var trackingLink = $("a." + linkClass);
+			var currentTrackingHref = trackingLink.attr("href"); 				
+			var campaignCodeValue = this.getQueryStringByKeyName(inBoundCampaignCodeKey);
+			var campaignCodeCookie = NNA.Utils.getCookie(inBoundCampaignCodeKey);
+			
+			if(campaignCodeValue != "")
+			{
+				NNA.Utils.setCookie(inBoundCampaignCodeKey, campaignCodeValue, {expiryDays:0, path: '/'});											
+			}
+			else
+			{
+				if(campaignCodeCookie != null)
+				{
+					campaignCodeValue = NNA.Utils.getCookie(inBoundCampaignCodeKey);
+				}
+				else
+				{
+					campaignCodeValue = "";
+				}
+			}
+			if(campaignCodeValue != "")
+			{
+				if (currentTrackingHref.indexOf("?") >= 0)
+				{
+					currentTrackingHref = currentTrackingHref + "&" + outBoundCampaignCodeKey + "=" +campaignCodeValue;
+				}
+				else
+				{
+					currentTrackingHref = currentTrackingHref + "?" + outBoundCampaignCodeKey + "=" +campaignCodeValue;
+				}
+					
+				trackingLink.attr("href",currentTrackingHref);	
+			}			
+		},
+		
+		// GetQuery String Value By KeyName
+		getQueryStringByKeyName: function(KeyName){
+			  KeyName = KeyName.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+			  var regexS = "[\\?&]" + KeyName + "=([^&#]*)";
+			  var regex = new RegExp(regexS);
+			  var results = regex.exec(window.location.search);
+			  if(results == null)
+				return "";
+			  else
+				return decodeURIComponent(results[1].replace(/\+/g, " "));
+		},
+
+		// set audio true is on flase is off
+		setAudio: function(state){
+			if(state){
+				$.publish('/nna/audioEngine/unmute');
+				$.publish('/nna/audioToggled', [true]);
+				this.audioMuted = false;
+				NNA.Utils.setCookie('audioMuted', 'NO', {expiryDays:0, path: '/'});
+			}else{
+				$.publish('/nna/audioEngine/mute');
+				$.publish('/nna/audioToggled', [false]);
+				this.audioMuted = true;
+				NNA.Utils.setCookie('audioMuted', 'YES', {expiryDays:0, path: '/'});
+			}
+		},
+
+		// used to check the audio cookie on page load
+		checkAudio: function(){
+			var audioCookie = NNA.Utils.getCookie('audioMuted');
+			if(audioCookie === 'YES') this.setAudio(false);
+			else this.setAudio(true);
+		},
+
+		// init background audio track
+		startBackgroundAudio: function(){
+			if(this.options.backgroundAudio.track === null) return;
+			$.publish('/nna/audioEngine/updateDefaultPageBackgroundVolume', [this.options.backgroundAudio.volume]);
+			$.publish('/nna/audioEngine/cacheSound', ['background', this.options.backgroundAudio.track]);
+			$.publish('/nna/audioEngine/playPageBackgroundSoundById', ['background']);
+		},
+
+		// Open Modal on Deeplink
+		openModalDeepLink: function(){
+			var self = this,
+				hash = $.param.fragment();
+
+			switch (hash) {
+				case "join":
+					self.showHandraiserModal();
+					break;
+				case "all-features":
+					self.showAllFeaturesModal();
+					break;
+				default:
+					return false;
+			}
+		},
+
+		// detect device orientation
+		detectOrientation: function(){
+			var self = this;
+
+			// orientation works well on ipad
+			if(NNA.BROWSER.isIpad){
+				if(orientation === 0 || orientation === 180){
+					this.showOrientationMessage();
+				}else{
+					this.hideOrientationMessage();
+				}
+			}
+			// android is weird this workaround seems to work
+			else{
+				setTimeout(function(){
+					if(self.windowElement.width() < self.windowElement.height()){
+						self.showOrientationMessage();
+					}else{
+						self.hideOrientationMessage();
+					}
+				}, 300);
+			}
+		},
+
+		// show orientation message indicating landscape is only supported
+		showOrientationMessage: function(){
+			this.orientationMessage.show();
+		},
+
+		// hide the orientation message
+		hideOrientationMessage: function(){
+			this.orientationMessage.hide();
+		},		
+
+		// show the all features modal
+		showAllFeaturesModal: function(){
+			var self = this;
+			
+			// show modals loading indicator while fetching html
+			$.publish('/nna/modalShowLoading');
+			
+			// ajax request to get html for modal window and show
+			$.ajax({
+				url: NNA.PATHS.CONTEXT + this.options.modalTemplates.allFeatures
+			}).done(function(html){
+				var modalTemplate = $(html);
+
+				// generate chapter thumbnails for each of the videos
+				var chapterTemplate = modalTemplate.find('ul li:first').remove();
+				modalTemplate.find('ul').each(function(){
+					var videoId = $(this).data('video-id');
+					
+					// loop over timeline events for the appropriate video
+					for(var i = 0; i < self.videoData[videoId].timeline.length; i++){
+						// get event from timeline
+						var timelineEvent = self.videoData[videoId].timeline[i];
+
+						// for each chapter event we will create a nav item
+						if(timelineEvent.type === 'CHAPTER' || timelineEvent.type === 'MARKER'){
+							// create chapter nav element
+							var chapterElement = chapterTemplate.clone();
+
+							// update element with chapter data
+							chapterElement.find('a').data('chapter-id', timelineEvent['id']);
+							chapterElement.find('img').attr({ src: timelineEvent['thumbnail'], alt: timelineEvent['label'] });
+							chapterElement.find('span').html(timelineEvent['label']);
+
+							// append to nav
+							$(this).append(chapterElement);
+						}
+					}
+				});
+
+				// attach event handlers
+				modalTemplate.on('click', 'ul li a', function(e){
+					e.preventDefault();
+
+					var id = $(this).data('chapter-id');
+					var url = $(this).parents('ul').data('link');
+					var index = $(this).parents('li').index();
+					
+					$.publish('/nna/closeModal', [function(){
+						// redirect to correct page and deeplink to chapter 
+						if(window.location.href.indexOf(url) < 0){
+							// first chapter does not need deeplink param
+							if(index > 0)window.location.href = url + '?chapter=' + id;
+							else window.location.href = url;
+						}
+						// on current page just seek to chapter
+						else{
+							$.publish('/nna/videofeature/seekChapter', [id]);
+						}
+					}]);
+				});
+
+				// images to preload background and thumbnails
+				var preloadImages = ['<%= asset_path :images, "common/bg/modal.png" %>'];
+				modalTemplate.find('img').each(function(){
+					preloadImages.push($(this).attr('src'));
+				});
+
+				// preload images
+				NNA.Utils.preloadImages(preloadImages).done(function(){
+					// show modal
+					$.publish('/nna/openModal', [modalTemplate]);
+				});
+			}).fail(function(){
+				self.modal.close();
+				debug.log('NNA.PageController: error fetching modal.');
+			});
+		},
+		
+		// shows the disclaimer modal
+		showDisclaimerModal: function(){
+			var self = this;
+			
+			// show modals loading indicator while fetching html
+			$.publish('/nna/modalShowLoading');
+			
+			// ajax request to get html for modal window and show
+			$.ajax({
+				url: NNA.PATHS.CONTEXT + this.options.modalTemplates.disclaimer
+			}).done(function(html){
+				var modalTemplate = $(html);
+				
+				// preload images
+				NNA.Utils.preloadImages(['<%= asset_path :images, "common/bg/modal.png" %>']).done(function(){
+					// show modal
+					$.publish('/nna/openModal', [modalTemplate, function(){
+						new NNA.Handraiser();
+					}]);
+				});
+			}).fail(function(){
+				self.modal.close();
+				debug.log('NNA.PageController: error fetching modal.');
+			});
+		},		
+		
+		// detect browser window width
+		windowAdjustment: function(){
+			var windowWidth = this.windowElement.width();
+			
+			if(windowWidth <= 1250){
+				this.bodyElement.removeClass("win_1280").removeClass("win_1920 win_1024").addClass("win_1024");
+			}
+			if(windowWidth > 1250 && windowWidth < 1920){
+				this.bodyElement.removeClass("win_1024").removeClass("win_1920 win_1280").addClass("win_1280");
+			}
+			if(windowWidth >= 1890){
+				this.bodyElement.removeClass("win_1024").removeClass("win_1280 win_1920").addClass("win_1920");
+			}
+		},
+		
+		// detect if browser is chrome
+		chromeDetect: function(){
+			var isChrome = window.chrome;
+			
+			if(isChrome){
+				this.bodyElement.addClass("chrome");
+			}
+		},
+		
+		// update Pinterest url
+		pinterestUrl: function(){
+			var baseUrl = "http://pinterest.com/pin/create/button/";
+			var currentUrl = "?url=" + window.location.href;
+			var imageUrl = "&media=http://www.infinitiusa.com/all-new-q50/image.jpg";
+			$('footer.main ul li a.pintrest').attr("href", baseUrl + currentUrl + imageUrl);
+		}
+	});
+	
+})(NNA, jQuery);

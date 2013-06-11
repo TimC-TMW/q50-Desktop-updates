@@ -1,0 +1,340 @@
+(function(NNA, $){
+
+	NNA.PageControllers.Home = NNA.PageController.extend({
+		init: function(videoData, options){
+			// configurable options
+			options = $.extend(true, {
+			}, options);
+			this._super(videoData, options);
+
+			// class attributes
+			this.width = 0;
+			this.height = 0;
+			this.top = 0;
+			this.left = 0;
+			this.boxHeight = 0;
+			this.boxWidth = 0;
+			this.boxTop = 0;			
+			
+			// init
+			var self = this;
+
+			$.publish('/nna/effects/showLoading');
+			self.attachHome();
+			self.homeResize();
+			if(!/Android|webOS|iPhone|iPod|iPad|BlackBerry|Silk-Accelerated|Kindle/i.test(navigator.userAgent)){
+				self.introVideo();
+			}else{
+				$.publish('/nna/effects/hideLoading');
+				self.loadHomeElements();
+			}
+
+			this.initMute();
+		},
+
+		// attach event handlers
+		attachHome: function(){
+			var self = this;
+
+			// resize handler
+			this.windowElement.on("resize", $.proxy(this.homeResize, this));
+			
+			//Disable logo click
+			this.bodyElement.on('click', '.logo', function(e){
+				e.preventDefault();
+			});
+		},
+		
+		introVideo: function(){
+			var self = this;
+			
+			var introVideo = _V_("home-intro-video", {techOrder:["html5", "flash"]});
+
+			//INIT VIDEOS
+			introVideo.ready(function(){loadVideo(this);});
+			
+			function loadVideo(videoPlayer){
+				var containerId = videoPlayer.el.id;
+				$.publish('/nna/effects/hideLoading');
+				//AUTO PLAY
+				videoPlayer.play();
+				
+				//ONLOAD RESIZE  
+				videoPlayer.size(self.width, self.height);
+				$("#" + containerId).css({
+					top: self.top + 'px',
+					left: self.left + 'px'
+				});
+				
+				//ONRESIZE
+				$(window).resize(function(){
+					videoPlayer.size(self.width, self.height);
+					$("#" + containerId).css({
+						top: self.top + 'px',
+						left: self.left + 'px'
+					});
+				});
+				
+				//VIDEO ENDED
+				videoPlayer.addEvent("ended", function(){
+					$("#home-intro-video").hide();
+					self.loadHomeElements();
+				});
+				
+				$.subscribe('/nna/modalShowLoading', function(){		
+					videoPlayer.pause();
+				});
+				
+				$.subscribe('/nna/modalCloseComplete', function(){		
+					videoPlayer.play();
+				});
+			}
+		},
+		
+		// show home elements after video is done
+		loadHomeElements: function(){
+			var self = this;
+			
+			$("#page_home header.main a.logo, #page_home a.sign_up, #page_home header.main a.build, #feature_car, section#home h1, section#home h2, section#home .background img").fadeIn(750);
+			$("#page_home header.main a.sign_up").hide();
+			$(".feature-box").children().css({
+				opacity: 0
+			});
+			$("li.feature-box").css({
+				marginTop: "95px"
+			}).show();
+			$(".video-js").hide();//Hide video till poster image fades in
+			$("li.feature-box:nth-child(1)").animate({marginTop:"0"}, 950, "easeInOutQuad").children().delay(200).animate({opacity:1}, 750);
+			$("li.feature-box:nth-child(2)").delay(250).animate({marginTop:["0", "easeInOutQuad"]}, 950).children().delay(450).animate({opacity:1}, 750);
+			$("li.feature-box:nth-child(3)").delay(500).animate({marginTop:["0", "easeInOutQuad"]}, 950, function(){
+				if(!/Android|webOS|iPhone|iPod|iPad|BlackBerry|Silk-Accelerated|Kindle/i.test(navigator.userAgent)){
+					$("#home-design-video, #home-performance-video, #home-technology-video").show();//Show video after poster image fades in
+					self.initFeatureVideos();
+				}
+			}).children().delay(700).animate({opacity:1}, 750);
+
+			// start audio playing
+			this.options.backgroundAudio = {
+				track: '<%= asset_path :images, "design/music/design.mp3" %>'
+			};
+			this.startBackgroundAudio();
+		},
+		
+		// start playing feature videos (design, performance, technology)
+		initFeatureVideos: function(){
+			var self = this;
+			var designVideo = _V_("home-design-video", {techOrder:["html5", "flash"]});
+			var performanceVideo = _V_("home-performance-video", {techOrder:["html5", "flash"]});
+			var technologyVideo = _V_("home-technology-video", {techOrder:["html5", "flash"]});
+			var currentVideo = designVideo;
+			var boxHover = false;
+			var introComplete = false;
+			var hoverTimeout = null;
+			
+			//INIT VIDEOS
+			designVideo.ready(function(){loadVideo(this);});
+			performanceVideo.ready(function(){loadVideo(this);});
+			technologyVideo.ready(function(){
+				loadVideo(this); 
+				playVideo(currentVideo, currentVideo.el.id);
+			});
+		
+			function loadVideo(videoPlayer){
+				var containerId = videoPlayer.el.id;
+						
+				//ONLOAD RESIZE  
+				videoPlayer.size(self.boxHeight*1.8, self.boxHeight);
+				$("#" + containerId).css({
+					left: '-' + ((self.boxHeight*1.8)-self.boxWidth)/2 + 'px'
+				});
+				
+				//ONRESIZE
+				$(window).resize(function(){
+					videoPlayer.size(self.boxHeight*1.8, self.boxHeight);
+					$("#" + containerId).css({
+						left: '-' + ((self.boxHeight*1.8)-self.boxWidth)/2 + 'px'
+					});
+				});
+				
+				//VIDEO ENDED
+				videoPlayer.addEvent("ended", function(){
+					if(introComplete === false || boxHover === false){
+						$("#" + containerId).siblings("img, h3").fadeIn("Fast");//Show Poster Image	
+					}
+					if(introComplete === false){
+						introLoop(videoPlayer, containerId);//Switch videos
+					}
+					if(boxHover === true){
+						videoPlayer.currentTime(0).play();//Play the video again
+					}
+				});
+				
+				//VIDEO STARTS PLAYING
+				videoPlayer.addEvent("timeupdate", function(){videoStart(videoPlayer, containerId);});
+				
+				//VIDEO HOVER
+				$("#" + containerId).parent().on('mouseenter', function(){
+					hoverTimeout = setTimeout(function(){
+						boxHover = true;
+						introComplete = true;
+						if(currentVideo != videoPlayer){
+							var stopVideo = currentVideo;
+							currentVideo = videoPlayer;//Reset current video
+							$("#" + stopVideo.el.id).siblings("img, h3").show();//Show Poster Image
+							stopVideo.currentTime(stopVideo.duration());//End current video
+							playVideo(currentVideo, currentVideo.el.id);
+						}
+						if(currentVideo == videoPlayer && currentVideo.currentTime() <= 0){
+							playVideo(currentVideo, currentVideo.el.id);
+						}
+					}, 300);
+				}).on('mouseleave', function(){
+					boxHover = false;
+					clearTimeout(hoverTimeout);
+				});
+			}
+			
+			function videoStart(video, videoId){
+				if(video.currentTime() > 0){
+					$("#" + videoId).siblings("a").removeClass("loading");
+					$("#" + videoId).siblings("a").addClass("loaded");
+				}
+			}
+			
+			function introLoop(video, videoId){
+				//CHANGE CURRENT VIDEO
+				if(video == designVideo && boxHover === false){
+					currentVideo = performanceVideo;
+				}
+				if(video == performanceVideo && boxHover === false){
+					currentVideo = technologyVideo;
+				}
+				if(video == technologyVideo && boxHover === false){
+					introComplete = true;
+				}
+				if(introComplete === false){
+					playVideo(currentVideo, currentVideo.el.id);
+				}
+			}
+			
+			function playVideo(video, videoId){
+				$("#" + videoId).siblings("a:not(.loaded)").addClass("loading");//Show loader first time
+				$("#" + videoId).siblings("h3").hide().siblings("img").fadeOut("Fast");//Hide Poster Image
+				video.currentTime(0).play();
+			}
+		},
+
+		// resize elements
+		homeResize: function(){
+			// dimensions
+			var self = this;
+			var containerWidth = $("#wrapper").width();
+			var containerHeight = $("#wrapper").height();
+			var backgroundWidth = 1280;
+			var backgroundHeight = 720;
+			var containerRatio = containerHeight / containerWidth;
+			var backgroundRatio = backgroundHeight / backgroundWidth;
+
+			// determine if cropping will be veritcal or horizontal
+			if(backgroundRatio > containerRatio){
+				// new dimensions
+				self.width = containerWidth;
+				self.height = (containerWidth * backgroundRatio);
+				self.left = 0;
+				self.top = (self.height - containerHeight) / -2;
+			}else{
+				// new dimensions
+				self.width = (containerHeight / backgroundRatio);
+				self.height = containerHeight;
+				self.top = 0;
+				self.left = (self.width - containerWidth) / -2;
+			}
+			
+			// size and position poster image
+			$(".background img").css({
+				width: self.width + 'px',
+				height: self.height + 'px',
+				left: self.left + 'px',
+				top: self.top + 'px'
+			});
+		
+			// size and position boxes
+			self.boxWidth = Math.round(self.width*0.2398);
+			self.boxHeight = Math.round(self.height*0.408333);
+			var boxGap = Math.round(self.width*0.01171875);
+			var topGapSpace = Math.round((self.height-containerHeight)/2);
+			
+			// position boxes from the top
+			if((self.height*0.158333)-(topGapSpace) > (containerHeight*0.15)){
+				self.boxTop = (self.height*0.158333)-(topGapSpace);
+			}else{
+				self.boxTop = (containerHeight*0.15);
+			}
+			
+			// size boxes width/height/side gaps
+			$(".feature-box").css({
+				width: self.boxWidth + 'px',
+				height: self.boxHeight + 'px',
+				top: self.boxTop + 'px',
+				left: (containerWidth/2)-(self.boxWidth/2) + 'px'
+			});
+			$(".feature-box:first").css({
+				left: ((containerWidth/2)-(self.boxWidth+(self.boxWidth/2)))-(boxGap) + 'px'
+			});
+			$(".feature-box:last").css({
+				left: (containerWidth/2)+(self.boxWidth/2)+(boxGap) + 'px'
+			});
+			
+			// position Links
+			var linkPosHor = ((self.boxWidth/2)*3)+boxGap;
+			var linkPosVer = self.boxTop + self.boxHeight;
+			$(".sign_up").css({
+				top: linkPosVer + 'px',
+				marginLeft: '-' + linkPosHor + 'px'
+			});
+			$(".build").css({
+				top: linkPosVer + 'px',
+				marginRight: '-' + linkPosHor + 'px'
+			});
+
+			// sound/mute button
+			var sound = $(".sound");
+			sound.css({
+				left: (containerWidth/2)+(self.boxWidth/2)+ boxGap + self.boxWidth - sound.width() + 'px'
+			});
+
+			// size and position car
+			var carWidth = self.width*1.0;
+			var carHeight = self.height*0.4569444;
+			
+			$("#feature_car").css({
+				width: carWidth + 'px',
+				height: carHeight + 'px',
+				left: (containerWidth/2)-(carWidth/2) + 'px',
+				top: (self.height*0.4569444)-(topGapSpace) + 'px'
+			});
+			
+			// position h1
+			$("section#home h1").css({
+				top: (carHeight*0.82) + ((self.height*0.4569444)-(topGapSpace)) + 'px'
+			});
+		},
+
+		initMute: function(){
+			var sound = $('.sound');
+
+			sound.on('click touchstart', function(e){
+				e.preventDefault();
+				$.publish('/nna/toggleAudio');
+			});
+
+			$.subscribe('/nna/audioToggled', function(e, state){
+				if(state) sound.removeClass('mute');
+				else sound.addClass('mute');
+			});
+
+			if(this.audioMuted) sound.addClass('mute');
+		}
+	});
+	
+})(NNA, jQuery);

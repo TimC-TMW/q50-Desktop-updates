@@ -1,0 +1,97 @@
+(function(NNA, $) {
+	NNA.BrowserUpgrade = Class.extend({
+		init : function(options) {
+			// configurable options
+			this.options = {
+				modalTemplates : {
+					upgrade : 'modals/browser-update.html',
+					flash : 'modals/flash-enable.html'
+				},
+				cookieName : 'q50-microsite-ie-upgrade',
+				cookieDaysToLive : 7
+			};
+			$.extend(true, this.options, options);
+
+			// class attributes
+			this.upgrade = false;
+
+			// init
+			if (!NNA.Utils.getCookie(this.options.cookieName)) {
+				this.initUpgradeBrowserModal();
+			}
+			
+			if(!/Android|webOS|iPhone|iPod|iPad/i.test(navigator.userAgent) && flashBlockDetect() > 0 && this.upgrade !== true){
+				this.flashDetect();
+			}
+			
+			if ($('html').hasClass('ie8') && flashBlockDetect() > 0 && this.upgrade !== true) {
+				this.initEnableFlashModal();
+			}
+			debug.log('NNA.BrowserUpgrade: initialized');
+		},
+
+		initUpgradeBrowserModal : function() {
+			var self = this;
+			var ie7 = $('html').hasClass('ie7');
+			var ie8 = $('html').hasClass('ie8');
+			var compatibilityMode = 0;
+			var browserVersion = parseInt($.browser.version, 10);
+
+			if (document.documentMode) {
+				compatibilityMode = document.documentMode;
+			}
+
+			if (ie7 || ie8 || document.documentMode !== undefined && compatibilityMode != browserVersion) {
+				this.upgrade = true;
+				// show modals loading indicator while fetching html
+				$.publish('/nna/modalShowLoading');
+				// ajax request to get html for modal window and show
+				$.ajax({
+					url : NNA.PATHS.CONTEXT + this.options.modalTemplates.upgrade
+				}).done(function(html) {
+					var modalTemplate = $(html);
+
+					// preload images
+					NNA.Utils.preloadImages(['<%= asset_path :images, "common/bg/modal.png" %>']).done(function() {
+						// show modal
+						$.publish('/nna/openModal', [modalTemplate,
+						function() {
+							NNA.Utils.setCookie(self.options.cookieName, true, {
+								expiryDays : self.options.cookieDaysToLive
+							});
+						}]);
+					});
+				}).fail(function() {
+					self.modal.close();
+					debug.log('NNA.PageController: error fetching modal.');
+				});
+			}
+		},
+
+		flashDetect : function() {
+			if (flashBlockDetect() > 0) {
+				$('html').addClass('no-flash');
+			}
+		},
+
+		initEnableFlashModal : function() {
+			var self = this;
+			// show modals loading indicator while fetching html
+			$.publish('/nna/modalShowLoading');
+			// ajax request to get html for modal window and show
+			$.ajax({
+				url : NNA.PATHS.CONTEXT + this.options.modalTemplates.flash
+			}).done(function(html) {
+				var modalTemplate = $(html);
+
+				// preload images
+				NNA.Utils.preloadImages(['<%= asset_path :images, "common/bg/modal.png" %>']).done(function() {
+					// show modal
+					$.publish('/nna/openModal', [modalTemplate]);
+				});
+			}).fail(function() {
+				debug.log('NNA.PageController: error fetching modal.');
+			});
+		}
+	});
+})(NNA, jQuery);

@@ -1,0 +1,123 @@
+(function(NNA, $){
+
+	NNA.PageControllers.Colors = NNA.PageController.extend({
+		init: function(videoData, options){
+			// configurable options
+			//setting data.q50.en.cfg. to data.q50.[I18.locale.to_s].cfg. works but requries all translations to be in a single data file
+			options = $.extend(true, {
+				defaultExteriorColor: '<%= data.q50.en.cfg.model.defaults.exterior_color %>',
+				exteriorStartFrame: 5
+			}, options);
+			this._super(videoData, options);
+
+			// class attributes
+			this.threeSixty = null;
+			this.threeSixtyWrapper = $('#threesixty').show();
+			this.threeSixtyElement = this.threeSixtyWrapper.find('.threesixty');		
+			this.key = this.options.defaultExteriorColor;
+
+			// init only after first/default set of images have been loaded
+			var self = this;
+			$.publish('/nna/effects/showLoading');
+			NNA.Utils.preloadImages(this.getImages(this.key)).done(function(){
+				self.initSwatches();
+				$.publish('/nna/effects/hideLoading');
+			});
+
+			// tracking for loading of color page
+			$.publish('/nna/colors/load');
+
+			debug.log('NNA.PageControllers.Colors: initialized');
+		},
+
+		// set up the color swatch functionality
+		initSwatches: function(){
+			var self = this;
+			var swatchList = $('#content_colors ul.swatches');
+
+			// event handlers for selecting and mouse interaction with swatches
+			swatchList.on('click', 'li', function(e){
+				var swatch = $(this);
+				self.key = $(this).attr('data-id');
+				var images = swatchList.find('img')
+				for(i = 0; i < images.length; i++){
+					unselected = $(images[i]).attr('src');
+					resetpath = unselected.replace("_s.png",".png");
+					$(images[i]).attr('src', resetpath);
+				};
+				swatch.addClass('selected')
+				swatch.siblings().removeClass('selected');
+				var path = swatch.children().attr('src');
+				var selected = path.replace(".png","_s.png");
+				swatch.children().attr('src', selected);
+				self.showThreesixty(self.key, true);
+			}).on('mouseenter', 'li', function(e){
+				var swatch = $(this);
+				var label = swatch.data('label');
+				var toUpdate = swatch.parent().prev().find('span');
+				toUpdate.html(label);
+			}).on('mouseleave', 'li', function(e){
+				var swatch = $(this);
+				var selected = swatch.parent().children('.selected');
+				var toUpdate = swatch.parent().prev().find('span');
+				if(selected.length > 0) toUpdate.html(selected.data('label'));
+				else toUpdate.html('');
+			});
+
+			// set initial state with defualt swatch selected
+			swatchList.find('li[data-id=' + this.key + ']')
+			.trigger('mouseenter')
+			.trigger('click');
+		},
+
+		// generate array of images for the passed in color
+		getImages: function(key){
+			var images = [];
+			for(var i = 1; i < 9; i++){
+				var index = (i < 9) ? "0"+i : i;
+				var path = '<%= asset_path :images, "colors/exterior/' + key + '/" %>' + index + '.jpg';
+				images.push(path);
+			}
+			return images;
+		},
+
+		// show requested 360 using color id
+		showThreesixty: function(key, update){
+			var self = this;
+			var images = this.getImages(key);
+			var hintElement = this.threeSixtyWrapper.find('.hint');
+
+			// be sure images are all loaded before updating 360
+			NNA.Utils.preloadImages(images).done(function(){
+				// updating 360 it has already been initialized
+				if(self.threeSixty !== null){
+					$.publish('/nna/colors/updateThreeSixty');
+					self.threeSixty.updateThreeSixty(images);
+				}
+				// 360 has yet to be initialized
+				else{
+					// init threesixty
+					self.threeSixtyElement.threesixty({
+						useBuiltInLoader: false,
+						imageList: images,
+						width: 1280,
+						height: 720,
+						frameSteps: 50,
+						startFrame : self.options.exteriorStartFrame,
+						loadSpinnerHTML: '<div></div>',
+						reverse: false,
+						redrawOnResize: true,
+						parentElement: $('#wrapper'),
+						onRotate: function(){
+							$.publish('/nna/colors/rotate');
+						}
+					});
+
+					// store the 360 so it can be interacted with
+					self.threeSixty = self.threeSixtyElement.data('ThreeSixty');
+				}
+			});
+		}
+	});
+	
+})(NNA, jQuery);

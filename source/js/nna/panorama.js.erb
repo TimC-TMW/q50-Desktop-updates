@@ -1,0 +1,119 @@
+(function(NNA, $){
+	
+	NNA.Panorama = Class.extend({
+		init: function(container, options){
+			// configurable options
+			this.options = {
+				panoSceneNames: { '0': 'Front', '1': 'Back' },
+				krpanoPackagePath: '<%= asset_path :images, "gallery/krpano" %>',
+				xml: 'tour.xml',
+				crmPanoLoaded: null,
+				crmPanoInteracted: null,
+				modalTemplates: { instructions: 'modals/pano-instructions.html' },
+				onReady: $.noop()
+			};
+			$.extend(true, this.options, options);
+
+			// class attributes
+			this.containerElement = $(container);
+			this.panoElement = this.containerElement.find('.pano');
+			this.welcome = this.containerElement.find(".welcome_screen");
+			this.help = this.containerElement.find(".help_screen");
+			this.pano = null;
+			this.currentSceneIndex = 0;
+			this.scenesViewed = {};
+			this.scenesInteracted = {};
+			
+			// init
+			this.attach();
+			this.pano = new NNA.PanoramaViewer(this.panoElement, this.options.krpanoPackagePath, {
+				xml: this.options.xml
+			});
+		},
+
+		attach: function() {
+			// close welcome when clicked
+			this.containerElement.on('click', '.welcome_screen', $.proxy(function(e){
+				e.preventDefault();
+				this.onPanoMouseDown();
+			}, this));
+
+			// help handler
+			this.containerElement.on('click', '.help', $.proxy(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				this.showInstructionsModal();
+			}, this));
+
+			// subscriptions
+			$.subscribe('/nna/panoramaviewer/startupComplete', $.proxy(this.onPanoReady, this));
+			$.subscribe('/nna/panoramaviewer/loadedScene', $.proxy(this.onLoadedScene, this));
+			$.subscribe('/nna/panoramaviewer/loadingScene', $.proxy(this.onLoadingScene, this));
+			$.subscribe('/nna/panoramaviewer/mousedown', $.proxy(this.onPanoMouseDown, this));
+		},
+		
+		onPanoReady : function(e, panoId) {
+			if(this.pano && this.pano.panoId == panoId) {
+				//$.publish(NNA.TC.CRM_TRACK_EVENT, [this.crmPanoLoaded, {row: this.options.panoSceneNames[this.currentSceneIndex]}]);
+				this.scenesViewed[this.currentSceneIndex] = true;
+				this.welcome.show();
+				if(typeof this.options.onReady === 'function') this.options.onReady();
+			}
+		},
+		
+		onLoadedScene: function(e, panoId) {
+			if(this.pano && this.pano.panoId == panoId) {
+				if(!this.scenesViewed[this.currentSceneIndex]) {
+					//$.publish(NNA.TC.CRM_TRACK_EVENT, [this.crmPanoLoaded, {row: this.options.panoSceneNames[this.currentSceneIndex]}]);
+					this.scenesViewed[this.currentSceneIndex] = true;
+				}
+			}
+		},
+
+		onLoadingScene: function(e, panoId, sceneIndex, fromInternalLoad) {
+			if(this.pano && this.pano.panoId == panoId) {
+				this.currentSceneIndex = sceneIndex;
+			}
+		},
+
+		onPanoMouseDown: function(e, panoId) {
+			if(this.pano && this.pano.panoId == panoId) {
+				if(!this.scenesInteracted[this.currentSceneIndex]) {
+					//$.publish(NNA.TC.CRM_TRACK_EVENT, [this.crmPanoInteracted, {row: this.options.panoSceneNames[this.currentSceneIndex]}]);
+					this.scenesInteracted[this.currentSceneIndex] = true;
+				}
+			}
+			this.welcome.hide();
+			this.help.show();
+		},
+
+		// show panorama instructions
+		showInstructionsModal: function(){
+			var self = this;
+			
+			// show modals loading indicator while fetching html
+			$.publish('/nna/modalShowLoading');
+			
+			// ajax request to get html for modal window and show
+			$.ajax({
+				url: NNA.PATHS.CONTEXT + this.options.modalTemplates.instructions
+			}).done(function(html){
+				var modalTemplate = $(html);
+				$.publish('/nna/openModal', [modalTemplate]);
+			}).fail(function(){
+				self.modal.close();
+				debug.log('NNA.PageController: error fetching modal.');
+			});
+		},
+
+		destroy : function(){
+			this.pano.destroy();
+			this.pano = null;
+			this.currentSceneIndex = 0;
+			this.scenesViewed = {};
+			this.scenesInteracted = {};
+			$.unsubscribe("/nna/pano/startupComplete", $.proxy(this.onPanoReady, this));
+		}
+	});
+
+})(NNA, jQuery);

@@ -1,0 +1,227 @@
+(function($) {
+	// set up the NNA namespace
+	NNA = {
+		PATHS: {},
+		GLOBALS: {},
+		TC: {},
+		BROWSER: {},
+		PRELOAD: [],
+		PageControllers: {}
+	};
+	
+	// configure paths
+	NNA.PATHS.BASE = 'http://' + window.location.host;
+	NNA.PATHS.CONTEXT = ''; // default is root, can be set via 'contextPath' query parameter
+	NNA.PATHS.JSDIR = ''; // default is root, can be set via 'contextPath' query parameter	
+
+	// configure globals
+	NNA.GLOBALS.LANG_CODE = $('html').attr('lang') || 'en'; // defaulting to 'en' if lang isn't available
+
+	// configure tracking
+	NNA.TC.CRM_TRACK_EVENT = '/nna/trackEvent'; // topic constants(TC) for pubsub
+	
+	// browser detection
+	NNA.BROWSER.isIphone = (navigator.userAgent.match(/iPhone/i) != null || navigator.userAgent.match(/iPod/i) != null);
+	NNA.BROWSER.isIpad =  navigator.userAgent.match(/iPad/i) != null;
+	NNA.BROWSER.isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/i) != null;
+	NNA.BROWSER.isAndroid = navigator.userAgent.toLowerCase().indexOf('android"=') > -1;
+	NNA.BROWSER.isSupportedMobile = function() { return Modernizr.mq('only screen and (min-device-width: 320px) and (max-device-width: 480px)');};
+	NNA.BROWSER.isOldIE = $.browser.msie && parseInt($.browser.version,10) < 9 || false; // ie8 and lower
+
+	// configure images preloaded before page is displayed
+	NNA.PRELOAD = [
+		'<%= asset_path :images, "common/icon/loader.gif" %>',
+		'<%= asset_path :images, "common/bg/loading.png" %>',
+		'<%= asset_path :images, "common/infiniti-logo.png" %>',
+		'<%= asset_path :images, "common/header-title.png" %>',
+		'<%= asset_path :images, "common/bg/sign-up.png" %>',
+		'<%= asset_path :images, "common/bg/nav-main.png" %>',
+		'<%= asset_path :images, "common/bg/nav-main-li-sprite.png" %>',
+		'<%= asset_path :images, "common/icon/sprite.png" %>',
+		'<%= asset_path :images, "common/bg/scrub.png" %>',
+		'<%= asset_path :images, "common/bg/scrub-chapter.png" %>',
+		'<%= asset_path :images, "common/icon/scrub-indicator-sprite.png" %>',
+		'<%= asset_path :images, "common/bg/black-30.png" %>',
+		'<%= asset_path :images, "common/icon/social-sprite.png" %>',
+		'<%= asset_path :images, "common/icon/arrow-previous.png" %>',
+		'<%= asset_path :images, "common/icon/arrow-next.png" %>'
+	];
+
+	// used to initialize pages basically a domready with a preload
+	NNA.pageInit = function(onComplete){
+		$(function(){
+			NNA.Utils.preloadImages(NNA.PRELOAD).done(function(images){
+				$('html').removeClass('page-loading');
+				if(typeof onComplete === 'function') onComplete();
+			}).fail(function(image){
+				debug.log('PRELOAD FAILED: ' + image);
+			});
+		});
+	};
+	
+	// holds useful functions used throughout the framework. All methods are static.
+	NNA.Utils = {
+		// safely grabs a property using a path
+		getSafeProperty: function(path){
+			
+			var keys      = path.split(".");
+			var length    = keys.length;
+			var parentObj = window;
+			var prop      = "";
+			
+			for(var i=0; i<length; i++){
+				var key = keys[i];
+				if(key in parentObj){
+					//since it's the last key, this is where the prop will come from
+					if(i == length-1){
+						prop = parentObj[key];
+					}
+					//use prop as the parent object until we reach the last prop
+					else{
+						parentObj = parentObj[key];
+					}
+				}else{ break; }
+			}
+			return prop;
+		},
+		
+		// preload a set of images based on an array of image paths.
+		// utilizesjQuery's Deferred Object
+		preloadImages: function(images){
+			var deferred = $.Deferred();
+
+			if(images.length > 0) {
+				var imagesLoaded = 0;
+
+				images = images.slice(0);
+				$.each(images, function(index, item){
+					var img = new Image();
+					
+					$(img).load(function(){
+						imagesLoaded++;
+						images[index] = this;
+						if(imagesLoaded >= images.length) deferred.resolve(images);
+						else deferred.notify(imagesLoaded / images.length);
+					}).error(function(){
+						deferred.reject(this.src);
+					})[0].src = item;
+				});
+			}else{
+				deferred.resolve();
+			}
+			
+			return deferred.promise();
+		},
+
+		// executing a function by name
+		// http://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string
+		executeFunctionByName: function(functionName, context /*, args */){
+			var args = Array.prototype.slice.call(arguments).splice(2);
+			var namespaces = functionName.split(".");
+			var func = namespaces.pop();
+			for(var i = 0; i < namespaces.length; i++){
+				context = context[namespaces[i]];
+			}
+			return context[func].apply(this, args);
+		},
+
+		// prevent text selection when clicking an DOM element rapidly.
+		preventSelection: function(container){
+			if (typeof container !== undefined) {
+				$(container).css('MozUserSelect', 'none').bind('selectstart', function(e) { e.preventDefault(); });
+			}
+		},
+
+		// set cookie helper.
+		setCookie: function(name, value, opts) {
+			
+			var cookieStr = name + '=' + escape(value);
+			
+			var options = {
+				expiryDays: 365,
+				path: NNA.PATHS.CONTEXT
+			};
+			$.extend(true, options, opts);
+			
+			if(options.expiryDays !== 0) {
+				
+				var date = new Date();
+				
+				date.setDate(date.getDate() + options.expiryDays);
+				cookieStr += '; expires=' + date.toGMTString();
+			}
+			
+			document.cookie = cookieStr + '; path=' + options.path;
+		},
+		
+		// get cookie helper
+		getCookie: function(name){
+			var results = null;
+
+			results = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+			return results ? unescape(results[2]) : null;
+		},
+		
+		// delete cookie helper.
+		deleteCookie: function(name){
+			this.setCookie(name, '', {expiryDays: -1});
+		},
+		
+		// retrieve the value of parameter from window.location
+		getParam: function(name){
+			return NNA.Utils.getParamFromString(window.location.href, name);
+		},
+		
+		// get a parameter from a string
+		getParamFromString: function(aString, name){
+			name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			var regexS = "[\\?&]"+name+"=([^&#]*)";
+			var regex = new RegExp( regexS );
+			var results = regex.exec( aString );
+			if(results == null) return "";
+			else return results[1];
+		},
+		
+		// format number as currency
+		formatCurrency: function(num) {
+			var parts = num.toString().split('.');
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			return parts.join('.');
+		}
+		
+	};
+	
+	// bootstrap
+	// config parameters via query string. See http://mangstacular.blogspot.ca/2011/12/javascript-script-with-query-string.html
+	var scriptElement = (function deriveScriptElement(){
+		var id = 'bootstrap_dummy_script';
+		document.write('<script id="' + id + '"></script>');
+		var dummyScript = document.getElementById(id);
+		var element = dummyScript.previousSibling;
+		dummyScript.parentNode.removeChild(dummyScript);
+		return element;
+	}());
+	
+	// check if contextPath is available
+	if(NNA.Utils.getParamFromString(scriptElement.src, 'contextPath')) NNA.PATHS.CONTEXT = decodeURIComponent(NNA.Utils.getParamFromString(scriptElement.src, 'contextPath'));
+	if(NNA.Utils.getParamFromString(scriptElement.src, 'contextPath')) NNA.PATHS.JSDIR = decodeURIComponent(NNA.Utils.getParamFromString(scriptElement.src, 'jsDir'));
+
+	// check for 'jsDebug' query parameter first and set corresponding cookie.
+	if(NNA.Utils.getParam('jsDebug')) NNA.Utils.setCookie('jsDebug', NNA.Utils.getParam('jsDebug'), {expiryDays: 0});
+	
+	// set debug level based on cookie value. Valid values are 0-5, see http://benalman.com/projects/javascript-debug-console-log/ 
+	if(NNA.Utils.getCookie('jsDebug')) debug.setLevel(parseInt(NNA.Utils.getCookie('jsDebug'),10));
+	else debug.setLevel(0);
+
+	// polyfill for requestanimationframe
+	window.requestAnimFrame = (function(){
+		return  window.requestAnimationFrame   || 
+			window.webkitRequestAnimationFrame || 
+			window.mozRequestAnimationFrame    || 
+			window.oRequestAnimationFrame      || 
+			window.msRequestAnimationFrame     || 
+			function(callback){
+				window.setTimeout(callback, 1000 / 60);
+			};
+    })();
+})(jQuery);
