@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'MetaPro';
+    src: url('MetaWebPro-Normal.eot');
+    src: url('MetaWebPro-Normal.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-Normal.woff') format('woff'),
+         url('MetaCompPro-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MetaPro';
+    src: url('MetaWebPro-NormalIta.eot');
+    src: url('MetaWebPro-NormalIta.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-NormalIta.woff') format('woff'),
+         url('MetaCompPro-NormalIta.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MetaPro';
+    src: url('MetaWebPro-Medium.eot');
+    src: url('MetaWebPro-Medium.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-Medium.woff') format('woff'),
+         url('MetaCompPro-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MetaPro';
+    src: url('MetaWebPro-MediumIta.eot');
+    src: url('MetaWebPro-MediumIta.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-MediumIta.woff') format('woff'),
+         url('MetaCompPro-MediumIta.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* declared again for IE 6 to 8 with unique font family names */
+@font-face {
+    font-family: 'MetaPro-n4';
+    src: url('MetaWebPro-Normal.eot');
+    src: url('MetaWebPro-Normal.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-Normal.woff') format('woff'),
+         url('MetaCompPro-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MetaPro-i4';
+    src: url('MetaWebPro-NormalIta.eot');
+    src: url('MetaWebPro-NormalIta.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-NormalIta.woff') format('woff'),
+         url('MetaCompPro-NormalIta.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MetaPro-n6';
+    src: url('MetaWebPro-Medium.eot');
+    src: url('MetaWebPro-Medium.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-Medium.woff') format('woff'),
+         url('MetaCompPro-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MetaPro-i6';
+    src: url('MetaWebPro-MediumIta.eot');
+    src: url('MetaWebPro-MediumIta.eot?#iefix') format('embedded-opentype'),
+         url('MetaWebPro-MediumIta.woff') format('woff'),
+         url('MetaCompPro-MediumIta.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
