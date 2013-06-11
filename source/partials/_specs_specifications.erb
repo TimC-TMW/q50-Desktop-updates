@@ -1,0 +1,130 @@
+<% 
+	trims = getSpecTrims(models)
+	specs = @cfg.model.specs 
+	packages = getPackagesByGroup('ALL')
+%>
+<div id="content_specifications" class="content">
+	<header class="primary">
+		<div class="filter">
+			<h3><%= I18n.t("specs.specs.view_by") %></h3>
+			<ul class="options">
+				<li data-engine-type="standard" class="selected"><%= I18n.t("specs.specs.standard") %></li>
+				<li data-engine-type="hybrid"><%= I18n.t("specs.specs.hybrid") %></li>
+			</ul>
+		</div>
+		<div class="trims">
+			<div class="titles">
+				<% trims.each do |trim| %>
+					<div class="<%= addClasses(trim,nil) %>"><span class="model"><%= @cfg.model.title %></span><%= trim.title %></div>
+				<% end %>
+			</div>
+			<div class="prices">
+				<div class="msrp"><%= I18n.t("specs.common.starting_at") %>*</div>
+					<% trims.each do |trim| %>
+						<div class="<%= addClasses(trim,'price') %>"><%= moneyFormat(trim.price, @cfg.currency) %></div>
+					<% end %>
+			</div>
+		</div>
+	</header>
+	<div class="list specifications" data-category="<%= I18n.t("specs.common.specs") %>">
+		<ul class="expand_collapse">
+			<li class="expand"><%= I18n.t("specs.specs.expand") %></li>
+			<li class="collapse"><%= I18n.t("specs.specs.collapse") %></li>
+		</ul>
+	 	<header>
+	 		<h2><%= I18n.t("specs.common.specs") %></h2>
+	 		<ul class="legend">
+	 			<li class="first"><%= I18n.t("specs.common.standard_marker") %> - <%= I18n.t("specs.common.standard") %></li>
+	 			<li><%= I18n.t("specs.common.na_marker") %> - <%= I18n.t("specs.common.na") %></li>
+	 			<li class="last"><%= I18n.t("specs.common.optional_marker") %> - <%= I18n.t("specs.common.optional") %></li>
+	 		</ul>
+	 	</header>  
+    <% specs.each_with_index do |spec, index| %>       
+		<div class="sub_list <%= index == 0 ? ' first' : '' %><%= index == specs.length-1 ? ' last' : '' %>" data-category="<%= spec.category %>"> 
+			<% if spec.category %>
+				<header>
+					<h3><%= spec.category %></h3>
+				</header>
+  			<% end %>
+			<div class="features">
+				<% spec.items.each_with_index do |item, i| %>
+				<div class="feature<%= i == 0 ? ' first' : '' %><%= i == spec.items.length-1 ? ' last' : '' %>">
+					<% if item.header && item.header == "C" %>
+						<h4><%= item.title %></h4>
+						<div class="subfeatures">
+							<% if item.items %>
+								<% item.items.each do |subitem| %>
+									<% if subitem.header && subitem.header == "H"%>
+										<h5><%= subitem.title %></h5>
+										<% if subitem.items %>
+											<% subitem.items.each do |subsubitem| %>
+												<%= partial "partials/specs/_specitem", :locals => {:item => subsubitem, :trims => trims} %>
+											<% end%>
+										<% end%>
+									<% else %>								
+										<%= partial "partials/specs/_specitem", :locals => {:item => subitem, :trims => trims} %>
+									<% end %>
+								<% end %>
+							<% end %>
+						</div>
+					<% elsif item.spec %>
+						<%= partial "partials/specs/_specitem", :locals => {:item => item, :trims => trims} %>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
+		</div>   
+    <% end %>
+	</div>
+	<div class="list packages"  data-category="<%= I18n.t("specs.packages") %>
+		">
+		<ul class="expand_collapse">
+			<li class="expand"><%= I18n.t("specs.specs.expand") %></li>
+			<li class="collapse"><%= I18n.t("specs.specs.collapse") %></li>
+		</ul>
+	 	<header>
+	 		<h2><%= I18n.t("specs.packages") %></h2>
+	 	</header>
+	 	<% packages.each do |package| %>
+	 		<div class="sub_list" data-category="<%= package.title %>">
+	 			<header>
+	 				<h3><%= package.title %></h3>
+					<div class="trims">
+						<% trims.each do |trim| %>
+							<% package_availablity = getPackageAvailablity(package.package_id, trim.package_groups) %>
+							<div class="<%= addClasses(trim,'price') %>"><%= package_availablity %></div>
+						<% end %>
+					</div>
+	 			</header>
+	 			<div class="features">
+					<div class="feature first last">
+						<div class="subfeatures">
+							<% package.features.each do |feature| %>
+								<div class="subfeature">
+									<div class="details">
+										<% if feature.disclaimer %>
+											<p><%= feature.title %> <%= link_to "[*]", "/disclaimers/disclaimers.html", :anchor=>feature.disclaimer, :class => "disclaimer_tooltip" %></p>
+										<% else %>
+											<p><%= feature.title %></p>
+										<% end %>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+					<% if package.required %>
+						<div class="required">
+							<p><%= package.required %></p>
+						</div>
+					<% end %>
+				</div>
+	 		</div>
+	 	<% end %>
+	</div>
+	<div class="disclaimers closed">
+		<h4>Disclaimer</h4>
+		<div class="container">
+			<p>*All prices are Manufacturer’s Suggested Retail Price (MSRP). MSRP excludes destination and handling charges, tax, title, license, and options. Retailer sets actual price.</p>
+		</div>
+	</div>
+</div>

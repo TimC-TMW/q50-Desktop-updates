@@ -1,0 +1,63 @@
+<% specs = @cfg.compare.specs %>
+<div id="content_compare" class="content">
+	<div class="shadow"></div>
+	<table class="compare">
+		<thead>
+			<tr class="titles">
+				<th class="details"></th>
+				<th class="trim focus"><span class="model"><%= @cfg.compare.q50.brand %></span><%= @cfg.compare.q50.model %></th>
+				<th class="trim"><span class="model"><%= @cfg.compare.bmw.brand %></span><%= @cfg.compare.bmw.model %></th>
+				<th class="trim"><span class="model"><%= @cfg.compare.audi.brand %></span><%= @cfg.compare.audi.model %></th>
+			</tr>
+			<tr class="prices">
+				<th class="details msrp"><%= I18n.t("compare.common.starting_at") %>*</th>
+				<th class="trim price focus"><%= @cfg.model.trims[0].price %></th>
+				<th class="trim price">$<%= @cfg.compare.bmw.price %></th>
+				<th class="trim price">$<%= @cfg.compare.audi.price %></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% specs.each_with_index do |spec, index| %>    
+			<tr>
+				<td colspan="4">
+				<table class="feature">
+					<thead>
+						<tr>
+							<th class="details"><%= spec.category %></th>
+							<th class="trim focus"></th>
+							<th class="trim"></th>
+							<th class="trim"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% spec.items.each_with_index do |item, i| %>
+						<tr class="<%= i == 0 ? ' first' : '' %><%= i == spec.items.length-1 ? ' last' : '' %>">
+							<td class="details">
+								<%= item.spec %><% if item.disclaimer != nil %> <%= link_to "[*]", "/disclaimers/disclaimers.html", :anchor=>item.disclaimer, :class => "disclaimer_tooltip" %><% end %>
+							</td>
+							<td class="trim focus"><%= translateValue(item.vals.q50) %></td>
+							<td class="trim"><%= translateValue(item.vals.bmw) %></td>
+							<td class="trim"><%= translateValue(item.vals.audi) %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<div class="disclaimers">
+		<p>Based on 2013 Model Year Information:</p>
+		<ul>
+			<li>BMW - <a href="http://www.bmwusa.com">http://www.bmwusa.com</a></li>
+			<li>Audi - <a href="http://www.audiusa.com">http://www.audiusa.com</a></li>
+		</ul>
+	</div>
+	<div class="disclaimers closed">
+		<h4>Disclaimer</h4>
+		<div class="container">
+			<p>*One year connection plus / Four year Infiniti Personal Assistant.</p>
+			<p><sup>1</sup>Available on Audi Q7 3.0T Premium Plus (Base MSRP: $52,550)</p>
+		</div>
+	</div>
+</div>

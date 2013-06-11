@@ -1,0 +1,16 @@
+<div id="content_colors" class="content">
+	<div id="content_colors_container">
+		<div id="cutline"><%= I18n.t("colors.cutline") %></div>
+		<h3><%= I18n.t("colors.exterior_color") %>* - <span></span></h3>
+		<ul class="swatches">
+			<% @cfg.model.colors.exterior.each do |color| %>
+				<li data-id="<%= color.color_id %>" data-label="<%= color.title %>">
+					<%= image_tag "build/swatches/small/" + color.color_id.downcase + ".png", :alt => color.title %>
+				</li>
+			<% end %>
+		</ul>
+		<div class="disclaimer">
+			<h4><%= I18n.t("colors.disclaimer_1") %></h4>
+		</div>
+	</div>
+</div>

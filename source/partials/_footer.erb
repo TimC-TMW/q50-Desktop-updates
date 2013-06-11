@@ -1,0 +1,141 @@
+<!-- footer -->
+<footer class="main wf <% if current_page.data.transparent_footer == false %> solid<% end %>">
+
+	<ul>
+		<li class="back"><%= link_to I18n.t("footer.back.label"), I18n.t("footer.back.link"), :query=>"next=L53H_Micro.Footer.Home_Page.Home" %></li>
+		<li><%= link_to I18n.t("footer.feedback.label"), I18n.t("footer.feedback.link"), :target => "_blank"  %></li>
+		<li><%= link_to I18n.t("footer.copyright.label"), I18n.t("footer.copyright.link"), :target => "_blank" %></li>
+		<li><%= link_to I18n.t("footer.privacy.label"), I18n.t("footer.privacy.link"), :target => "_blank" %></li>
+		<li><%= link_to I18n.t("footer.microdisclaimer.label"), I18n.t("footer.microdisclaimer.link"), :class => "microsite-disclaimer" %></li>
+		<li><%= link_to I18n.t("footer.cookie_information.label"), I18n.t("footer.cookie_information.link"), :target => "_blank", :class => "cookie-information" %></li>
+		<li class="follow-links"><a target="_blank" href="<%= I18n.t("footer.facebook.link") %>"><%= image_tag "common/icon/facebook.png" %></a>&nbsp;<a target="_blank" href="<%= I18n.t("footer.twitter.link") %>"><%= image_tag "common/icon/twitter.png" %></a></li>		
+		<li class="share" id="footer-share-addthis">
+			<a href="#"><%= I18n.t("footer.share.label") %></a>
+
+
+			<div class="addthis_toolbox" <%= yield_content :addthis %>>
+				<a class="addthis_button_email" href="http://www.addthis.com/bookmark.php"><%= image_tag "common/bg/transparent.gif" %></a> 
+				<a class="addthis_button_facebook"><%= image_tag "common/bg/transparent.gif" %></a>
+				<a class="addthis_button_twitter"><%= image_tag "common/bg/transparent.gif" %></a>
+				<img class="addthis_button_extras" src="/media/common/bg/transparent.gif" />
+			</div>
+
+			<div class="social-tool">
+
+	            <h3>Share Infiniti Q50</h3>
+	            <div class="close-share"><a href="#">X</a></div>
+	            <div class="addthis_toolbox addthis_default_style">
+	                <ul class="services">
+	                    <li>
+	                        <a class="addthis_button_twitter"  data-service="Twitter" data-showicon="true" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_twitter at16t_twitter">
+	                                <span class="at_a11y">Share on twitter</span>
+	                            </span>
+	                            <span class="service-name">Twitter</span>
+	                        </a>
+	                        
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_facebook" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_facebook at16t_facebook">
+	                                <span class="at_a11y">Share on facebook</span>
+	                            </span>
+	                            <span class="service-name">Facebook</span>
+	                        </a>
+	                        
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_gmail" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_gmail at16t_gmail">
+	                                <span class="at_a11y">Share on gmail</span>
+	                            </span>
+	                            <span class="service-name">GMail</span>
+	                        </a>
+	                        
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_formspring" style="cursor:pointer">
+	                            <span class=" at300bs at15nc at15t_formspring">
+	                                <span class="at_a11y">Share on formspring</span>
+	                            </span>
+	                            <span class="service-name">Formspring</span>
+	                        </a>
+	                        
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_email" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_email at16t_email">
+	                                <span class="at_a11y">Share on email</span>
+	                            </span>
+	                            <span class="service-name">Email</span>
+	                        </a>
+	                        
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_print" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_print at16t_print">
+	                                <span class="at_a11y">Share on print</span>
+	                            </span>
+	                            <span class="service-name">Print</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_reddit" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_reddit at16t_reddit">
+	                                <span class="at_a11y">Share on reddit</span>
+	                            </span>
+	                            <span class="service-name">Reddit</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_stumbleupon" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_stumbleupon at16t_stumbleupon">
+	                                <span class="at_a11y">Share on stumbleupon</span>
+	                                
+	                            </span>
+	                            <span class="service-name">StumbleUpon</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_favourites" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_favorites at16t_favorites">
+	                                <span class="at_a11y">Share on favorites</span>
+	                            </span>
+	                            <span class="service-name">Favourites</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_blogger" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_blogger at16t_blogger">
+	                                <span class="at_a11y">Share on blogger</span>
+	                            </span>
+	                            <span class="service-name">Blogger</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_linkedin" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_linkedin at16t_linkedin">
+	                                <span class="at_a11y">Share on linkedin</span>
+	                                
+	                            </span>
+	                            <span class="service-name">LinkedIn</span>
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <a class="addthis_button_more" style="cursor:pointer">
+	                            <span class="at16nc at300bs at15nc at15t_more at16t_more" style="background-image: none; background-position: initial initial; background-repeat: initial initial;">
+	                                <span class="at_a11y">Share on more</span>
+	                                
+	                            </span>
+	                            <span class="service-name">More...</span>
+	                        </a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <script src="http://s7.addthis.com/js/250/addthis_widget.js#domready=1" type="text/javascript"></script>
+	        </div>
+			
+			
+		</li>
+	</ul>
+</footer>

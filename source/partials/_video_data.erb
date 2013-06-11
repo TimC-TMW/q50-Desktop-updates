@@ -1,0 +1,855 @@
+{
+	design: {
+		id: 'design',
+		link: '<%= asset_url I18n.t("nav.design.link") %>',
+		files: {
+			high: {
+				webm: '<%= asset_path :images, "design/video/design_540p.webm" %>',
+				mp4: '<%= asset_path :images, "design/video/design_540p.mp4" %>'
+			},
+			low: {
+				webm: '<%= asset_path :images, "design/video/design_360p.webm" %>',
+				mp4: '<%= asset_path :images, "design/video/design_360p.mp4" %>'
+			}
+		},
+		timeline: [
+			{
+				timecode: 0,
+				type: 'CHAPTER',
+				id: 'overview',
+				crmid: 'Design Overview',
+				label: '<%= I18n.t("design.chapters.label_1") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/1.jpg" %>'
+			},{
+				timecode: 100,
+				type: 'SHOW',
+				duration: 1500,
+				selector: '#design_overview'
+			},{
+				timecode: 7800,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#design_overview'
+			},{
+				timecode: 8500,
+				type: 'SHOW',
+				duration: 3000,
+				selector: '#wavehood'
+			},{
+				timecode: 16100,
+				type: 'HIDE',
+				duration: 500,
+				selector: '#wavehood'
+			},{
+				timecode: 24200,
+				type: 'SHOW',
+				duration: 3000,
+				selector: '#crescent_window'
+			},{
+				timecode: 31800,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#crescent_window'
+			},{
+				timecode: 43200,
+				type: 'SHOW',
+				duration: 3000,
+				selector: '#sculpted_body'
+			},{
+				timecode: 51000,
+				type: 'HIDE',
+				duration: 500,
+				selector: '#sculpted_body'
+			},{
+				timecode:52500 ,
+				type: 'EOC',
+				crmid: 'Design Overview'
+			},{
+				timecode: 53000,
+				type: 'MARKER',
+				id: 'exterior-360',
+				crmid: 'Exterior 360',
+				label: '<%= I18n.t("design.chapters.label_2") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/2.jpg" %>'
+			},{
+				timecode: 53400,
+				type: 'EXTERIOR360',
+				selector: '#exterior_360',
+				frames: 43,
+				startFrame: 0,
+				prefix: '<%= asset_path :images, "gallery/exterior/" %>',
+				suffix: '.jpg'
+			},{
+				timecode: 53500,
+				type: 'CHAPTER',
+				id: 'adaptive-headlamps',
+				crmid: 'Sig Headlights',
+				label: '<%= I18n.t("design.chapters.label_3") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/3.jpg" %>'
+			},{
+				timecode: 56800,
+				type: 'SHOW',
+				duration: 350,
+				selector: '#headlights_super_1'
+			},{
+				timecode: 58650,
+				type: 'HIDE',
+				duration: 350,
+				selector: '#headlights_super_1'
+			},{
+				timecode: 59100,
+				type: 'SHOW',
+				duration: 350,
+				selector: '#headlights_super_2'
+			},{
+				timecode: 61000,
+				type: 'HIDE',
+				duration: 350,
+				selector: '#headlights_super_2'
+			},{
+				timecode: 61700,
+				type: 'SHOW',
+				duration: 350,
+				selector: '#headlights_super_3'
+			},{
+				timecode: 63550,
+				type: 'HIDE',
+				duration: 350,
+				selector: '#headlights_super_3'
+			},{
+				timecode: 64000,
+				type: 'SHOW',
+				duration: 350,
+				selector: '#headlights_super_4'
+			},{
+				timecode: 66200,
+				type: 'HIDE',
+				duration: 350,
+				selector: '#headlights_super_4'
+			},{
+				timecode:68600 ,
+				type: 'EOC',
+				crmid: 'Sig Headlights'
+			},{
+				timecode: 68700,
+				type: 'HEADLIGHTS',
+				selector: '#headlights',
+				frames: [
+					'<%= asset_path :images, "gallery/headlights/00.jpg" %>',
+					'<%= asset_path :images, "gallery/headlights/01.jpg" %>',
+					'<%= asset_path :images, "gallery/headlights/02.jpg" %>',
+					'<%= asset_path :images, "gallery/headlights/03.jpg" %>'
+				]
+			},{
+				timecode: 70500,
+				type: 'CHAPTER',
+				id: 'advanced-seating',
+				crmid: 'Zero Gravity Seats',
+				label: '<%= I18n.t("design.chapters.label_4") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/4.jpg" %>'
+			},{
+				timecode: 81500,
+				type: 'SHOW',
+				duration: 3000,
+				selector: '#zero_gravity_seats'
+			},{
+				timecode:87500 ,
+				type: 'EOC',
+				crmid: 'Zero Gravity Seats'
+			},{
+				timecode: 88500,
+				type: 'PAUSE'
+			},{
+				timecode: 89300,
+				type: 'HIDE',
+				duration: 500,
+				selector: '#zero_gravity_seats'
+			},{
+				timecode: 90500,
+				type: 'CHAPTER',
+				id: 'intuitive-interior',
+				crmid: 'Cockpit',
+				label: '<%= I18n.t("design.chapters.label_5") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/5.jpg" %>'
+			},{
+				timecode:121500 ,
+				type: 'EOC',
+				crmid: 'Cockpit'
+			},{
+				timecode: 122000,
+				type: 'MARKER',
+				id: 'interior-panorama',
+				crmid: 'Interior Pano',
+				label: '<%= I18n.t("design.chapters.label_6") %>',
+				thumbnail: '<%= asset_path :images, "design/chapter/6.jpg" %>'
+			},{
+				timecode:122100 ,
+				type: 'EOC',
+				crmid: 'Interior Pano'
+			},{
+				timecode: 122200,
+				type: 'INTERIORPANO',
+				selector: '#interior_pano'
+			},{
+				timecode: 122200,
+				type: 'END'
+			}
+		]
+	},
+	performance: {
+		id: 'performance',
+		link: '<%= asset_url I18n.t("nav.performance.link") %>',
+		files: {
+			high: {
+				webm: '<%= asset_path :images, "performance/video/" %><%= I18n.t("performance.video.high_res_webm") %>',
+				mp4: '<%= asset_path :images, "performance/video/" %><%= I18n.t("performance.video.high_res_mp4") %>'
+			},
+			low: {
+				webm: '<%= asset_path :images, "performance/video/" %><%= I18n.t("performance.video.low_res_webm") %>',
+				mp4: '<%= asset_path :images, "performance/video/" %><%= I18n.t("performance.video.low_res_mp4") %>'
+			}
+		},
+		timeline: [
+			{
+				timecode: 0,
+				type: 'CHAPTER',
+				id: 'overview',
+				crmid: 'Performance Overview',
+				label: '<%= I18n.t("performance.chapters.label_1") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/1.jpg" %>'
+			},{
+				timecode: 100,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#performance_overview'
+			},{
+				timecode: 10300,
+				type: 'HIDE',
+				duration: 50,
+				selector: '#performance_overview'
+			},{
+				timecode: 18700,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#performance_zero-lift'
+			},{
+				timecode: 22000 ,
+				type: 'EOC',
+				crmid: 'Performance Overview'
+			},{
+				timecode: 22500,
+				type: 'PAUSE'
+			},{
+				timecode: 22600,
+				type: 'HIDE',
+				duration: 500,
+				selector: '#performance_zero-lift'
+			},{
+				timecode: 23000,
+				type: 'CHAPTER',
+				id: 'sport-model',
+				crmid: 'Sports Model',
+				label: '<%= I18n.t("performance.chapters.label_2") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/2.jpg" %>'
+			},{
+				timecode: 41500 ,
+				type: 'EOC',
+				crmid: 'Sports Model'
+			},{
+				timecode: 41700,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#performance_sport_model'
+			},{
+				timecode: 41800,
+				type: 'PAUSE'
+			},{
+				timecode: 42000,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#performance_sport_model'
+			},{
+				timecode: 43500,
+				type: 'CHAPTER',
+				id: 'engine',
+				crmid: 'Engine Story',
+				label: '<%= I18n.t("performance.chapters.label_3") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/3.jpg" %>'
+			},{
+				timecode: 45600,
+				type: 'SHOW',
+				duration: 1500,
+				selector: '#performance_engine'
+			},{
+				timecode: 47000 ,
+				type: 'EOC',
+				crmid: 'Engine Story'
+			},{
+				timecode: 47200,
+				type: 'PAUSE'
+			},{
+				timecode: 47300,
+				type: 'HIDE',
+				duration: 50,
+				selector: '#performance_engine'
+			},{
+				timecode: 51000,
+				type: 'CHAPTER',
+				id: 'performance-hybrid',
+				crmid: 'Hybrid',
+				label: '<%= I18n.t("performance.chapters.label_4") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/4.jpg" %>'
+			},{
+				timecode: 52800,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#performance_hybrid_engine_1'
+			},{
+				timecode: 56800,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#performance_hybrid_engine_1'
+			},{
+				timecode: 58250,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#performance_hybrid_engine_2'
+			},{
+				timecode: 60100 ,
+				type: 'EOC',
+				crmid: 'Hybrid'
+			},{
+				timecode: 60200,
+				type: 'PAUSE'
+			},{
+				timecode: 60400,
+				type: 'HIDE',
+				duration: 400,
+				selector: '#performance_hybrid_engine_2'
+			},{
+				timecode: 65500,
+				type: 'CHAPTER',
+				id: 'direct-adaptive-steering',
+				crmid: 'Steer By Wire',
+				label: '<%= I18n.t("performance.chapters.label_5") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/5.jpg" %>'
+			},{
+				timecode: 74800,
+				type: 'SHOW',
+				duration: 750,
+				selector: '#performance_adaptive_steering'
+			},{
+				timecode: 77500 ,
+				type: 'EOC',
+				crmid: 'Steer By Wire'
+			},{
+				timecode: 78000,
+				type: 'PAUSE'
+			},{
+				timecode: 78200,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#performance_adaptive_steering'
+			},{
+				timecode: 83000,
+				type: 'CHAPTER',
+				id: 'personalized-drive-modes',
+				crmid: 'Drive Modes',
+				label: '<%= I18n.t("performance.chapters.label_6") %>',
+				thumbnail: '<%= asset_path :images, "performance/chapter/6.jpg" %>'
+			},{
+				timecode: 84500,
+				type: 'SHOW',
+				duration: 750,
+				easing: 'linear',
+				selector: '#steer_by_wire_none'
+			},{
+				timecode: 86500,
+				type: 'HIDE',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_none'
+			},{
+				timecode: 86500,
+				type: 'SHOW',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_sport'
+			},{
+				timecode: 91000,
+				type: 'HIDE',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_sport'
+			},{
+				timecode: 91000,
+				type: 'SHOW',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_standard'
+			},{
+				timecode: 94200,
+				type: 'HIDE',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_standard'
+			},{
+				timecode: 94200,
+				type: 'SHOW',
+				duration: 400,
+				easing: 'linear',
+				selector: '#steer_by_wire_custom'
+			},{
+				timecode: 101000,
+				type: 'HIDE',
+				duration: 750,
+				easing: 'linear',
+				selector: '#steer_by_wire_custom'
+			},{
+				timecode: 102300,
+				type: 'SHOW',
+				duration: 1500,
+				selector: '#steer_by_wire_end'
+			},{
+				timecode: 102500 ,
+				type: 'EOC',
+				crmid: 'Drive Modes'
+			},{
+				timecode: 102900,
+				type: 'PAUSE'
+			},{
+				timecode: 103100,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#steer_by_wire_end'
+			},{
+				timecode: 110823,
+				type: 'END'
+			}
+		]
+	},
+	technology: {
+		id: 'technology',
+		link: '<%= asset_url I18n.t("nav.technology.link") %>',
+		files: {
+			high: {
+				webm: '<%= asset_path :images, "technology/video/technology_540p.webm" %>',
+				mp4: '<%= asset_path :images, "technology/video/technology_540p.mp4" %>'
+			},
+			low: {
+				webm: '<%= asset_path :images, "technology/video/technology_360p.webm" %>',
+				mp4: '<%= asset_path :images, "technology/video/technology_360p.mp4" %>'
+			}
+		},
+		timeline: [
+			{ 
+				timecode: 0,
+				type: 'CHAPTER',
+				id: 'digital-environment',
+				crmid: 'Digital Assistant',
+				label: '<%= I18n.t("technology.chapters.label_1") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/1.jpg" %>'
+			},{
+				timecode: 500,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#technology_overview'
+			},{
+				timecode: 6300,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#technology_overview'
+			},{
+				timecode: 14250,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 17000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#torque_response'
+			},{
+				timecode: 18250,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 20800,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#torque_response'
+			},{
+				timecode: 24250,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#adaptive_steering'
+			},{
+				timecode: 27700,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#adaptive_steering'
+			},{
+				timecode: 31000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#driver_position'
+			},{
+				timecode: 34900,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#driver_position'
+			},{
+				timecode: 37850,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#active_trace_control'
+			},{
+				timecode: 41600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#active_trace_control'
+			},{
+				timecode: 43000,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#digital_environment'
+			},{
+				timecode: 43500 ,
+				type: 'EOC',
+				crmid: 'Digital Assistant'
+			},{
+				timecode: 44000,
+				type: 'PAUSE'
+			},{
+				timecode: 45000,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#digital_environment'
+			},{
+				timecode: 45500,
+				type: 'CHAPTER',
+				id: 'infiniti-connection',
+				crmid: 'Infiniti Connection',
+				label: '<%= I18n.t("technology.chapters.label_2") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/2.jpg" %>'
+			},{
+				timecode: 46500,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#connection_calendar'
+			},{
+				timecode: 46600,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 50600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 52500,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#connection_calendar'
+			},{
+				timecode: 55000,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#infiniti_connection'
+			},{
+				timecode: 55300 ,
+				type: 'EOC',
+				crmid: 'Infiniti Connection'
+			},{
+				timecode: 55500,
+				type: 'PAUSE'
+			},{
+				timecode: 55600,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#infiniti_connection'
+			},{
+				timecode: 57000,
+				type: 'CHAPTER',
+				id: 'infiniti-intouch',
+				crmid: 'Infiniti Intouch',
+				label: '<%= I18n.t("technology.chapters.label_3") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/3.jpg" %>'
+			},{
+				timecode: 57500,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#intouch_apps'
+			},{
+				timecode: 57600,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 60500,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#intouch_apps'
+			},{
+				timecode: 61600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 63500,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#intouch_facebook'
+			},{
+				timecode: 69500,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#intouch_facebook'
+			},{
+				timecode: 74200,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#intouch_places'
+			},{
+				timecode: 79000,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#intouch_places'
+			},{
+				timecode: 80000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#intouch_pinch_zoom'
+			},{
+				timecode: 86000,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#intouch_pinch_zoom'
+			},{
+				timecode: 87000,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#infiniti_intouch'
+			},{
+				timecode: 88000 ,
+				type: 'EOC',
+				crmid: 'Infiniti Intouch'
+			},{
+				timecode: 88500,
+				type: 'PAUSE'
+			},{
+				timecode: 88700,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#infiniti_intouch'
+			},{
+				timecode: 89000,
+				type: 'CHAPTER',
+				id: 'bose-audio',
+				crmid: 'BOSE Audio',
+				label: '<%= I18n.t("technology.chapters.label_4") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/4.jpg" %>'
+			},{
+				timecode: 89100,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 93400,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_digital_env'
+			},{
+				timecode: 103250,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#bose_speakers'
+			},{
+				timecode: 108100,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#bose_speakers'
+			},{
+				timecode: 108500,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#bose_audio'
+			},{
+				timecode: 110500 ,
+				type: 'EOC',
+				crmid: 'BOSE Audio'
+			},{
+				timecode: 110700,
+				type: 'PAUSE'
+			},{
+				timecode: 110800,
+				type: 'HIDE',
+				duration: 500,
+				selector: '#bose_audio'
+			},{
+				timecode: 112000,
+				type: 'CHAPTER',
+				id: 'backup-collision-intervention',
+				crmid: 'Backup Collision Intervention',
+				label: '<%= I18n.t("technology.chapters.label_5") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/5.jpg" %>'
+			},{
+				timecode: 112000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_bci'
+			},{
+				timecode: 113000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#bci_super1'
+			},{
+				timecode: 115000,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_bci'
+			},{
+				timecode: 116200,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#bci_super1'
+			},{
+				timecode: 116500,
+				type: 'SHOW',
+				duration: 150,
+				selector: '#bci_super2'
+			},{
+				timecode: 118000,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#bci_super2'
+			},{
+				timecode: 118500,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#bci_super3'
+			},{
+				timecode: 120750,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#bci_super3'
+			},{
+				timecode: 125000,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#bci_overview'
+			},{
+				timecode: 125200 ,
+				type: 'EOC',
+				crmid: 'Backup Collision Intervention'
+			},{
+				timecode: 125400,
+				type: 'PAUSE'
+			},{
+				timecode: 125500,
+				type: 'HIDE',
+				duration: 1000,
+				selector: '#bci_overview'
+			},{
+				timecode: 126500,
+				type: 'CHAPTER',
+				id: 'safety-shield',
+				crmid: 'Safety Shield',
+				label: '<%= I18n.t("technology.chapters.label_6") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/6.jpg" %>'
+			},{
+				timecode: 131500,
+				type: 'EOC',
+				crmid: 'Safety Shield'
+			},{
+				timecode: 131900,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#safety_shield_info'
+			},{
+				timecode: 132000,
+				type: 'SAFETYSHIELD',
+				selector: '#safety-shield',
+				shieldPreload: '<%= asset_path :images, "" %>',
+				width:1280,
+				height:695
+			},{
+				timecode: 132100,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#safety_shield_info'
+			},{
+				timecode: 135000,
+				type: 'CHAPTER',
+				id: 'aroundview-monitor',
+				crmid: 'Around View Mirror',
+				label: '<%= I18n.t("technology.chapters.label_7") %>',
+				thumbnail: '<%= asset_path :images, "technology/chapter/7.jpg" %>'
+			},{
+				timecode: 135100,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#disclaimer_avm'
+			},{
+				timecode: 140000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#avm_super1'
+			},{
+				timecode: 141000,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#disclaimer_avm'
+			},{
+				timecode: 143600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#avm_super1'
+			},{
+				timecode: 145000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#avm_super2'
+			},{
+				timecode: 148600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#avm_super2'
+			},{
+				timecode: 149000,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#avm_super3'
+			},{
+				timecode: 156600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#avm_super3'
+			},{
+				timecode: 158250,
+				type: 'SHOW',
+				duration: 250,
+				selector: '#avm_super4'
+			},{
+				timecode: 167600,
+				type: 'HIDE',
+				duration: 250,
+				selector: '#avm_super4'
+			},{
+				timecode: 172000,
+				type: 'SHOW',
+				duration: 1000,
+				selector: '#avm'
+			},{
+				timecode: 173000 ,
+				type: 'EOC',
+				crmid: 'Around View Mirror'
+			},{
+				timecode: 173402,
+				type: 'END'
+			}
+		]
+	}
+}

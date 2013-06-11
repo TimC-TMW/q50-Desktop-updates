@@ -1,0 +1,30 @@
+<!-- video controls -->
+<div id="video_controls">
+	<!-- play -->
+	<span class="play"><%= I18n.t("controls.play") %></span>
+
+	<!-- scrub -->
+	<div class="scrub_wrapper">
+		<div class="scrub"><ul></ul></div>
+		<div class="scrub_loaded"><ul></ul></div>
+		<div class="scrub_played"><ul></ul></div>
+	</div>
+
+	<!-- chapter thumbnail -->
+	<div class="chapter_thumbnail">
+		<div class="thumbnail"><%= image_tag "common/bg/transparent.gif", :alt => "" %></div>
+		<div class="label"></div>
+		<div class="tip"></div>
+	</div>
+</div>
+
+<!-- chapter arrows -->
+<div id="chapter_arrows">
+	<div class="arrow previous previous_chapter">
+		<!--span class="label"><%= I18n.t("controls.previous_chapter") %></span-->
+	</div>
+	<div class="arrow next next_chapter">
+		<span class="label continue_journey"><%= I18n.t("controls.continue") %></span>
+		<span class="label next_journey"><%= yield_content :next_journey %></span>
+	</div>
+</div>

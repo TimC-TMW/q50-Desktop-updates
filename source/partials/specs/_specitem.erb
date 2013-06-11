@@ -1,0 +1,52 @@
+<% if trims.length > 1 %>
+<% disclaimerLocale =  "/" + ::I18n.locale.to_s + "/disclaimers/disclaimers.html" %>
+  <div class="subfeature">
+    <div class="details">
+    	<% if item.tooltip %>
+            <% if item.disclaimer and item.disclaimer != nil %>
+                <p><%= item.spec.gsub('[[', '<a href="#" class="disclaimer_tooltip underline_tooltip">').gsub(']]', '</a>') %> <%= link_to "[*]", "/disclaimers/disclaimers.html", :anchor=>item.disclaimer, :class => "disclaimer_tooltip" %></p>
+            <% else %>
+                <p><%= item.spec.gsub('[[', '<a href="#" class="disclaimer_tooltip underline_tooltip">').gsub(']]', '</a>') %></p>
+            <% end %>
+            <div class="tooltip_content">
+                <% item.tooltip.each do |tip| %>
+                    <p><%= tip %></p>
+                <% end %>
+            </div>
+    	<% else %>
+            <% if item.disclaimer and item.disclaimer != nil %>
+                <p><%= item.spec %> <%= link_to "[*]", disclaimerLocale , :anchor=>item.disclaimer, :class => "disclaimer_tooltip" %></p>
+            <% else %>
+                <p><%= item.spec %></p>
+            <% end %>
+    	<% end %>
+    </div>
+    <div class="trims">
+    <% trims.each do |trim| %>
+    	<div class="<%= addClasses(trim,nil) %>"><%= translateValue(item.vals[Integer(trim.code)]) %></div>
+    <% end %>	
+    </div>
+  </div>
+<% else %>
+  <% trims.each do |trim| %>
+    <% if translateValue(item.vals[Integer(trim.code)]) != 'N/A' %>
+      <div class="subfeature">
+        <div class="details">
+    	<% if item.tooltip %>
+    	<p><%= item.spec.gsub('[[', '<a href="#" class="disclaimer_tooltip underline_tooltip">').gsub(']]', '</a>') %></p>
+    	<div class="tooltip_content">
+    	<% item.tooltip.each do |tip| %>
+    	<p><%= tip %></p>
+    	<% end %>
+    	</div>
+    	<% else %>
+    	<p><%= item.spec %></p>
+    	<% end %>
+        </div>
+        <div class="trims">
+          <div class="<%= addClasses(trim,nil) %>"><%= translateValue(item.vals[Integer(trim.code)]) %></div>  
+        </div>
+      </div>
+    <% end %> 
+  <% end %> 
+<% end %> 

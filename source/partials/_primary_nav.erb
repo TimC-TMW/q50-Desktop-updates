@@ -1,0 +1,46 @@
+<!-- primary nav -->
+<nav class="main wf <% if current_page.data.transparent_nav == false %> solid<% end %>" id="bottom_nav">
+	<div class="centered-container">
+		<ul class="left">
+			<li class="nav_home"><%= link_to I18n.t("nav.home.label"), I18n.t("nav.home.link") %></li>
+			<li class="nav_design<% if @current_nav == 0 %> current<% end %>" data-video-id="design">
+				<%= link_to I18n.t("nav.design.label"), I18n.t("nav.design.link") %>
+				<div class="video_nav">
+					<div class="video_nav_content">
+						<h2><%= I18n.t("nav.design.heading") %></h2>
+						<ul></ul>
+						<!--ul>
+							<li data-chapter-id="some-chapter"><div><img src="image.gif" width="84" height="38" alt="Title" /></div><span>Title</span></li>
+						</ul-->
+					</div>
+				</div>
+			</li>
+			<li class="nav_performance<% if @current_nav == 1 %> current<% end %>" data-video-id="performance">
+				<%= link_to I18n.t("nav.performance.label"), I18n.t("nav.performance.link") %>
+				 <div class="video_nav">
+					<div class="video_nav_content">
+						<h2><%= I18n.t("nav.performance.heading") %></h2>
+						<ul></ul>
+					</div>
+				</div>
+			</li>
+			<li class="nav_technology<% if @current_nav == 2 %> current<% end %>" data-video-id="technology">
+				<%= link_to I18n.t("nav.technology.label"), I18n.t("nav.technology.link") %>
+				 <div class="video_nav">
+					<div class="video_nav_content">
+						<h2><%= I18n.t("nav.technology.heading") %></h2>
+						<ul></ul>
+					</div>
+				</div>
+			</li>
+	<!-- 	</ul>
+		<ul class="right"> -->
+			<li class="nav_all_features"><a class="all_features" href="#"><%= I18n.t("nav.features.label") %></a></li>
+			<li class="nav_specs<% if @current_nav == 4 %> current<% end %>"><%= link_to I18n.t("nav.specs.label"), I18n.t("nav.specs.link") %></li>
+			<li class="nav_gallery<% if @current_nav == 3 %> current<% end %>"><%= link_to I18n.t("nav.gallery.label"), I18n.t("nav.gallery.link") %></li>
+			<li class="nav_colors<% if @current_nav == 5 %> current<% end %>"><%= link_to I18n.t("nav.colors.label"), I18n.t("nav.colors.link") %></li>
+			<li class="sound"><a href="#"><%= I18n.t("nav.mute.label") %></a></li>
+		</ul>
+	</div>
+    <div class="shadow"></div>
+</nav>

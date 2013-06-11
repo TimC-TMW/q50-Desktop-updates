@@ -1,0 +1,11 @@
+<!-- loading and effects -->
+<div id="effects">
+	<div class="loading">
+		<% if content_for?(:loading) %>
+			<%= yield_content :loading %>
+		<% else %>
+			<span class="spinner"></span>
+		<% end %>
+	</div>
+	<div class="flash"></div>
+</div>
