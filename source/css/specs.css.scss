@@ -1,0 +1,606 @@
+@import 'fonts';
+
+/*------------------------------ HEADER ---------------*/
+#page_specs{
+
+}
+
+#page_specs header.main{
+	width:950px;
+	left:50%;
+	margin-left:-475px;
+}
+#page_specs header.main a.logo{
+	margin-left:8px;
+	background:image-url("common/infiniti-logo.png") no-repeat 0 0;
+}
+#page_specs header.main a.build,
+#page_specs header.main a.sign_up{ 
+	right: 0;
+}
+
+
+/*------------------------------ LAYOUT ---------------*/
+#specs{
+	min-height:100%;
+	background: #fff image-url("specs/background.jpg") no-repeat center top;
+	padding-top: 59px;
+}
+#specs .wrapper{
+	width:990px;
+	margin:0 auto;
+	padding-bottom:110px; /* enough to clear fixed nav */
+}
+#specs .wrapper .top{
+	width: 990px;
+	height: 30px;
+	background: transparent image-url("specs/bg-wrapper-top.png") no-repeat;
+}
+#specs .wrapper .middle{
+	width: 890px;
+	background: transparent image-url("specs/bg-wrapper-middle.png") repeat-y;
+	padding:12px 50px;
+	position: relative;
+}
+#specs .wrapper .bottom{
+	width: 990px;
+	height: 30px;
+	background: transparent image-url("specs/bg-wrapper-bottom.png") no-repeat;
+}
+
+/*------------------------------ TABS ---------------*/
+#specs ul.tabs{
+	width: 500px;
+	position: relative;
+	z-index: 10;
+	overflow:hidden;
+	zoom:1;
+}
+#specs ul.tabs li{
+	width:190px;
+	height:50px;
+	background:transparent image-url("specs/tabs.png") no-repeat -190px 0;
+	color:#333;
+	cursor: pointer;
+	display:block;
+	float:left;
+	@include default-font-n4;
+	font-size:13px;
+	line-height:47px;
+	margin-right: 8px;
+	text-align:center;
+	text-decoration: none;
+	text-transform:uppercase;	
+}
+
+#specs ul.tabs li.last {
+	margin-right: 0;
+}
+
+#specs ul.tabs li.selected {
+	background-position: 0 0;
+	color: #fff;
+}
+
+
+/*------------------------------ DOWNLOAD ---------------*/
+#specs .download {
+	font-size: 11px;
+	position: absolute;
+	top: 28px;
+	right: 51px;
+}
+#specs .download a {
+	color: #472e5f;
+	text-decoration: none;
+}
+#specs .download a:before {
+	background:transparent image-url("common/icon/download.png") no-repeat 0 0;
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	width:8px;
+	height:11px;
+	margin:-5px 7px 0 0;
+}
+
+
+/*------------------------------ TAB CONTENT ---------------*/
+#specs .tab_contents{}
+#specs .tab_contents .content{
+	color: #333;
+	margin-top:-8px;
+}
+#specs .tab_contents .content a.disclaimer_tooltip{
+	text-decoration:none;
+	color:#333;
+}
+#specs .disclaimers{
+	margin-top:20px;
+	font-family:helvetica,arial,verdana,sans-serif;
+	font-size: 11px;
+	color: #666;
+
+}
+#specs .disclaimers a{ color:#666; }
+#specs .disclaimers h4{
+	display:inline-block;
+	line-height:12px;
+	cursor:pointer;
+	text-transform: uppercase;
+}
+#specs .disclaimers h4:before{
+	content:"";
+	display:inline-block;
+	width:7px;
+	height:12px;
+	margin-right:7px;
+	background:transparent image-url("common/icon/disclaimer.png") no-repeat right 4px;
+}
+#specs .disclaimers .container{
+	overflow:hidden;
+	height:auto;
+	display: block;
+	padding:0;
+	font-size:10px;
+}
+#specs .disclaimers .container.source{ padding-bottom: 14px; }
+#specs .disclaimers .container.source p,
+#specs .disclaimers .container.source li{ margin: 0 0 4px; }
+#specs .disclaimers .container p{ margin:10px 0; }
+#specs .disclaimers.closed .container{ height:0; display:none; }
+#specs .disclaimers.closed h4:before{ background-position:left 4px; }
+
+
+/*------------------------------ TRIMS ---------------*/
+#specs .trim {
+
+}
+/*#specs .trim.price:before {
+	background:transparent image-url("common/icon/dollar.png") no-repeat 0 0;
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	width:4px;
+	height:11px;
+	margin:-2px 2px 0 0;
+}*/
+
+
+/*------------------------------ EXPAND & COLLAPSE  ---------------*/
+.tab_contents .expand_collapse {
+	font-size:11px;
+	padding:6px 0 6px 18px;
+	overflow:hidden;
+	zoom:1;
+}
+.tab_contents .expand_collapse li {
+	float:left;
+	cursor:pointer;
+	margin-right:20px;
+	padding:3px 0 2px 1px;
+}
+.tab_contents .expand_collapse li:before {
+	background:transparent image-url("common/icon/expand-collapse.png") no-repeat 0 0;
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	width:13px;
+	height:15px;
+	margin:0 8px 0 0;
+}
+.tab_contents .expand_collapse li.collapse {
+	margin-right:0;
+}
+.tab_contents .expand_collapse li.collapse:before {
+	background-position:0px -39px;
+}
+
+
+/*------------------------------ SPECIFICATIONS & PACKAGES ---------------*/
+#content_specifications {}
+#content_specifications .trims {
+	float:right;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications .trim {
+	width:76px;
+	float:left;
+}
+#content_specifications .trim.hybrid {
+	display: none;
+}
+#content_specifications header.primary {
+	width:890px;
+	height:97px;
+	background:#fff image-url("specs/bg-header-specs.png") no-repeat 0 0;
+	border-bottom: 1px solid #fff;
+	font-size:13px;
+	padding:10px 0 0 0;
+	position:absolute;
+	top:55px;
+	z-index:7;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications header.sticky {
+	position: fixed;
+	top: 0;
+}
+#content_specifications header .filter {
+	float:left;
+	@include default-font-n4;
+	padding:10px 0 0 4px;
+	text-transform:uppercase;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications header .filter h3 {
+	float: left;
+	padding-right: 14px;
+}
+#content_specifications header .filter .options {
+	float: left;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications header .filter ul.options li {
+	@include default-font-n6;
+	cursor:pointer;
+	float:left;
+	padding:0 12px 0 17px;
+	background:transparent image-url("common/icon/radio-dark.png") no-repeat 0 3px;
+}
+
+#content_specifications header .filter ul.options li.selected {
+	background-position: 0 -36px;
+}
+html.ie8 #content_specifications header .filter ul.options li,
+html.ie9 #content_specifications header .filter ul.options li {
+	background-position: 0 0;
+}
+html.ie8 #content_specifications header .filter ul.options li.selected,
+html.ie9 #content_specifications header .filter ul.options li.selected {
+	background-position: 0 -39px;
+}
+#content_specifications header .expand_collapse {
+	position: absolute;
+	bottom: 2px;
+}
+#content_specifications header .trims {
+	float:inherit;
+	position:absolute;
+	right:0;
+}
+#content_specifications header .trims .titles,
+#content_specifications header .trims .prices {
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications header .trims .titles {
+	float: right;
+}
+#content_specifications header .trims .prices {
+	clear: both;
+	padding-top: 2px;
+}
+#content_specifications header .trims .msrp {
+	float:left;
+	font-size: 12px;
+	padding: 1px 25px 0 0;
+}
+#content_specifications header .trim {
+	@include default-font-n6;
+	line-height:18px;
+	text-transform:uppercase;
+	position:relative;
+}
+#content_specifications header .trim span.model {
+	color: #666666;
+	display:block;
+	@include default-font-n4;
+}
+#content_specifications .list {
+	margin-bottom:18px;
+}
+#content_specifications .list header {
+	width:auto;
+	height:29px;
+	background:#5e4870 image-url("specs/bg-accordion-header.png") repeat-x;
+	color:#fffefe;
+	font-size:14px;
+	line-height:normal;
+	margin:1px 0;
+	padding:10px 11px 0 19px;
+	position: inherit;
+}
+#content_specifications .list header h2 {
+	height:auto;
+	background:transparent image-url("common/icon/expand-collapse.png") no-repeat 0 -36px;
+	@include default-font-n4;
+	color:#fffefe;
+	cursor:pointer;
+	float:left;
+	font-size:14px;
+	line-height:normal;
+	margin:0;
+	padding:0 0 0 19px;
+	text-transform:uppercase;
+}
+html.ie8 #content_specifications .list header h2,
+html.ie9 #content_specifications .list header h2 {
+	padding-top: 3px;
+}
+#content_specifications .list.closed header h2 {
+	background-position:0 3px;
+}
+#content_specifications .list header .legend {
+	color:#f1e8f5;
+	font-size:11px;
+	float:right;
+	padding-top:3px;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications .list header .legend li {
+	float:left;
+	border-right:1px solid #dacddf;
+	margin:0;
+	padding:0 5px 0;
+}
+#content_specifications .list header .legend li.last {
+	border-right:none;
+	padding-right:0;
+}
+#content_specifications .list header .legend li.available {
+	background:transparent image-url("specs/available-invert.png") no-repeat 0 3px;
+	padding-left:15px;
+}
+#content_specifications .list .sub_list {
+	position: relative;
+}
+#content_specifications .list.closed .sub_list{
+	display:none;
+}
+#content_specifications .list .sub_list header {
+	height: auto;
+	background:#dedede;
+	color:#000000;
+	cursor:pointer;
+	@include default-font-n4;
+	font-size:13px;
+	padding:9px 0 7px 37px;
+	position:relative;
+	overflow:hidden;
+	zoom:1;
+}
+#content_specifications .list .sub_list header h3 {
+	background:transparent image-url("common/icon/expand-collapse.png") no-repeat 0 -37px;
+	@include default-font-n4;
+	float:left;
+	font-size:13px;
+	line-height:normal;
+	margin: 0;
+	padding: 0 0 0 19px;
+	text-transform:uppercase;
+}
+html.ie8 #content_specifications .list .sub_list header h3,
+html.ie9 #content_specifications .list .sub_list header h3 { 
+	background-position:0 -40px;
+}
+#content_specifications .list .sub_list.closed header h3 {
+	background-position:0 2px;
+}
+html.ie8 #content_specifications .list .sub_list.closed header h3,
+html.ie9 #content_specifications .list .sub_list.closed header h3 {
+	background-position:0 -1px;
+}
+#content_specifications .list .sub_list header .trims {
+	height:auto;
+	float:right;
+	position:relative;
+}
+#content_specifications .list .sub_list header .trim {
+	@include default-font-n4;
+}
+#content_specifications .list .sub_list .features {
+	padding:0 0 0 19px;
+}
+#content_specifications .list .sub_list.closed .features {
+	display: none;
+}
+#content_specifications .list .sub_list .feature {
+	border-bottom:1px solid #eaeaea;
+	padding:14px 0 14px 17px;
+	position: relative;
+	overflow:hidden;
+	zoom:1;   
+}
+#content_specifications .list .sub_list .subfeature {
+	margin-bottom:14px;  
+	position: relative; 
+	overflow:hidden; 
+	zoom:1; 
+}
+#content_specifications .list .sub_list .feature:before, 
+#content_specifications .list .sub_list .subfeature:before  {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+#content_specifications .list .sub_list .feature.last {
+	border-bottom:none;
+}
+#content_specifications .list .sub_list .feature .details {
+	width:364px;
+	float: left;
+	padding-right:20px;
+}
+#content_specifications .list .sub_list .feature .details p {
+	font-weight: bold;
+}
+#content_specifications .list .sub_list .feature .details a.disclaimer_tooltip{
+	text-decoration:none;
+	color:#333;
+}
+#content_specifications .list .sub_list .feature  h4 {
+	font-weight:bold;
+	padding-bottom:8px;
+}
+#content_specifications .list .sub_list .feature .subfeatures {
+	padding: 8px 0 0 10px;
+}
+#content_specifications .list .sub_list .feature .subfeatures .subfeature:before {
+	width: 12px;
+	height: 12px;
+	background:transparent image-url("common/icon/bullet.png") no-repeat 0 3px;
+	content: '';
+	float: left;
+	display: inline-block;
+	margin-right: 3px;
+}
+#content_specifications .list .sub_list .feature .subfeatures h5 {
+	font-weight: bold;
+	padding-bottom: 8px;
+}
+#content_specifications .list .sub_list .feature .subfeatures .details {
+	width: 300px;
+}
+#content_specifications .list .sub_list .feature .subfeatures .details p {
+	font-weight: normal;
+}
+#content_specifications .list .sub_list .feature .details p{
+	line-height:18px;
+}
+#content_specifications .list .sub_list .feature .trims {
+	float: none;
+	font-size:11px;
+	margin-top: -8px;
+	position: absolute;
+  	top: 50%;	
+	right: 0;
+}
+#content_specifications .list .sub_list .features .required {
+	font-size: 11px;
+	font-style: italic;
+	padding-bottom: 15px;
+}
+#content_specifications .specifications {
+	margin-top:76px;
+	position:relative;
+}
+#content_specifications .specifications .expand_collapse {
+	position: relative;
+	z-index: 8;
+}
+html.touch #content_specifications .specifications {
+	margin-top:74px;
+}
+html.ie8 #content_specifications .specifications,
+html.ie9 #content_specifications .specifications {
+	margin-top:75px;
+}
+html.ie8 #content_specifications .packages .sub_list header h3,
+html.ie9 #content_specifications .packages .sub_list header h3 {
+	margin-top:2px;
+}
+#content_specifications .packages .sub_list header .trims .trim.available {
+	margin-top: 1px;
+}
+
+@media screen and (min-width:0\0) { 
+	#content_specifications header .filter ul.options li {
+		background-position: 0 0;
+	}
+	#content_specifications header .filter ul.options li.selected {
+		background-position: 0 -39px;
+	}	
+	#content_specifications .list header h2 {
+		padding-top: 3px;
+	}
+	#content_specifications .list .sub_list header h3 {
+		background-position:0 -40px;
+		margin-top: 2px;
+	}
+	#content_specifications .list .sub_list.closed header h3 {
+		background-position: 0 -1px;
+	}
+}
+
+
+/*------------------------------ COMPARE COMPETITORS ---------------*/
+#content_compare { position: relative; }
+#content_compare div.shadow {
+	width: 890px;
+	height: 36px;
+	background:transparent image-url("specs/bg-header-compare.png") no-repeat 100% 0;
+	position: absolute;
+	top: 0;
+}
+#content_compare .details {
+	width: 394px;
+	line-height: 18px;
+	padding: 10px 30px 13px 0;
+}
+#content_compare .trim {
+	width: 120px;
+	padding: 10px 15px 13px;
+	vertical-align: top;
+}
+#content_compare .focus {
+	background: #f7f7f7;
+}
+#content_compare table.compare {
+	width: 100%;
+	border-bottom: 1px solid #c1c1c1;
+}
+#content_compare table.compare thead {
+	font-size:13px;
+	padding:10px 0 0 0;
+}
+#content_compare table.compare thead .trim {
+	@include default-font-n6;
+	line-height:18px;
+	text-transform:uppercase;
+}
+#content_compare table.compare thead .titles .trim {
+	padding-bottom: 0;
+}
+#content_compare table.compare thead span.model {
+	color: #666666;
+	display:block;
+	@include default-font-n4;
+}
+#content_compare table.compare .details.msrp {
+	text-align: right;
+	font-size:12px;
+}
+#content_compare table.compare table.feature {
+	width: 100%;
+	border-top: 1px solid #c1c1c1;
+}
+#content_compare table.compare table.feature {
+	width: 100%;
+	border-top: 1px solid #c1c1c1;
+	padding-top: 10px;
+}
+#content_compare table.compare table.feature .trim {
+	vertical-align: middle;
+}
+#content_compare table.compare table.feature thead {
+	@include default-font-n6;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#content_compare table.compare table.feature tbody tr {
+	border-top: 1px solid #eaeaea;
+}
+#content_compare table.compare table.feature tbody tr.first {
+	border-top: none;
+}
+#content_compare table.compare table.feature thead .details {
+	padding-top: 20px;
+	padding-bottom: 0;
+}

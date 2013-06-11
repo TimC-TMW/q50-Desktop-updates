@@ -1,0 +1,250 @@
+/* mixins use to get the font you want */
+@mixin default-font-n4{
+	font-family:"MetaPro-n4", "MetaPro", arial, verdana, sans-serif;
+	font-style:normal;
+	font-weight:400;
+}
+@mixin default-font-i4{
+	font-family:"MetaPro-i4", "MetaPro", arial, verdana, sans-serif;
+	font-style:italic;
+	font-weight:400;
+}
+@mixin default-font-n6{
+	font-family:"MetaPro-n6", "MetaPro", arial, verdana, sans-serif;
+	font-style:normal;
+	font-weight:600;
+}
+@mixin default-font-i6{
+	font-family:"MetaPro-i6", "MetaPro", arial, verdana, sans-serif;
+	font-style:italic;
+	font-weight:600;
+}
+
+/*------------------------------ DESIGN ---------------*/
+article#design_overview{top:80px; right:90px; width:415px; height:205px; opacity:0;}
+	.win_1280 article#design_overview{right:145px;}
+	.win_1920 article#design_overview{right:200px;}
+article#design_overview.show{opacity:1;}
+
+article#wavehood{top:15%; left:90px; width:355px; height:180px; opacity:0;}
+	.win_1280 article#wavehood{left:145px;}
+	.win_1920 article#wavehood{left:200px;}
+article#wavehood.show{opacity:1;}
+
+article#crescent_window{bottom:18%; right:35px; width:345px; height:190px; opacity:0;}
+	.win_1280 article#crescent_window{right:145px;}
+	.win_1920 article#crescent_window{right:200px;}
+article#crescent_window.show{opacity:1;}
+
+article#sculpted_body{bottom:75px; left:90px; width:385px; height:175px; opacity:0;}
+	.win_1280 article#sculpted_body{left:145px;}
+	.win_1920 article#sculpted_body{left:200px;}
+article#sculpted_body.show{opacity:1;}
+
+article.headlights_super{display:none; position:absolute; z-index:4; top:17%; left:0; right:0; text-align:center; opacity:0; color:#fff;}
+	.win_1280 article.headlights_super{top:19%;}
+	.win_1920 article.headlights_super{top:19%;}
+article.headlights_super h2{@include default-font-n4; font-size:18px;}
+article.headlights_super p{@include default-font-i4; font-size:18px;}
+article.headlights_super.show{opacity:1;}
+
+article#zero_gravity_seats{bottom:120px; right:90px; width:350px; height:320px; opacity:0;}
+	.win_1280 article#zero_gravity_seats{right:145px;}
+	.win_1920 article#zero_gravity_seats{right:200px;}
+article#zero_gravity_seats.show{opacity:1;}
+
+/*------------------------------ PERFORMANCE ---------------*/
+article#performance_overview{top:6%; right:90px; width:510px; height:200px; text-align:center; opacity:0;}
+	article#performance_overview h2, article#performance_overview p{ color:#526a64; }
+	.win_1280 article#performance_overview{right:145px;}
+	.win_1920 article#performance_overview{right:200px;}
+article#performance_overview.show{opacity:1;}
+
+article#performance_zero-lift{top:50%; left:90px; width:280px; height:490px; margin-top:-260px; opacity:0;}
+	.win_1280 article#performance_zero-lift{left:145px;}
+	.win_1920 article#performance_zero-lift{left:200px;}
+article#performance_zero-lift.show{opacity:1;}
+
+article#performance_sport_model{top:50%; right:90px; width:290px; height:490px; margin-top:-260px; opacity:0;}
+	.win_1280 article#performance_sport_model{right:145px;}
+	.win_1920 article#performance_sport_model{right:200px;}
+article#performance_sport_model.show{opacity:1;}
+
+article#performance_engine{bottom:7%; left:50%; width:820px; height:260px; margin-left:-410px; text-align:center; opacity:0;}
+	.win_1280 article#performance_engine{bottom:8%;}
+	.win_1920 article#performance_engine{bottom:9%;}
+article#performance_engine.show{opacity:1;}
+
+article#performance_hybrid_engine_1{bottom:8%; left:50%; width:800px; height:260px; margin-left:-400px; text-align:center; opacity:0;}
+	.win_1280 article#performance_hybrid_engine_1{bottom:9%;}
+	.win_1920 article#performance_hybrid_engine_1{bottom:10%;}
+article#performance_hybrid_engine_1.show{opacity:1;}
+
+article#performance_hybrid_engine_2{bottom:8%; left:50%; width:920px; height:260px; margin-left:-460px; text-align:center; opacity:0;}
+	.win_1280 article#performance_hybrid_engine_2{ bottom:9%; }
+	.win_1920 article#performance_hybrid_engine_2{ bottom:10%; }
+article#performance_hybrid_engine_2.show{opacity:1;}
+
+article#performance_adaptive_steering{top:50%; left:90px; width:340px; height:420px; margin-top:-225px; opacity:0;}
+	.win_1280 article#performance_adaptive_steering{left:145px;}
+	.win_1920 article#performance_adaptive_steering{left:200px;}
+article#performance_adaptive_steering.show{opacity:1;}
+
+article#steer_by_wire_end{top:7%; left:50%; width:650px; height:260px; margin-left:-325px; opacity:0; text-align:center; opacity:0;}
+	article#steer_by_wire_end h2{color:#393b42;}
+	article#steer_by_wire_end p{color:#393b42;}
+	article#steer_by_wire_end span.replay{color:#fff;}
+	article#steer_by_wire_end a.disclaimer_tooltip{color:#393b42;}
+article#steer_by_wire_end.show{opacity:1;}
+
+article.sbw_demo{opacity:0;}
+article.sbw_demo.show{opacity:1;}
+
+/*------------------------------ TECHNOLOGY ---------------*/
+article#technology_overview{top:9%; left:60px; width:540px; height:255px; opacity:0;}
+	article#technology_overview h2, article#technology_overview p{color:#1f2728;}
+	.win_1280 article#technology_overview{left:110px;}
+	.win_1920 article#technology_overview{left:170px;}
+article#technology_overview.show{opacity:1;}
+
+article#torque_response{top:50%; left:90px; width:340px; height:190px; margin:-150px 0 0 0; opacity:0;}
+	.win_1280 article#torque_response{left:145px;}
+	.win_1920 article#torque_response{left:200px;}
+article#torque_response.show{opacity:1;}
+
+article#adaptive_steering{top:50%; left:90px; width:355px; height:190px; margin:-150px 0 0 0; opacity:0;}
+	.win_1280 article#adaptive_steering{left:145px;}
+	.win_1920 article#adaptive_steering{left:200px;}
+article#adaptive_steering.show{opacity:1;}
+
+article#driver_position{top:50%; left:90px; width:340px; height:190px; margin:-150px 0 0 0; opacity:0;}
+	.win_1280 article#driver_position{left:145px;}
+	.win_1920 article#driver_position{left:200px;}
+article#driver_position.show{opacity:1;}
+
+article#active_trace_control{top:50%; left:90px; width:340px; height:190px; margin:-150px 0 0 0; opacity:0;}
+	.win_1280 article#active_trace_control{left:145px;}
+	.win_1920 article#active_trace_control{left:200px;}
+article#active_trace_control.show{opacity:1;}
+
+article#digital_environment{top:50%; left:90px; width:320px; height:375px; margin:-200px 0 0 0; opacity:0;}
+	.win_1280 article#digital_environment{left:145px;}
+	.win_1920 article#digital_environment{left:200px;}
+article#digital_environment.show{opacity:1;}
+
+article#disclaimer_digital_env{ bottom:131px; left:50%; margin-left:-305px; width:630px; opacity:0;}
+	.win_1280 article#disclaimer_digital_env{}
+	.win_1920 article#disclaimer_digital_env{}
+article#disclaimer_digital_env.show{opacity:0.4;}
+
+article#disclaimer_bci{bottom:123px; left:50%; margin-left:-314px; width:632px; opacity:0;text-align:center;}
+	.win_1280 article#disclaimer_bci{}
+	.win_1920 article#disclaimer_bci{}
+article#disclaimer_bci.show{opacity:0.6;}
+
+article#disclaimer_avm{ bottom:123px; left:50%; margin-left:-361px; width:729px; opacity:0;text-align:center;}
+	.win_1280 article#disclaimer_avm{}
+	.win_1920 article#disclaimer_avm{}
+article#disclaimer_avm.show{opacity:0.6;}
+
+article#infiniti_intouch{top:50%; left:90px; width:300px; height:420px; margin-top:-240px; opacity:0;}
+	.win_1280 article#infiniti_intouch{left:145px;}
+	.win_1920 article#infiniti_intouch{left:200px;}
+article#infiniti_intouch.show{opacity:1;}
+
+article#infiniti_connection{top:50%; left:90px; width:300px; height:420px; margin-top:-220px; opacity:0;}
+	.win_1280 article#infiniti_connection{left:145px;}
+	.win_1920 article#infiniti_connection{left:200px;}
+article#infiniti_connection.show{opacity:1;}
+
+article#connection_calendar{top:50%; left:90px; width:260px; height:100px; margin:-88px 0 0 0; opacity:0; text-align:center;}
+	.win_1280 article#connection_calendar{left:145px;}
+	.win_1920 article#connection_calendar{left:200px;}
+article#connection_calendar.show{opacity:1;}
+
+article#intouch_apps{top:50%; left:90px; width:250px; height:100px; margin:-90px 0 0 0; opacity:0;}
+	.win_1280 article#intouch_apps{left:145px;}
+	.win_1920 article#intouch_apps{left:200px;}
+article#intouch_apps.show{opacity:1;}
+
+article#intouch_facebook{top:50%; left:90px; width:405px; height:100px; margin:-90px 0 0 0; opacity:0;}
+	.win_1280 article#intouch_facebook{left:145px;}
+	.win_1920 article#intouch_facebook{left:200px;}
+article#intouch_facebook.show{opacity:1;}
+
+article#intouch_places{top:50%; left:90px; width:385px; height:100px; margin:-90px 0 0 0; opacity:0;}
+	.win_1280 article#intouch_places{left:145px;}
+	.win_1920 article#intouch_places{left:200px;}
+article#intouch_places.show{opacity:1;}
+
+article#intouch_pinch_zoom{top:50%; left:90px; width:307px; height:270px; margin:-170px 0 0 0; opacity:0;}
+article#intouch_pinch_zoom .top{}
+article#intouch_pinch_zoom .bottom{}
+	.win_1280 article#intouch_pinch_zoom{left:145px;}
+	.win_1920 article#intouch_pinch_zoom{left:200px;}
+article#intouch_pinch_zoom.show{opacity:1;}
+
+article#bose_audio{top:50%; left:90px; width:272px; height:480px; margin-top:-248px; opacity:0;}
+	.win_1280 article#bose_audio{left:145px;}
+	.win_1920 article#bose_audio{left:200px;}
+article#bose_audio.show{opacity:1;}
+
+article#bose_speakers{top:50%; left:90px; width:279px; height:190px; margin:-134px 0 0 0; opacity:0;}
+	.win_1280 article#bose_speakers{left:145px;}
+	.win_1920 article#bose_speakers{left:200px;}
+article#bose_speakers.show{opacity:1;}
+
+article#bci_overview{top:50%; margin-top:-215px; height:410px;right:90px; width:272px; opacity:0;}
+	.win_1280 article#bci_overview{right:145px;}
+	.win_1920 article#bci_overview{right:200px;}
+article#bci_overview.show{opacity:1;}
+
+article#bci_super1{top:80px; right:53px; width:415px; height:205px; opacity:0;}
+	.win_1280 article#bci_super1{right:246px;}
+	.win_1920 article#bci_super1{right:330px;}
+article#bci_super1.show{opacity:1;}
+
+article#bci_super2{top:50%; margin-top:-210px; right:114px; width:305px; height:205px; opacity:0;}
+	.win_1280 article#bci_super2{right:315px;}
+	.win_1920 article#bci_super2{right:450px;}
+article#bci_super2.show{opacity:1;}
+
+article#bci_super3{top:7px; right:90px; width:430px; height:205px; opacity:0;}
+	.win_1280 article#bci_super3{right:265px;}
+	.win_1920 article#bci_super3{right:400px;}
+article#bci_super3.show{opacity:1;}
+
+article#safety_shield_info{top:140px; left:90px; width:283px; height:205px; opacity:0;z-index:6;}
+	.win_1280 article#safety_shield_info{left:145px;}
+	.win_1920 article#safety_shield_info{left:200px;}
+article#safety_shield_info.show{opacity:1;}
+
+article#avm{top:18%; left:60px; width:306px; height:255px;opacity:0;}
+	.win_1280 article#avm{left:110px;}
+	.win_1920 article#avm{left:170px;}
+article#avm.show{opacity:1;}
+
+article#avm_super1{top:50%; margin-top:-150px; left:90px; width:187px; height:205px; opacity:0;}
+	.win_1280 article#avm_super1{left:130px;}
+	.win_1920 article#avm_super1{left:200px;}
+article#avm_super1.show{opacity:1;}
+
+article#avm_super2{top:50%; left:90px; width:245px; margin-top: -170px; height:285px; opacity:0;}
+	.win_1280 article#avm_super2{left:145px;}
+	.win_1920 article#avm_super2{left:200px;}
+article#avm_super2.show{opacity:1;}
+
+article#avm_super3{top:50%; left:90px; width:275px; margin-top: -170px; height:285px; opacity:0;}
+	.win_1280 article#avm_super3{left:145px;}
+	.win_1920 article#avm_super3{left:200px;}
+article#avm_super3.show{opacity:1;}
+
+article#avm_super3_half{top:50%; left:90px; width:245px; margin-top: -170px; height:285px; opacity:0;}
+	.win_1280 article#avm_super3_half{left:145px;}
+	.win_1920 article#avm_super3_half{left:200px;}
+article#avm_super3_half.show{opacity:1;}
+
+article#avm_super4{top:50%; right:5%; width:453px; height:205px;text-align:center; margin-top:20px; opacity:0;}
+	.win_1280 article#avm_super4{right:13%; }
+	.win_1920 article#avm_super4{right:18%; }
+article#avm_super4.show{opacity:1;}
