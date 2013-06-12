@@ -1,0 +1,178 @@
+<krpano version="1.0.8.14" onstart="startup();" idletime="5.0" showerrors="true" debugmode="true" instructionsshown="false">
+	<!-- vtour.xml template krpano tools version 1.0.8.14 -->
+
+	<!-- plugins -->
+	<plugin name="gyro" alturl="pano-plugins/gyro.js" keep="true" enabled="true" camroll="false" friction="0.5" velastic="0.2" />
+
+	<!-- include zoom and fullscreen buttons for Android -->
+	<include url="skin/androidskin.xml" devices="android+flash" />
+
+	<autorotate enabled="false" waittime="3.5" speed="1.0" />
+
+	<style name="frontSeat" url="panos/car-front.png" />
+	<style name="backSeat" url="panos/car-back.png" />
+	<style name="rowHotspot" url="panos/row-hotspot.png" keep="true" />
+
+	<style name="gyroOn" devices="iphone|ipad" crop="0|0|77|31" keep="true" />
+	<style name="gyroOff" devices="iphone|ipad" crop="0|-31|77|31" keep="true" />
+	
+	<plugin enabled="true" name="gyrotoggle" align="leftbottom" x="30" y="120"  url="panos/gyro-button.png" style="gyroOn" onclick="action(toggleGyro)" />
+	
+	<action name="startup">
+		<!-- load the first scene -->
+		loadscene(get(scene[0].name), null, MERGE);
+
+		<!-- publish topic for pano startup complete -->
+		js(jQuery.publish(/nna/pano/startupComplete));
+	</action>
+
+	<!-- Disable fullscreen -->
+	<contextmenu fullscreen="false" enterfs="Fullscreen" exitfs="Exit Fullscreen" />
+	
+	<!-- scenes -->
+	<scene name="row_01" title="01" onstart="" thumburl="panos/row-1.tiles/thumb.jpg">
+		<view hlookat="0" vlookat="20" fovtype="MFOV" fov="100" fovmin="60" fovmax="110" />
+		<events onloadcomplete="action(panoloaded); action(updateNav, 0); action(showMap);" onkeydown="action(panomousedown);" onmousedown="action(panomousedown);" />
+		<preview url="panos/row-1.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="2000" tiledimageheight="2000"><cube url="panos/row-1.tiles/l3_%s_%v_%h.jpg" /></level>
+			<level tiledimagewidth="1024" tiledimageheight="1024"><cube url="panos/row-1.tiles/l2_%s_%v_%h.jpg" /></level>
+			<level tiledimagewidth="512" tiledimageheight="512"><cube url="panos/row-1.tiles/l1_%s_%v_%h.jpg" /></level>
+			<mobile><cube url="panos/row-1.tiles/mobile_%s.jpg" /></mobile>
+		</image>
+		<plugin name="frontMap" enabled="false" visible="false" align="rightbottom" x="68" y="125" style="frontSeat" zorder="1" handcursor="false" />
+		<plugin name="loadscene1" enabled="true" keep="true" visible="true" align="rightbottom" x="134" y="191" style="rowHotspot" zorder="3" onclick="action(internalLoadScene, 0);" />
+		<plugin name="loadscene2" enabled="true" keep="true" visible="true" align="rightbottom" x="133" y="167" style="rowHotspot" zorder="3" onclick="action(internalLoadScene, 1);" />
+		<plugin name="map" url="panos/mask.png" enabled="true" visible="false" devices="flash" align="bottomright" x="43" y="100" scale="1" zorder="1" heading="270.0" fillcolor="0x682071" handcursor="false" blendmode="add" />
+		<plugin name="mapmask" url="panos/mask.png" visible="false" devices="flash" parent="map" />
+		<plugin name="radar" url="pano-plugins/radar.swf" visible="true" devices="flash" parent="map" mask="mapmask" scale="0.4" zorder="2" align="center" x="0" y="0" edge="center" heading="270.0" fillcolor="0x682071" fillalpha="1" linecolor="0x682071" handcursor="false" />
+		<plugin name="radar2" url="pano-plugins/radar.js" visible="false" devices="html5" scale="0.4" align="bottomright" x="92" y="149" heading="270.0" fillcolor="0x682071" fillalpha="0.45" linecolor="0x682071" handcursor="false" zorder="2" />
+	</scene>
+
+	<scene name="row_02" title="02" onstart="" thumburl="panos/row-2.tiles/thumb.jpg">
+		<view hlookat="0" vlookat="20" fovtype="MFOV" fov="100" fovmin="60" fovmax="110" />
+		<events onloadcomplete="action(panoloaded); action(updateNav, 1); action(showMap);" onmousedown="action(panomousedown);" />
+		<preview url="panos/row-2.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="2000" tiledimageheight="2000"><cube url="panos/row-2.tiles/l3_%s_%v_%h.jpg" /></level>
+			<level tiledimagewidth="1024" tiledimageheight="1024"><cube url="panos/row-2.tiles/l2_%s_%v_%h.jpg" /></level>
+			<level tiledimagewidth="512" tiledimageheight="512"><cube url="panos/row-2.tiles/l1_%s_%v_%h.jpg" /></level>
+			<mobile><cube url="panos/row-2.tiles/mobile_%s.jpg" /></mobile>
+		</image>
+		<plugin name="backMap" enabled="false" visible="false" align="rightbottom" x="68" y="125" style="backSeat" zorder="1" handcursor="false" />
+		<plugin name="loadscene1" enabled="true" keep="true" visible="true" align="rightbottom" x="134" y="191" style="rowHotspot" zorder="3" onclick="action(internalLoadScene, 0);" />
+		<plugin name="loadscene2" enabled="true" keep="true" visible="true" align="rightbottom" x="133" y="167" style="rowHotspot" zorder="3" onclick="action(internalLoadScene, 1);" />
+		<plugin name="map" url="panos/mask.png" enabled="false" visible="false" devices="flash" align="bottomright" x="43" y="77" scale="1" zorder="1" heading="270.0" fillcolor="0x682071" handcursor="false" blendmode="add" />
+		<plugin name="mapmask" url="panos/mask.png" visible="false" devices="flash" parent="map" />
+		<plugin name="radar" url="pano-plugins/radar.swf" visible="false" devices="flash" parent="map" mask="mapmask" scale="0.4" zorder="2" align="center" x="0" y="0" edge="center" heading="270.0" fillcolor="0x682071" fillalpha="1" linecolor="0x682071" handcursor="false" />
+		<plugin name="radar2" url="pano-plugins/radar.js" visible="false" devices="html5" scale="0.4" align="bottomright" x="92" y="126" heading="270.0" fillcolor="0x682071" fillalpha="0.45" linecolor="0x682071" handcursor="false" zorder="2" />
+	</scene>
+
+	<!-- custom actions -->
+	<action name="externalLoadScene">
+		<!-- this would be called from JS -->
+		if(scene[%1].name != xml.scene,
+			loadscene(get(scene[%1].name), null, MERGE);
+		);
+		action(updateNav, %1);
+		
+		<!-- triggering loadingScene event -->
+		js(jQuery.publish(/nna/pano/loadingScene, %1|true));
+	</action>
+	
+	<action name="internalLoadScene">
+		<!-- this will only be called from inside krpano -->
+		if(scene[%1].name != xml.scene,
+			loadscene(get(scene[%1].name), null, MERGE);
+		);
+		action(updateNav, %1);
+		
+		<!-- triggering loadingScene event -->
+		js(jQuery.publish(/nna/pano/loadingScene, %1|false));
+	</action>
+	
+	<action name="openHotspot">
+		js(jQuery.publish(/nna/pano/openHotspot, %1|%2));
+	</action>
+	
+	<action name="panoloaded">
+		js(jQuery.publish(/nna/pano/loadedScene));
+	</action>
+	
+	<action name="showMap">
+		if(instructionsshown == true,
+			set(plugin[frontMap].visible, true);
+			set(plugin[backMap].visible, true);
+			set(plugin[map].visible, true);
+			set(plugin[mapmask].visible, true);
+			set(plugin[radar].visible, true);
+			set(plugin[radar2].visible, true);
+		);
+		if(instructionsshown == false,
+			set(instructionsshown, true);
+		);
+	</action>
+	
+	<action name="panomousedown">
+		js(jQuery.publish(/nna/pano/mousedown));
+		if(plugin[map].visible != true,
+			set(plugin[frontMap].visible, true);
+			set(plugin[backMap].visible, true);
+			set(plugin[map].visible, true);
+			set(plugin[mapmask].visible, true);
+			set(plugin[radar].visible, true);
+			set(plugin[radar2].visible, true);
+		);
+	</action>
+	
+	<action name="exitPano">
+		js(jQuery.publish(/nna/pano/exit));
+	</action>
+	
+	<action name="updateNav">
+		if(%1 == 0,
+			plugin[loadscene1].loadstyle(rowActive);
+			plugin[loadscene2].loadstyle(rowInactive);
+			plugin[loadscene3].loadstyle(rowInactive);
+		);
+		if(%1 == 1,
+			plugin[loadscene2].loadstyle(rowActive);
+			plugin[loadscene1].loadstyle(rowInactive);
+			plugin[loadscene3].loadstyle(rowInactive);
+		);
+	</action>
+	
+	<action name="showHotSpots">
+		if(%1 != NEXT, set(i,0));
+		if(i LT scene.count,
+			set(hotspot[get(i)].visible, true);
+			inc(i);
+			showHotSpots(NEXT);
+		,
+			js(jQuery.publish(/nna/pano/hotspotsShown));
+		);
+	</action>
+	
+	<action name="hideHotSpots">
+		if(%1 != NEXT, set(i,0));
+		if(i LT scene.count,
+			set(hotspot[get(i)].visible, false);
+			inc(i);
+			hideHotSpots(NEXT);
+		,
+			js(jQuery.publish(/nna/pano/hotspotsHidden));
+		);
+	</action>
+	
+	<action name="toggleGyro">
+		if(plugin[gyro].enabled == false,
+			set(plugin[gyro].enabled, true);
+			plugin[gyrotoggle].loadstyle(gyroOn);
+		,
+			set(plugin[gyro].enabled, false);
+			plugin[gyrotoggle].loadstyle(gyroOff);
+		);
+		
+		js(jQuery.publish(/nna/pano/gyroToggled));
+	</action>
+</krpano>
